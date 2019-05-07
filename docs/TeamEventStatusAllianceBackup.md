@@ -1,6 +1,7 @@
 # TeamEventStatusAllianceBackup
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Out** | **string** | TBA key for the team replaced by the backup. | [optional] 

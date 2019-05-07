@@ -1,6 +1,7 @@
 # EliminationAllianceBackup
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **In** | **string** | Team key that was called in as the backup. | [optional] 

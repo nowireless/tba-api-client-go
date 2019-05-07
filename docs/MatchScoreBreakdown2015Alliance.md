@@ -1,6 +1,7 @@
 # MatchScoreBreakdown2015Alliance
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AutoPoints** | **int32** |  | [optional] 

@@ -1,6 +1,7 @@
 # EventInsights
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Qual** | [**map[string]interface{}**](.md) | Inights for the qualification round of an event | [optional] 

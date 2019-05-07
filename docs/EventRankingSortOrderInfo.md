@@ -1,6 +1,7 @@
 # EventRankingSortOrderInfo
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Precision** | **int32** | Integer expressing the number of digits of precision in the number provided in &#x60;sort_orders&#x60;. | 

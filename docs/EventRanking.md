@@ -1,6 +1,7 @@
 # EventRanking
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Rankings** | [**[]EventRankingRankings**](Event_Ranking_rankings.md) | List of rankings at the event. | 

@@ -1,6 +1,7 @@
 # Award
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | The name of the award as provided by FIRST. May vary for the same award type. | 

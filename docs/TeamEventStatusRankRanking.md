@@ -1,6 +1,7 @@
 # TeamEventStatusRankRanking
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MatchesPlayed** | **int32** | Number of matches played. | [optional] 

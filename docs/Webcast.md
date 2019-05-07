@@ -1,6 +1,7 @@
 # Webcast
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | Type of webcast, typically descriptive of the streaming provider. | 

@@ -1,6 +1,7 @@
 # ApiStatusAppVersion
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MinAppVersion** | **int32** | Internal use - Minimum application version required to correctly connect and process data. | 

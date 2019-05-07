@@ -1,6 +1,7 @@
 # TeamEventStatusPlayoff
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Level** | **string** | The highest playoff level the team reached. | [optional] 

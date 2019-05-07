@@ -1,6 +1,7 @@
 # MatchScoreBreakdown2019Alliance
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AdjustPoints** | **int32** |  | [optional] 

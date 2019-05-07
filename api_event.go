@@ -90,7 +90,6 @@ func (a *EventApiService) GetDistrictEvents(ctx context.Context, districtKey str
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -201,7 +200,6 @@ func (a *EventApiService) GetDistrictEventsKeys(ctx context.Context, districtKey
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -312,7 +310,6 @@ func (a *EventApiService) GetDistrictEventsSimple(ctx context.Context, districtK
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -423,7 +420,6 @@ func (a *EventApiService) GetEvent(ctx context.Context, eventKey string, localVa
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -534,7 +530,6 @@ func (a *EventApiService) GetEventAlliances(ctx context.Context, eventKey string
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -645,7 +640,6 @@ func (a *EventApiService) GetEventAwards(ctx context.Context, eventKey string, l
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -756,7 +750,6 @@ func (a *EventApiService) GetEventDistrictPoints(ctx context.Context, eventKey s
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -867,7 +860,6 @@ func (a *EventApiService) GetEventInsights(ctx context.Context, eventKey string,
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -978,7 +970,6 @@ func (a *EventApiService) GetEventMatchTimeseries(ctx context.Context, eventKey 
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1089,7 +1080,6 @@ func (a *EventApiService) GetEventMatches(ctx context.Context, eventKey string, 
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1200,7 +1190,6 @@ func (a *EventApiService) GetEventMatchesKeys(ctx context.Context, eventKey stri
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1311,7 +1300,6 @@ func (a *EventApiService) GetEventMatchesSimple(ctx context.Context, eventKey st
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1422,7 +1410,6 @@ func (a *EventApiService) GetEventOPRs(ctx context.Context, eventKey string, loc
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1533,7 +1520,6 @@ func (a *EventApiService) GetEventPredictions(ctx context.Context, eventKey stri
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1644,7 +1630,6 @@ func (a *EventApiService) GetEventRankings(ctx context.Context, eventKey string,
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1755,7 +1740,6 @@ func (a *EventApiService) GetEventSimple(ctx context.Context, eventKey string, l
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1866,7 +1850,6 @@ func (a *EventApiService) GetEventTeams(ctx context.Context, eventKey string, lo
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1977,7 +1960,6 @@ func (a *EventApiService) GetEventTeamsKeys(ctx context.Context, eventKey string
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2088,7 +2070,6 @@ func (a *EventApiService) GetEventTeamsSimple(ctx context.Context, eventKey stri
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2199,7 +2180,6 @@ func (a *EventApiService) GetEventTeamsStatuses(ctx context.Context, eventKey st
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2310,7 +2290,6 @@ func (a *EventApiService) GetEventsByYear(ctx context.Context, year int32, local
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2421,7 +2400,6 @@ func (a *EventApiService) GetEventsByYearKeys(ctx context.Context, year int32, l
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2532,7 +2510,6 @@ func (a *EventApiService) GetEventsByYearSimple(ctx context.Context, year int32,
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2645,7 +2622,6 @@ func (a *EventApiService) GetTeamEventAwards(ctx context.Context, teamKey string
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2758,7 +2734,6 @@ func (a *EventApiService) GetTeamEventMatches(ctx context.Context, teamKey strin
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2871,7 +2846,6 @@ func (a *EventApiService) GetTeamEventMatchesKeys(ctx context.Context, teamKey s
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2984,7 +2958,6 @@ func (a *EventApiService) GetTeamEventMatchesSimple(ctx context.Context, teamKey
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3097,7 +3070,6 @@ func (a *EventApiService) GetTeamEventStatus(ctx context.Context, teamKey string
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3208,7 +3180,6 @@ func (a *EventApiService) GetTeamEvents(ctx context.Context, teamKey string, loc
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3321,7 +3292,6 @@ func (a *EventApiService) GetTeamEventsByYear(ctx context.Context, teamKey strin
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3434,7 +3404,6 @@ func (a *EventApiService) GetTeamEventsByYearKeys(ctx context.Context, teamKey s
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3547,7 +3516,6 @@ func (a *EventApiService) GetTeamEventsByYearSimple(ctx context.Context, teamKey
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3658,7 +3626,6 @@ func (a *EventApiService) GetTeamEventsKeys(ctx context.Context, teamKey string,
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3769,7 +3736,6 @@ func (a *EventApiService) GetTeamEventsSimple(ctx context.Context, teamKey strin
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3882,7 +3848,6 @@ func (a *EventApiService) GetTeamEventsStatusesByYear(ctx context.Context, teamK
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err

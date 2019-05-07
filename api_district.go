@@ -90,7 +90,6 @@ func (a *DistrictApiService) GetDistrictEvents(ctx context.Context, districtKey 
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -201,7 +200,6 @@ func (a *DistrictApiService) GetDistrictEventsKeys(ctx context.Context, district
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -312,7 +310,6 @@ func (a *DistrictApiService) GetDistrictEventsSimple(ctx context.Context, distri
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -423,7 +420,6 @@ func (a *DistrictApiService) GetDistrictRankings(ctx context.Context, districtKe
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -534,7 +530,6 @@ func (a *DistrictApiService) GetDistrictTeams(ctx context.Context, districtKey s
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -645,7 +640,6 @@ func (a *DistrictApiService) GetDistrictTeamsKeys(ctx context.Context, districtK
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -756,7 +750,6 @@ func (a *DistrictApiService) GetDistrictTeamsSimple(ctx context.Context, distric
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -867,7 +860,6 @@ func (a *DistrictApiService) GetDistrictsByYear(ctx context.Context, year int32,
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -978,7 +970,6 @@ func (a *DistrictApiService) GetEventDistrictPoints(ctx context.Context, eventKe
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1089,7 +1080,6 @@ func (a *DistrictApiService) GetTeamDistricts(ctx context.Context, teamKey strin
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err

@@ -1,6 +1,7 @@
 # MatchScoreBreakdown2015
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Blue** | [**MatchScoreBreakdown2015Alliance**](Match_Score_Breakdown_2015_Alliance.md) |  | [optional] 

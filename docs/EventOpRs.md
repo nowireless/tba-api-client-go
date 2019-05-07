@@ -1,6 +1,7 @@
 # EventOpRs
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Oprs** | **map[string]float32** | A key-value pair with team key (eg &#x60;frc254&#x60;) as key and OPR as value. | [optional] 

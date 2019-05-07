@@ -1,6 +1,7 @@
 # DistrictList
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Abbreviation** | **string** | The short identifier for the district. | 

@@ -1,6 +1,7 @@
 # EventInsights2017
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AverageFoulScore** | **float32** | Average foul score. | 

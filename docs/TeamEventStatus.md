@@ -1,6 +1,7 @@
 # TeamEventStatus
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Qual** | [**TeamEventStatusRank**](Team_Event_Status_rank.md) |  | [optional] 

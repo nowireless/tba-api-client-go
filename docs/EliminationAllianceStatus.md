@@ -1,6 +1,7 @@
 # EliminationAllianceStatus
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PlayoffAverage** | **float64** |  | [optional] 

@@ -87,7 +87,6 @@ func (a *TBAApiService) GetStatus(ctx context.Context, localVarOptionals *GetSta
 			localVarHeaderParams["X-TBA-Auth-Key"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err

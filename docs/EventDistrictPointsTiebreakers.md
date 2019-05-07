@@ -1,6 +1,7 @@
 # EventDistrictPointsTiebreakers
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **HighestQualScores** | **[]int32** |  | [optional] 

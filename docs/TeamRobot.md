@@ -1,6 +1,7 @@
 # TeamRobot
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Year** | **int32** | Year this robot competed in. | 

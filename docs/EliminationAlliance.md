@@ -1,6 +1,7 @@
 # EliminationAlliance
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | Alliance name, may be null. | [optional] 

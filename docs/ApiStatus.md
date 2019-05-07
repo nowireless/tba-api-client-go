@@ -1,6 +1,7 @@
 # ApiStatus
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CurrentSeason** | **int32** | Year of the current FRC season. | 

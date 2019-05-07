@@ -1,6 +1,7 @@
 # WltRecord
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Losses** | **int32** | Number of losses. | 

@@ -1,6 +1,7 @@
 # DistrictRanking
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **TeamKey** | **string** | TBA team key for the team. | 
