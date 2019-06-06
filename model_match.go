@@ -18,7 +18,7 @@ type Match struct {
 	SetNumber int32 `json:"set_number"`
 	// The match number of the match in the competition level.
 	MatchNumber int32 `json:"match_number"`
-	Alliances MatchAlliances `json:"alliances,omitempty"`
+	Alliances MatchSimpleAlliances `json:"alliances,omitempty"`
 	// The color (red/blue) of the winning alliance. Will contain an empty string in the event of no winner, or a tie.
 	WinningAlliance string `json:"winning_alliance,omitempty"`
 	// Event key of the event the match was played at.

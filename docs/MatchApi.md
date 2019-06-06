@@ -22,14 +22,29 @@ Method | HTTP request | Description
 
 ## GetEventMatchTimeseries
 
-> []string GetEventMatchTimeseries(ctx, )
+> []string GetEventMatchTimeseries(ctx, eventKey, optional)
 
 
 Gets an array of Match Keys for the given event key that have timeseries data. Returns an empty array if no matches have timeseries data. *WARNING:* This is *not* official data, and is subject to a significant possibility of error, or missing data. Do not rely on this data for any purpose. In fact, pretend we made it up. *WARNING:* This endpoint and corresponding data models are under *active development* and may change at any time, including in breaking ways.
 
 ### Required Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**eventKey** | **string**| TBA Event Key, eg &#x60;2016nytr&#x60; | 
+ **optional** | ***GetEventMatchTimeseriesOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a GetEventMatchTimeseriesOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **ifModifiedSince** | **optional.String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | 
 
 ### Return type
 
@@ -51,14 +66,29 @@ This endpoint does not need any parameter.
 
 ## GetEventMatches
 
-> []Match GetEventMatches(ctx, )
+> []Match GetEventMatches(ctx, eventKey, optional)
 
 
 Gets a list of matches for the given event.
 
 ### Required Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**eventKey** | **string**| TBA Event Key, eg &#x60;2016nytr&#x60; | 
+ **optional** | ***GetEventMatchesOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a GetEventMatchesOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **ifModifiedSince** | **optional.String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | 
 
 ### Return type
 
@@ -80,14 +110,29 @@ This endpoint does not need any parameter.
 
 ## GetEventMatchesKeys
 
-> []string GetEventMatchesKeys(ctx, )
+> []string GetEventMatchesKeys(ctx, eventKey, optional)
 
 
 Gets a list of match keys for the given event.
 
 ### Required Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**eventKey** | **string**| TBA Event Key, eg &#x60;2016nytr&#x60; | 
+ **optional** | ***GetEventMatchesKeysOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a GetEventMatchesKeysOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **ifModifiedSince** | **optional.String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | 
 
 ### Return type
 
@@ -109,14 +154,29 @@ This endpoint does not need any parameter.
 
 ## GetEventMatchesSimple
 
-> []MatchSimple GetEventMatchesSimple(ctx, )
+> []MatchSimple GetEventMatchesSimple(ctx, eventKey, optional)
 
 
 Gets a short-form list of matches for the given event.
 
 ### Required Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**eventKey** | **string**| TBA Event Key, eg &#x60;2016nytr&#x60; | 
+ **optional** | ***GetEventMatchesSimpleOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a GetEventMatchesSimpleOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **ifModifiedSince** | **optional.String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | 
 
 ### Return type
 
@@ -138,14 +198,29 @@ This endpoint does not need any parameter.
 
 ## GetMatch
 
-> Match GetMatch(ctx, )
+> Match GetMatch(ctx, matchKey, optional)
 
 
 Gets a `Match` object for the given match key.
 
 ### Required Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**matchKey** | **string**| TBA Match Key, eg &#x60;2016nytr_qm1&#x60; | 
+ **optional** | ***GetMatchOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a GetMatchOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **ifModifiedSince** | **optional.String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | 
 
 ### Return type
 
@@ -167,14 +242,29 @@ This endpoint does not need any parameter.
 
 ## GetMatchSimple
 
-> MatchSimple GetMatchSimple(ctx, )
+> MatchSimple GetMatchSimple(ctx, matchKey, optional)
 
 
 Gets a short-form `Match` object for the given match key.
 
 ### Required Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**matchKey** | **string**| TBA Match Key, eg &#x60;2016nytr_qm1&#x60; | 
+ **optional** | ***GetMatchSimpleOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a GetMatchSimpleOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **ifModifiedSince** | **optional.String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | 
 
 ### Return type
 
@@ -196,14 +286,29 @@ This endpoint does not need any parameter.
 
 ## GetMatchTimeseries
 
-> []map[string]interface{} GetMatchTimeseries(ctx, )
+> []map[string]interface{} GetMatchTimeseries(ctx, matchKey, optional)
 
 
 Gets an array of game-specific Match Timeseries objects for the given match key or an empty array if not available. *WARNING:* This is *not* official data, and is subject to a significant possibility of error, or missing data. Do not rely on this data for any purpose. In fact, pretend we made it up. *WARNING:* This endpoint and corresponding data models are under *active development* and may change at any time, including in breaking ways.
 
 ### Required Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**matchKey** | **string**| TBA Match Key, eg &#x60;2016nytr_qm1&#x60; | 
+ **optional** | ***GetMatchTimeseriesOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a GetMatchTimeseriesOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **ifModifiedSince** | **optional.String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | 
 
 ### Return type
 
@@ -225,14 +330,31 @@ This endpoint does not need any parameter.
 
 ## GetTeamEventMatches
 
-> []Match GetTeamEventMatches(ctx, )
+> []Match GetTeamEventMatches(ctx, teamKey, eventKey, optional)
 
 
 Gets a list of matches for the given team and event.
 
 ### Required Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**teamKey** | **string**| TBA Team Key, eg &#x60;frc254&#x60; | 
+**eventKey** | **string**| TBA Event Key, eg &#x60;2016nytr&#x60; | 
+ **optional** | ***GetTeamEventMatchesOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a GetTeamEventMatchesOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **ifModifiedSince** | **optional.String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | 
 
 ### Return type
 
@@ -254,14 +376,31 @@ This endpoint does not need any parameter.
 
 ## GetTeamEventMatchesKeys
 
-> []string GetTeamEventMatchesKeys(ctx, )
+> []string GetTeamEventMatchesKeys(ctx, teamKey, eventKey, optional)
 
 
 Gets a list of match keys for matches for the given team and event.
 
 ### Required Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**teamKey** | **string**| TBA Team Key, eg &#x60;frc254&#x60; | 
+**eventKey** | **string**| TBA Event Key, eg &#x60;2016nytr&#x60; | 
+ **optional** | ***GetTeamEventMatchesKeysOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a GetTeamEventMatchesKeysOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **ifModifiedSince** | **optional.String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | 
 
 ### Return type
 
@@ -283,14 +422,31 @@ This endpoint does not need any parameter.
 
 ## GetTeamEventMatchesSimple
 
-> []Match GetTeamEventMatchesSimple(ctx, )
+> []Match GetTeamEventMatchesSimple(ctx, teamKey, eventKey, optional)
 
 
 Gets a short-form list of matches for the given team and event.
 
 ### Required Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**teamKey** | **string**| TBA Team Key, eg &#x60;frc254&#x60; | 
+**eventKey** | **string**| TBA Event Key, eg &#x60;2016nytr&#x60; | 
+ **optional** | ***GetTeamEventMatchesSimpleOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a GetTeamEventMatchesSimpleOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **ifModifiedSince** | **optional.String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | 
 
 ### Return type
 
@@ -312,14 +468,31 @@ This endpoint does not need any parameter.
 
 ## GetTeamMatchesByYear
 
-> []Match GetTeamMatchesByYear(ctx, )
+> []Match GetTeamMatchesByYear(ctx, teamKey, year, optional)
 
 
 Gets a list of matches for the given team and year.
 
 ### Required Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**teamKey** | **string**| TBA Team Key, eg &#x60;frc254&#x60; | 
+**year** | **int32**| Competition Year (or Season). Must be 4 digits. | 
+ **optional** | ***GetTeamMatchesByYearOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a GetTeamMatchesByYearOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **ifModifiedSince** | **optional.String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | 
 
 ### Return type
 
@@ -341,14 +514,31 @@ This endpoint does not need any parameter.
 
 ## GetTeamMatchesByYearKeys
 
-> []string GetTeamMatchesByYearKeys(ctx, )
+> []string GetTeamMatchesByYearKeys(ctx, teamKey, year, optional)
 
 
 Gets a list of match keys for matches for the given team and year.
 
 ### Required Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**teamKey** | **string**| TBA Team Key, eg &#x60;frc254&#x60; | 
+**year** | **int32**| Competition Year (or Season). Must be 4 digits. | 
+ **optional** | ***GetTeamMatchesByYearKeysOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a GetTeamMatchesByYearKeysOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **ifModifiedSince** | **optional.String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | 
 
 ### Return type
 
@@ -370,14 +560,31 @@ This endpoint does not need any parameter.
 
 ## GetTeamMatchesByYearSimple
 
-> []MatchSimple GetTeamMatchesByYearSimple(ctx, )
+> []MatchSimple GetTeamMatchesByYearSimple(ctx, teamKey, year, optional)
 
 
 Gets a short-form list of matches for the given team and year.
 
 ### Required Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**teamKey** | **string**| TBA Team Key, eg &#x60;frc254&#x60; | 
+**year** | **int32**| Competition Year (or Season). Must be 4 digits. | 
+ **optional** | ***GetTeamMatchesByYearSimpleOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a GetTeamMatchesByYearSimpleOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **ifModifiedSince** | **optional.String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | 
 
 ### Return type
 

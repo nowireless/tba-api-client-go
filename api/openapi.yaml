@@ -61,7 +61,16 @@ paths:
     get:
       description: Returns API status, and TBA status information.
       operationId: getStatus
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -98,7 +107,24 @@ paths:
     get:
       description: Gets a list of `Team` objects, paginated in groups of 500.
       operationId: getTeams
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Page number of results to return, zero-indexed
+        explode: false
+        in: path
+        name: page_num
+        required: true
+        schema:
+          type: integer
+        style: simple
       responses:
         200:
           content:
@@ -139,7 +165,24 @@ paths:
       description: Gets a list of short form `Team_Simple` objects, paginated in groups
         of 500.
       operationId: getTeamsSimple
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Page number of results to return, zero-indexed
+        explode: false
+        in: path
+        name: page_num
+        required: true
+        schema:
+          type: integer
+        style: simple
       responses:
         200:
           content:
@@ -183,7 +226,24 @@ paths:
         page will not have 500 teams, but will include the teams within that range
         of 500.)
       operationId: getTeamsKeys
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Page number of results to return, zero-indexed
+        explode: false
+        in: path
+        name: page_num
+        required: true
+        schema:
+          type: integer
+        style: simple
       responses:
         200:
           content:
@@ -224,7 +284,32 @@ paths:
       description: Gets a list of `Team` objects that competed in the given year,
         paginated in groups of 500.
       operationId: getTeamsByYear
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
+        in: path
+        name: year
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: Page number of results to return, zero-indexed
+        explode: false
+        in: path
+        name: page_num
+        required: true
+        schema:
+          type: integer
+        style: simple
       responses:
         200:
           content:
@@ -265,7 +350,32 @@ paths:
       description: Gets a list of short form `Team_Simple` objects that competed in
         the given year, paginated in groups of 500.
       operationId: getTeamsByYearSimple
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
+        in: path
+        name: year
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: Page number of results to return, zero-indexed
+        explode: false
+        in: path
+        name: page_num
+        required: true
+        schema:
+          type: integer
+        style: simple
       responses:
         200:
           content:
@@ -306,7 +416,32 @@ paths:
       description: Gets a list Team Keys that competed in the given year, paginated
         in groups of 500.
       operationId: getTeamsByYearKeys
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
+        in: path
+        name: year
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: Page number of results to return, zero-indexed
+        explode: false
+        in: path
+        name: page_num
+        required: true
+        schema:
+          type: integer
+        style: simple
       responses:
         200:
           content:
@@ -347,7 +482,24 @@ paths:
     get:
       description: Gets a `Team` object for the team referenced by the given key.
       operationId: getTeam
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -385,7 +537,24 @@ paths:
       description: Gets a `Team_Simple` object for the team referenced by the given
         key.
       operationId: getTeamSimple
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -423,7 +592,24 @@ paths:
       description: Gets a list of years in which the team participated in at least
         one competition.
       operationId: getTeamYearsParticipated
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -463,7 +649,24 @@ paths:
       description: Gets an array of districts representing each year the team was
         in a district. Will return an empty array if the team was never in a district.
       operationId: getTeamDistricts
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -505,7 +708,24 @@ paths:
         name was provided. Will return an empty array if the team has never named
         a robot.
       operationId: getTeamRobots
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -544,7 +764,24 @@ paths:
     get:
       description: Gets a list of all events this team has competed at.
       operationId: getTeamEvents
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -584,7 +821,24 @@ paths:
     get:
       description: Gets a short-form list of all events this team has competed at.
       operationId: getTeamEventsSimple
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -625,7 +879,24 @@ paths:
       description: Gets a list of the event keys for all events this team has competed
         at.
       operationId: getTeamEventsKeys
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -666,7 +937,32 @@ paths:
     get:
       description: Gets a list of events this team has competed at in the given year.
       operationId: getTeamEventsByYear
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
+        in: path
+        name: year
+        required: true
+        schema:
+          type: integer
+        style: simple
       responses:
         200:
           content:
@@ -707,7 +1003,32 @@ paths:
       description: Gets a short-form list of events this team has competed at in the
         given year.
       operationId: getTeamEventsByYearSimple
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
+        in: path
+        name: year
+        required: true
+        schema:
+          type: integer
+        style: simple
       responses:
         200:
           content:
@@ -748,7 +1069,32 @@ paths:
       description: Gets a list of the event keys for events this team has competed
         at in the given year.
       operationId: getTeamEventsByYearKeys
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
+        in: path
+        name: year
+        required: true
+        schema:
+          type: integer
+        style: simple
       responses:
         200:
           content:
@@ -790,7 +1136,32 @@ paths:
       description: Gets a key-value list of the event statuses for events this team
         has competed at in the given year.
       operationId: getTeamEventsStatusesByYear
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
+        in: path
+        name: year
+        required: true
+        schema:
+          type: integer
+        style: simple
       responses:
         200:
           content:
@@ -833,7 +1204,32 @@ paths:
     get:
       description: Gets a list of matches for the given team and event.
       operationId: getTeamEventMatches
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: TBA Event Key, eg `2016nytr`
+        explode: false
+        in: path
+        name: event_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -874,7 +1270,32 @@ paths:
     get:
       description: Gets a short-form list of matches for the given team and event.
       operationId: getTeamEventMatchesSimple
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: TBA Event Key, eg `2016nytr`
+        explode: false
+        in: path
+        name: event_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -915,7 +1336,32 @@ paths:
     get:
       description: Gets a list of match keys for matches for the given team and event.
       operationId: getTeamEventMatchesKeys
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: TBA Event Key, eg `2016nytr`
+        explode: false
+        in: path
+        name: event_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -957,7 +1403,32 @@ paths:
     get:
       description: Gets a list of awards the given team won at the given event.
       operationId: getTeamEventAwards
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: TBA Event Key, eg `2016nytr`
+        explode: false
+        in: path
+        name: event_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -997,7 +1468,32 @@ paths:
     get:
       description: Gets the competition rank and status of the team at the given event.
       operationId: getTeamEventStatus
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: TBA Event Key, eg `2016nytr`
+        explode: false
+        in: path
+        name: event_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -1035,7 +1531,24 @@ paths:
     get:
       description: Gets a list of awards the given team has won.
       operationId: getTeamAwards
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -1074,7 +1587,32 @@ paths:
     get:
       description: Gets a list of awards the given team has won in a given year.
       operationId: getTeamAwardsByYear
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
+        in: path
+        name: year
+        required: true
+        schema:
+          type: integer
+        style: simple
       responses:
         200:
           content:
@@ -1113,7 +1651,32 @@ paths:
     get:
       description: Gets a list of matches for the given team and year.
       operationId: getTeamMatchesByYear
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
+        in: path
+        name: year
+        required: true
+        schema:
+          type: integer
+        style: simple
       responses:
         200:
           content:
@@ -1153,7 +1716,32 @@ paths:
     get:
       description: Gets a short-form list of matches for the given team and year.
       operationId: getTeamMatchesByYearSimple
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
+        in: path
+        name: year
+        required: true
+        schema:
+          type: integer
+        style: simple
       responses:
         200:
           content:
@@ -1193,7 +1781,32 @@ paths:
     get:
       description: Gets a list of match keys for matches for the given team and year.
       operationId: getTeamMatchesByYearKeys
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
+        in: path
+        name: year
+        required: true
+        schema:
+          type: integer
+        style: simple
       responses:
         200:
           content:
@@ -1235,7 +1848,32 @@ paths:
       description: Gets a list of Media (videos / pictures) for the given team and
         year.
       operationId: getTeamMediaByYear
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
+        in: path
+        name: year
+        required: true
+        schema:
+          type: integer
+        style: simple
       responses:
         200:
           content:
@@ -1275,7 +1913,32 @@ paths:
       description: Gets a list of Media (videos / pictures) for the given team and
         tag.
       operationId: getTeamMediaByTag
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Media Tag which describes the Media.
+        explode: false
+        in: path
+        name: media_tag
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -1315,7 +1978,40 @@ paths:
       description: Gets a list of Media (videos / pictures) for the given team, tag
         and year.
       operationId: getTeamMediaByTagYear
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Media Tag which describes the Media.
+        explode: false
+        in: path
+        name: media_tag
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
+        in: path
+        name: year
+        required: true
+        schema:
+          type: integer
+        style: simple
       responses:
         200:
           content:
@@ -1354,7 +2050,24 @@ paths:
     get:
       description: Gets a list of Media (social media) for the given team.
       operationId: getTeamSocialMedia
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Team Key, eg `frc254`
+        explode: false
+        in: path
+        name: team_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -1393,7 +2106,24 @@ paths:
     get:
       description: Gets a list of events in the given year.
       operationId: getEventsByYear
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
+        in: path
+        name: year
+        required: true
+        schema:
+          type: integer
+        style: simple
       responses:
         200:
           content:
@@ -1433,7 +2163,24 @@ paths:
     get:
       description: Gets a short-form list of events in the given year.
       operationId: getEventsByYearSimple
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
+        in: path
+        name: year
+        required: true
+        schema:
+          type: integer
+        style: simple
       responses:
         200:
           content:
@@ -1473,7 +2220,24 @@ paths:
     get:
       description: Gets a list of event keys in the given year.
       operationId: getEventsByYearKeys
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
+        in: path
+        name: year
+        required: true
+        schema:
+          type: integer
+        style: simple
       responses:
         200:
           content:
@@ -1514,7 +2278,24 @@ paths:
     get:
       description: Gets an Event.
       operationId: getEvent
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Event Key, eg `2016nytr`
+        explode: false
+        in: path
+        name: event_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -1551,7 +2332,24 @@ paths:
     get:
       description: Gets a short-form Event.
       operationId: getEventSimple
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Event Key, eg `2016nytr`
+        explode: false
+        in: path
+        name: event_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -1588,7 +2386,24 @@ paths:
     get:
       description: Gets a list of Elimination Alliances for the given Event.
       operationId: getEventAlliances
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Event Key, eg `2016nytr`
+        explode: false
+        in: path
+        name: event_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -1627,7 +2442,24 @@ paths:
     get:
       description: Gets a set of Event-specific insights for the given Event.
       operationId: getEventInsights
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Event Key, eg `2016nytr`
+        explode: false
+        in: path
+        name: event_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -1665,7 +2497,24 @@ paths:
       description: Gets a set of Event OPRs (including OPR, DPR, and CCWM) for the
         given Event.
       operationId: getEventOPRs
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Event Key, eg `2016nytr`
+        explode: false
+        in: path
+        name: event_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -1704,7 +2553,24 @@ paths:
         Contains year-specific information. *WARNING* This endpoint is currently under
         development and may change at any time.
       operationId: getEventPredictions
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Event Key, eg `2016nytr`
+        explode: false
+        in: path
+        name: event_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -1741,7 +2607,24 @@ paths:
     get:
       description: Gets a list of team rankings for the Event.
       operationId: getEventRankings
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Event Key, eg `2016nytr`
+        explode: false
+        in: path
+        name: event_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -1778,7 +2661,24 @@ paths:
     get:
       description: Gets a list of team rankings for the Event.
       operationId: getEventDistrictPoints
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Event Key, eg `2016nytr`
+        explode: false
+        in: path
+        name: event_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -1816,7 +2716,24 @@ paths:
     get:
       description: Gets a list of `Team` objects that competed in the given event.
       operationId: getEventTeams
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Event Key, eg `2016nytr`
+        explode: false
+        in: path
+        name: event_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -1858,7 +2775,24 @@ paths:
       description: Gets a short-form list of `Team` objects that competed in the given
         event.
       operationId: getEventTeamsSimple
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Event Key, eg `2016nytr`
+        explode: false
+        in: path
+        name: event_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -1899,7 +2833,24 @@ paths:
     get:
       description: Gets a list of `Team` keys that competed in the given event.
       operationId: getEventTeamsKeys
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Event Key, eg `2016nytr`
+        explode: false
+        in: path
+        name: event_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -1942,7 +2893,24 @@ paths:
       description: Gets a key-value list of the event statuses for teams competing
         at the given event.
       operationId: getEventTeamsStatuses
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Event Key, eg `2016nytr`
+        explode: false
+        in: path
+        name: event_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -1985,7 +2953,24 @@ paths:
     get:
       description: Gets a list of matches for the given event.
       operationId: getEventMatches
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Event Key, eg `2016nytr`
+        explode: false
+        in: path
+        name: event_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -2025,7 +3010,24 @@ paths:
     get:
       description: Gets a short-form list of matches for the given event.
       operationId: getEventMatchesSimple
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Event Key, eg `2016nytr`
+        explode: false
+        in: path
+        name: event_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -2065,7 +3067,24 @@ paths:
     get:
       description: Gets a list of match keys for the given event.
       operationId: getEventMatchesKeys
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Event Key, eg `2016nytr`
+        explode: false
+        in: path
+        name: event_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -2109,7 +3128,24 @@ paths:
         *WARNING:* This is *not* official data, and is subject to a significant possibility of error, or missing data. Do not rely on this data for any purpose. In fact, pretend we made it up.
         *WARNING:* This endpoint and corresponding data models are under *active development* and may change at any time, including in breaking ways.
       operationId: getEventMatchTimeseries
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Event Key, eg `2016nytr`
+        explode: false
+        in: path
+        name: event_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -2150,7 +3186,24 @@ paths:
     get:
       description: Gets a list of awards from the given event.
       operationId: getEventAwards
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Event Key, eg `2016nytr`
+        explode: false
+        in: path
+        name: event_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -2189,7 +3242,24 @@ paths:
     get:
       description: Gets a `Match` object for the given match key.
       operationId: getMatch
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Match Key, eg `2016nytr_qm1`
+        explode: false
+        in: path
+        name: match_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -2226,7 +3296,24 @@ paths:
     get:
       description: Gets a short-form `Match` object for the given match key.
       operationId: getMatchSimple
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Match Key, eg `2016nytr_qm1`
+        explode: false
+        in: path
+        name: match_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -2266,7 +3353,24 @@ paths:
         *WARNING:* This is *not* official data, and is subject to a significant possibility of error, or missing data. Do not rely on this data for any purpose. In fact, pretend we made it up.
         *WARNING:* This endpoint and corresponding data models are under *active development* and may change at any time, including in breaking ways.
       operationId: getMatchTimeseries
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA Match Key, eg `2016nytr_qm1`
+        explode: false
+        in: path
+        name: match_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -2307,7 +3411,24 @@ paths:
       description: Gets a list of districts and their corresponding district key,
         for the given year.
       operationId: getDistrictsByYear
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
+        in: path
+        name: year
+        required: true
+        schema:
+          type: integer
+        style: simple
       responses:
         200:
           content:
@@ -2346,7 +3467,24 @@ paths:
     get:
       description: Gets a list of events in the given district.
       operationId: getDistrictEvents
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA District Key, eg `2016fim`
+        explode: false
+        in: path
+        name: district_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -2388,6 +3526,15 @@ paths:
       description: Gets a short-form list of events in the given district.
       operationId: getDistrictEventsSimple
       parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       - description: TBA District Key, eg `2016fim`
         explode: false
         in: path
@@ -2436,7 +3583,24 @@ paths:
     get:
       description: Gets a list of event keys for events in the given district.
       operationId: getDistrictEventsKeys
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA District Key, eg `2016fim`
+        explode: false
+        in: path
+        name: district_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -2479,7 +3643,24 @@ paths:
       description: Gets a list of `Team` objects that competed in events in the given
         district.
       operationId: getDistrictTeams
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA District Key, eg `2016fim`
+        explode: false
+        in: path
+        name: district_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -2521,7 +3702,24 @@ paths:
       description: Gets a short-form list of `Team` objects that competed in events
         in the given district.
       operationId: getDistrictTeamsSimple
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA District Key, eg `2016fim`
+        explode: false
+        in: path
+        name: district_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -2563,7 +3761,24 @@ paths:
       description: Gets a list of `Team` objects that competed in events in the given
         district.
       operationId: getDistrictTeamsKeys
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA District Key, eg `2016fim`
+        explode: false
+        in: path
+        name: district_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -2605,7 +3820,24 @@ paths:
     get:
       description: Gets a list of team district rankings for the given district.
       operationId: getDistrictRankings
-      parameters: []
+      parameters:
+      - description: Value of the `Last-Modified` header in the most recently cached
+          response by the client.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: TBA District Key, eg `2016fim`
+        explode: false
+        in: path
+        name: district_key
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
@@ -2723,676 +3955,6 @@ components:
     NotModified:
       description: Not Modified - Use Local Cached Value
   schemas:
-    Team_Event_Status_rank:
-      example:
-        sort_order_info:
-        - precision: 2
-          name: name
-        - precision: 2
-          name: name
-        ranking:
-          matches_played: 6
-          qual_average: 1.4658129805029452
-          sort_orders:
-          - 5.962133916683182
-          - 5.962133916683182
-          record:
-            wins: 2
-            ties: 7
-            losses: 5
-          rank: 9
-          dq: 3
-          team_key: team_key
-        num_teams: 0
-        status: status
-      properties:
-        num_teams:
-          description: Number of teams ranked.
-          type: integer
-        ranking:
-          $ref: '#/components/schemas/Team_Event_Status_rank_ranking'
-        sort_order_info:
-          description: Ordered list of names corresponding to the elements of the
-            `sort_orders` array.
-          items:
-            $ref: '#/components/schemas/Team_Event_Status_rank_sort_order_info'
-          type: array
-        status:
-          type: string
-      type: object
-    Event_Ranking:
-      example:
-        rankings:
-        - matches_played: 0
-          qual_average: 6
-          extra_stats:
-          - 1.4658129805029452
-          - 1.4658129805029452
-          sort_orders:
-          - 5.962133916683182
-          - 5.962133916683182
-          record:
-            wins: 2
-            ties: 7
-            losses: 5
-          rank: 5
-          dq: 2
-          team_key: team_key
-        - matches_played: 0
-          qual_average: 6
-          extra_stats:
-          - 1.4658129805029452
-          - 1.4658129805029452
-          sort_orders:
-          - 5.962133916683182
-          - 5.962133916683182
-          record:
-            wins: 2
-            ties: 7
-            losses: 5
-          rank: 5
-          dq: 2
-          team_key: team_key
-        sort_order_info:
-        - precision: 9
-          name: name
-        - precision: 9
-          name: name
-        extra_stats_info:
-        - precision: 7.061401241503109
-          name: name
-        - precision: 7.061401241503109
-          name: name
-      properties:
-        rankings:
-          description: List of rankings at the event.
-          items:
-            $ref: '#/components/schemas/Event_Ranking_rankings'
-          type: array
-        extra_stats_info:
-          description: List of special TBA-generated values provided in the `extra_stats`
-            array for each item.
-          items:
-            $ref: '#/components/schemas/Event_Ranking_extra_stats_info'
-          type: array
-        sort_order_info:
-          description: List of year-specific values provided in the `sort_orders`
-            array for each team.
-          items:
-            $ref: '#/components/schemas/Event_Ranking_sort_order_info'
-          type: array
-      required:
-      - rankings
-      - sort_order_info
-      type: object
-    Elimination_Alliance:
-      example:
-        declines:
-        - declines
-        - declines
-        backup:
-          in: in
-          out: out
-        name: name
-        picks:
-        - picks
-        - picks
-        status:
-          playoff_average: 0.8008281904610115
-          level: level
-          record:
-            wins: 2
-            ties: 7
-            losses: 5
-          current_level_record:
-            wins: 2
-            ties: 7
-            losses: 5
-          status: status
-      properties:
-        name:
-          description: Alliance name, may be null.
-          type: string
-        backup:
-          $ref: '#/components/schemas/Elimination_Alliance_backup'
-        declines:
-          description: List of teams that declined the alliance.
-          items:
-            description: Team key that declined the alliance.
-            type: string
-          type: array
-        picks:
-          description: List of team keys picked for the alliance. First pick is captain.
-          items:
-            description: Team key picked for the alliance.
-            type: string
-          type: array
-        status:
-          $ref: '#/components/schemas/Elimination_Alliance_status'
-      required:
-      - picks
-      type: object
-    Match_Score_Breakdown_2015_Alliance:
-      properties:
-        auto_points:
-          type: integer
-        teleop_points:
-          type: integer
-        container_points:
-          type: integer
-        tote_points:
-          type: integer
-        litter_points:
-          type: integer
-        foul_points:
-          type: integer
-        adjust_points:
-          type: integer
-        total_points:
-          type: integer
-        foul_count:
-          type: integer
-        tote_count_far:
-          type: integer
-        tote_count_near:
-          type: integer
-        tote_set:
-          type: boolean
-        tote_stack:
-          type: boolean
-        container_count_level1:
-          type: integer
-        container_count_level2:
-          type: integer
-        container_count_level3:
-          type: integer
-        container_count_level4:
-          type: integer
-        container_count_level5:
-          type: integer
-        container_count_level6:
-          type: integer
-        container_set:
-          type: boolean
-        litter_count_container:
-          type: integer
-        litter_count_landfill:
-          type: integer
-        litter_count_unprocessed:
-          type: integer
-        robot_set:
-          type: boolean
-      type: object
-    Event_District_Points:
-      example:
-        tiebreakers:
-          key:
-            highest_qual_scores:
-            - 2
-            - 2
-            qual_wins: 7
-        points:
-          key:
-            total: 0
-            alliance_points: 6
-            elim_points: 1
-            award_points: 5
-            qual_points: 5
-      properties:
-        points:
-          additionalProperties:
-            $ref: '#/components/schemas/Event_District_Points_points'
-          description: Points gained for each team at the event. Stored as a key-value
-            pair with the team key as the key, and an object describing the points
-            as its value.
-          type: object
-        tiebreakers:
-          additionalProperties:
-            $ref: '#/components/schemas/Event_District_Points_tiebreakers'
-          description: Tiebreaker values for each team at the event. Stored as a key-value
-            pair with the team key as the key, and an object describing the tiebreaker
-            elements as its value.
-          type: object
-      required:
-      - points
-      type: object
-    Match_Score_Breakdown_2018_Alliance:
-      properties:
-        adjustPoints:
-          type: integer
-        autoOwnershipPoints:
-          type: integer
-        autoPoints:
-          type: integer
-        autoQuestRankingPoint:
-          type: boolean
-        autoRobot1:
-          type: string
-        autoRobot2:
-          type: string
-        autoRobot3:
-          type: string
-        autoRunPoints:
-          type: integer
-        autoScaleOwnershipSec:
-          type: integer
-        autoSwitchAtZero:
-          type: boolean
-        autoSwitchOwnershipSec:
-          type: integer
-        endgamePoints:
-          type: integer
-        endgameRobot1:
-          type: string
-        endgameRobot2:
-          type: string
-        endgameRobot3:
-          type: string
-        faceTheBossRankingPoint:
-          type: boolean
-        foulCount:
-          type: integer
-        foulPoints:
-          type: integer
-        rp:
-          type: integer
-        techFoulCount:
-          type: integer
-        teleopOwnershipPoints:
-          type: integer
-        teleopPoints:
-          type: integer
-        teleopScaleBoostSec:
-          type: integer
-        teleopScaleForceSec:
-          type: integer
-        teleopScaleOwnershipSec:
-          type: integer
-        teleopSwitchBoostSec:
-          type: integer
-        teleopSwitchForceSec:
-          type: integer
-        teleopSwitchOwnershipSec:
-          type: integer
-        totalPoints:
-          type: integer
-        vaultBoostPlayed:
-          type: integer
-        vaultBoostTotal:
-          type: integer
-        vaultForcePlayed:
-          type: integer
-        vaultForceTotal:
-          type: integer
-        vaultLevitatePlayed:
-          type: integer
-        vaultLevitateTotal:
-          type: integer
-        vaultPoints:
-          type: integer
-        tba_gameData:
-          description: Unofficial TBA-computed value of the FMS provided GameData
-            given to the alliance teams at the start of the match. 3 Character String
-            containing `L` and `R` only. The first character represents the near switch,
-            the 2nd the scale, and the 3rd the far, opposing, switch from the alliance's
-            perspective. An `L` in a position indicates the platform on the left will
-            be lit for the alliance while an `R` will indicate the right platform
-            will be lit for the alliance. See also [WPI Screen Steps](https://wpilib.screenstepslive.com/s/currentCS/m/getting_started/l/826278-2018-game-data-details).
-          type: string
-      type: object
-    Team_Simple:
-      example:
-        country: country
-        city: city
-        nickname: nickname
-        name: name
-        team_number: 0
-        state_prov: state_prov
-        key: key
-      properties:
-        key:
-          description: TBA team key with the format `frcXXXX` with `XXXX` representing
-            the team number.
-          type: string
-        team_number:
-          description: Official team number issued by FIRST.
-          type: integer
-        nickname:
-          description: Team nickname provided by FIRST.
-          type: string
-        name:
-          description: Official long name registered with FIRST.
-          type: string
-        city:
-          description: City of team derived from parsing the address registered with
-            FIRST.
-          type: string
-        state_prov:
-          description: State of team derived from parsing the address registered with
-            FIRST.
-          type: string
-        country:
-          description: Country of team derived from parsing the address registered
-            with FIRST.
-          type: string
-      required:
-      - key
-      - name
-      - team_number
-      type: object
-    Event_OPRs:
-      description: OPR, DPR, and CCWM for teams at the event.
-      example:
-        dprs:
-          key: 6.0274563
-        oprs:
-          key: 0.8008282
-        ccwms:
-          key: 1.4658129
-      properties:
-        oprs:
-          additionalProperties:
-            description: OPR for team.
-            format: float
-            type: number
-          description: A key-value pair with team key (eg `frc254`) as key and OPR
-            as value.
-          type: object
-        dprs:
-          additionalProperties:
-            description: DPR for team.
-            format: float
-            type: number
-          description: A key-value pair with team key (eg `frc254`) as key and DPR
-            as value.
-          type: object
-        ccwms:
-          additionalProperties:
-            description: CCWM for team.
-            format: float
-            type: number
-          description: A key-value pair with team key (eg `frc254`) as key and CCWM
-            as value.
-          type: object
-      type: object
-    Award_Recipient:
-      description: An `Award_Recipient` object represents the team and/or person who
-        received an award at an event.
-      example:
-        awardee: awardee
-        team_key: team_key
-      properties:
-        team_key:
-          description: The TBA team key for the team that was given the award. May
-            be null.
-          type: string
-        awardee:
-          description: The name of the individual given the award. May be null.
-          type: string
-      type: object
-    Team_Robot:
-      example:
-        year: 0
-        robot_name: robot_name
-        team_key: team_key
-        key: key
-      properties:
-        year:
-          description: Year this robot competed in.
-          type: integer
-        robot_name:
-          description: Name of the robot as provided by the team.
-          type: string
-        key:
-          description: Internal TBA identifier for this robot.
-          type: string
-        team_key:
-          description: TBA team key for this robot.
-          type: string
-      required:
-      - key
-      - robot_name
-      - team_key
-      - year
-      type: object
-    Match:
-      example:
-        predicted_time: 2
-        set_number: 0
-        videos:
-        - type: type
-          key: key
-        - type: type
-          key: key
-        winning_alliance: winning_alliance
-        actual_time: 5
-        post_result_time: 7
-        match_number: 6
-        score_breakdown: '{}'
-        alliances:
-          red:
-            score: 1
-            team_keys:
-            - team_keys
-            - team_keys
-            surrogate_team_keys:
-            - surrogate_team_keys
-            - surrogate_team_keys
-            dq_team_keys:
-            - dq_team_keys
-            - dq_team_keys
-          blue:
-            score: 1
-            team_keys:
-            - team_keys
-            - team_keys
-            surrogate_team_keys:
-            - surrogate_team_keys
-            - surrogate_team_keys
-            dq_team_keys:
-            - dq_team_keys
-            - dq_team_keys
-        time: 5
-        key: key
-        comp_level: qm
-        event_key: event_key
-      properties:
-        key:
-          description: TBA match key with the format `yyyy[EVENT_CODE]_[COMP_LEVEL]m[MATCH_NUMBER]`,
-            where `yyyy` is the year, and `EVENT_CODE` is the event code of the event,
-            `COMP_LEVEL` is (qm, ef, qf, sf, f), and `MATCH_NUMBER` is the match number
-            in the competition level. A set number may be appended to the competition
-            level if more than one match in required per set.
-          type: string
-        comp_level:
-          description: The competition level the match was played at.
-          enum:
-          - qm
-          - ef
-          - qf
-          - sf
-          - f
-          type: string
-        set_number:
-          description: The set number in a series of matches where more than one match
-            is required in the match series.
-          type: integer
-        match_number:
-          description: The match number of the match in the competition level.
-          type: integer
-        alliances:
-          $ref: '#/components/schemas/Match_alliances'
-        winning_alliance:
-          description: The color (red/blue) of the winning alliance. Will contain
-            an empty string in the event of no winner, or a tie.
-          type: string
-        event_key:
-          description: Event key of the event the match was played at.
-          type: string
-        time:
-          description: UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the scheduled
-            match time, as taken from the published schedule.
-          format: int64
-          type: integer
-        actual_time:
-          description: UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of actual
-            match start time.
-          format: int64
-          type: integer
-        predicted_time:
-          description: UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the TBA
-            predicted match start time.
-          format: int64
-          type: integer
-        post_result_time:
-          description: UNIX timestamp (seconds since 1-Jan-1970 00:00:00) when the
-            match result was posted.
-          format: int64
-          type: integer
-        score_breakdown:
-          description: Score breakdown for auto, teleop, etc. points. Varies from
-            year to year. May be null.
-          properties: {}
-          type: object
-        videos:
-          description: Array of video objects associated with this match.
-          items:
-            $ref: '#/components/schemas/Match_videos'
-          type: array
-      required:
-      - comp_level
-      - event_key
-      - key
-      - match_number
-      - set_number
-      type: object
-    Match_Score_Breakdown_2017_Alliance:
-      properties:
-        autoPoints:
-          type: integer
-        teleopPoints:
-          type: integer
-        foulPoints:
-          type: integer
-        adjustPoints:
-          type: integer
-        totalPoints:
-          type: integer
-        robot1Auto:
-          enum:
-          - Unknown
-          - Mobility
-          - None
-          type: string
-        robot2Auto:
-          enum:
-          - Unknown
-          - Mobility
-          - None
-          type: string
-        robot3Auto:
-          enum:
-          - Unknown
-          - Mobility
-          - None
-          type: string
-        rotor1Auto:
-          type: boolean
-        rotor2Auto:
-          type: boolean
-        autoFuelLow:
-          type: integer
-        autoFuelHigh:
-          type: integer
-        autoMobilityPoints:
-          type: integer
-        autoRotorPoints:
-          type: integer
-        autoFuelPoints:
-          type: integer
-        teleopFuelPoints:
-          type: integer
-        teleopFuelLow:
-          type: integer
-        teleopFuelHigh:
-          type: integer
-        teleopRotorPoints:
-          type: integer
-        kPaRankingPointAchieved:
-          type: boolean
-        teleopTakeoffPoints:
-          type: integer
-        kPaBonusPoints:
-          type: integer
-        rotorBonusPoints:
-          type: integer
-        rotor1Engaged:
-          type: boolean
-        rotor2Engaged:
-          type: boolean
-        rotor3Engaged:
-          type: boolean
-        rotor4Engaged:
-          type: boolean
-        rotorRankingPointAchieved:
-          type: boolean
-        techFoulCount:
-          type: integer
-        foulCount:
-          type: integer
-        touchpadNear:
-          type: string
-        touchpadMiddle:
-          type: string
-        touchpadFar:
-          type: string
-      type: object
-    WLT_Record:
-      description: A Win-Loss-Tie record for a team, or an alliance.
-      example:
-        wins: 2
-        ties: 7
-        losses: 5
-      properties:
-        losses:
-          description: Number of losses.
-          type: integer
-        wins:
-          description: Number of wins.
-          type: integer
-        ties:
-          description: Number of ties.
-          type: integer
-      required:
-      - losses
-      - ties
-      - wins
-      type: object
-    Team_Event_Status_alliance:
-      example:
-        number: 4
-        backup:
-          in: in
-          out: out
-        pick: 7
-        name: name
-      properties:
-        name:
-          description: Alliance name, may be null.
-          type: string
-        number:
-          description: Alliance number.
-          type: integer
-        backup:
-          $ref: '#/components/schemas/Team_Event_Status_alliance_backup'
-        pick:
-          description: Order the team was picked in the alliance from 0-2, with 0
-            being alliance captain.
-          type: integer
-      required:
-      - number
-      - pick
-      type: object
     API_Status:
       example:
         is_datafeed_down: true
@@ -3435,35 +3997,61 @@ components:
       - is_datafeed_down
       - max_season
       type: object
-    Webcast:
+    API_Status_App_Version:
       example:
-        file: file
-        channel: channel
-        type: youtube
+        min_app_version: 1
+        latest_app_version: 5
       properties:
-        type:
-          description: Type of webcast, typically descriptive of the streaming provider.
-          enum:
-          - youtube
-          - twitch
-          - ustream
-          - iframe
-          - html5
-          - rtmp
-          - livestream
+        min_app_version:
+          description: Internal use - Minimum application version required to correctly
+            connect and process data.
+          type: integer
+        latest_app_version:
+          description: Internal use - Latest application version available.
+          type: integer
+      required:
+      - latest_app_version
+      - min_app_version
+      type: object
+    Team_Simple:
+      example:
+        country: country
+        city: city
+        nickname: nickname
+        name: name
+        team_number: 0
+        state_prov: state_prov
+        key: key
+      properties:
+        key:
+          description: TBA team key with the format `frcXXXX` with `XXXX` representing
+            the team number.
           type: string
-        channel:
-          description: Type specific channel information. May be the YouTube stream,
-            or Twitch channel name. In the case of iframe types, contains HTML to
-            embed the stream in an HTML iframe.
+        team_number:
+          description: Official team number issued by FIRST.
+          type: integer
+        nickname:
+          description: Team nickname provided by FIRST.
           type: string
-        file:
-          description: File identification as may be required for some types. May
-            be null.
+        name:
+          description: Official long name registered with FIRST.
+          type: string
+        city:
+          description: City of team derived from parsing the address registered with
+            FIRST.
+          type: string
+        state_prov:
+          description: State of team derived from parsing the address registered with
+            FIRST.
+          type: string
+        country:
+          description: Country of team derived from parsing the address registered
+            with FIRST.
           type: string
       required:
-      - channel
-      - type
+      - key
+      - name
+      - team_number
       type: object
     Team:
       example:
@@ -3557,277 +4145,259 @@ components:
       - rookie_year
       - team_number
       type: object
-    Match_Timeseries_2018:
-      description: |-
-        Timeseries data for the 2018 game *FIRST* POWER UP.
-        *WARNING:* This is *not* official data, and is subject to a significant possibility of error, or missing data. Do not rely on this data for any purpose. In fact, pretend we made it up.
-        *WARNING:* This model is currently under active development and may change at any time, including in breaking ways.
-      properties:
-        event_key:
-          description: TBA event key with the format yyyy[EVENT_CODE], where yyyy
-            is the year, and EVENT_CODE is the event code of the event.
-          type: string
-        match_id:
-          description: Match ID consisting of the level, match number, and set number,
-            eg `qm45` or `f1m1`.
-          type: string
-        mode:
-          description: Current mode of play, can be `pre_match`, `auto`, `telop`,
-            or `post_match`.
-          type: string
-        play:
-          type: integer
-        time_remaining:
-          description: Amount of time remaining in the match, only valid during `auto`
-            and `teleop` modes.
-          type: integer
-        blue_auto_quest:
-          description: 1 if the blue alliance is credited with the AUTO QUEST, 0 if
-            not.
-          type: integer
-        blue_boost_count:
-          description: Number of POWER CUBES in the BOOST section of the blue alliance
-            VAULT.
-          type: integer
-        blue_boost_played:
-          description: Returns 1 if the blue alliance BOOST was played, or 0 if not
-            played.
-          type: integer
-        blue_current_powerup:
-          description: Name of the current blue alliance POWER UP being played, or
-            `null`.
-          type: string
-        blue_face_the_boss:
-          description: 1 if the blue alliance is credited with FACING THE BOSS, 0
-            if not.
-          type: integer
-        blue_force_count:
-          description: Number of POWER CUBES in the FORCE section of the blue alliance
-            VAULT.
-          type: integer
-        blue_force_played:
-          description: Returns 1 if the blue alliance FORCE was played, or 0 if not
-            played.
-          type: integer
-        blue_levitate_count:
-          description: Number of POWER CUBES in the LEVITATE section of the blue alliance
-            VAULT.
-          type: integer
-        blue_levitate_played:
-          description: Returns 1 if the blue alliance LEVITATE was played, or 0 if
-            not played.
-          type: integer
-        blue_powerup_time_remaining:
-          description: Number of seconds remaining in the blue alliance POWER UP time,
-            or 0 if none is active.
-          type: string
-        blue_scale_owned:
-          description: 1 if the blue alliance owns the SCALE, 0 if not.
-          type: integer
-        blue_score:
-          description: Current score for the blue alliance.
-          type: integer
-        blue_switch_owned:
-          description: 1 if the blue alliance owns their SWITCH, 0 if not.
-          type: integer
-        red_auto_quest:
-          description: 1 if the red alliance is credited with the AUTO QUEST, 0 if
-            not.
-          type: integer
-        red_boost_count:
-          description: Number of POWER CUBES in the BOOST section of the red alliance
-            VAULT.
-          type: integer
-        red_boost_played:
-          description: Returns 1 if the red alliance BOOST was played, or 0 if not
-            played.
-          type: integer
-        red_current_powerup:
-          description: Name of the current red alliance POWER UP being played, or
-            `null`.
-          type: string
-        red_face_the_boss:
-          description: 1 if the red alliance is credited with FACING THE BOSS, 0 if
-            not.
-          type: integer
-        red_force_count:
-          description: Number of POWER CUBES in the FORCE section of the red alliance
-            VAULT.
-          type: integer
-        red_force_played:
-          description: Returns 1 if the red alliance FORCE was played, or 0 if not
-            played.
-          type: integer
-        red_levitate_count:
-          description: Number of POWER CUBES in the LEVITATE section of the red alliance
-            VAULT.
-          type: integer
-        red_levitate_played:
-          description: Returns 1 if the red alliance LEVITATE was played, or 0 if
-            not played.
-          type: integer
-        red_powerup_time_remaining:
-          description: Number of seconds remaining in the red alliance POWER UP time,
-            or 0 if none is active.
-          type: string
-        red_scale_owned:
-          description: 1 if the red alliance owns the SCALE, 0 if not.
-          type: integer
-        red_score:
-          description: Current score for the red alliance.
-          type: integer
-        red_switch_owned:
-          description: 1 if the red alliance owns their SWITCH, 0 if not.
-          type: integer
-      type: object
-    Event_Predictions:
-      description: JSON Object containing prediction information for the event. Contains
-        year-specific information and is subject to change.
-      type: object
-    Team_Event_Status_alliance_backup:
-      description: Backup status, may be null.
+    Team_Robot:
       example:
-        in: in
-        out: out
-      properties:
-        out:
-          description: TBA key for the team replaced by the backup.
-          type: string
-        in:
-          description: TBA key for the backup team called in.
-          type: string
-      type: object
-    District_Ranking:
-      description: Rank of a team in a district.
-      example:
-        rookie_bonus: 6
-        rank: 0
-        point_total: 1
+        year: 0
+        robot_name: robot_name
         team_key: team_key
-        event_points:
-        - district_cmp: true
-          total: 5
-          alliance_points: 5
-          elim_points: 2
-          award_points: 7
-          event_key: event_key
-          qual_points: 9
-        - district_cmp: true
-          total: 5
-          alliance_points: 5
-          elim_points: 2
-          award_points: 7
-          event_key: event_key
-          qual_points: 9
-      properties:
-        team_key:
-          description: TBA team key for the team.
-          type: string
-        rank:
-          description: Numerical rank of the team, 1 being top rank.
-          type: integer
-        rookie_bonus:
-          description: Any points added to a team as a result of the rookie bonus.
-          type: integer
-        point_total:
-          description: Total district points for the team.
-          type: integer
-        event_points:
-          description: List of events that contributed to the point total for the
-            team.
-          items:
-            $ref: '#/components/schemas/District_Ranking_event_points'
-          type: array
-      required:
-      - point_total
-      - rank
-      - team_key
-      type: object
-    Match_Score_Breakdown_2015:
-      description: See the 2015 FMS API documentation for a description of each value
-      properties:
-        blue:
-          $ref: '#/components/schemas/Match_Score_Breakdown_2015_Alliance'
-        red:
-          $ref: '#/components/schemas/Match_Score_Breakdown_2015_Alliance'
-        coopertition:
-          enum:
-          - None
-          - Unknown
-          - Stack
-          type: string
-        coopertition_points:
-          type: integer
-      type: object
-    Match_Score_Breakdown_2018:
-      description: See the 2018 FMS API documentation for a description of each value.
-      properties:
-        blue:
-          $ref: '#/components/schemas/Match_Score_Breakdown_2018_Alliance'
-        red:
-          $ref: '#/components/schemas/Match_Score_Breakdown_2018_Alliance'
-      type: object
-    Media:
-      description: The `Media` object contains a reference for most any media associated
-        with a team or event on TBA.
-      example:
-        direct_url: direct_url
-        foreign_key: foreign_key
-        view_url: view_url
-        details: '{}'
-        type: youtube
         key: key
-        preferred: true
       properties:
+        year:
+          description: Year this robot competed in.
+          type: integer
+        robot_name:
+          description: Name of the robot as provided by the team.
+          type: string
         key:
-          description: TBA identifier for this media.
+          description: Internal TBA identifier for this robot.
           type: string
-        type:
-          description: String type of the media element.
-          enum:
-          - youtube
-          - cdphotothread
-          - imgur
-          - facebook-profile
-          - youtube-channel
-          - twitter-profile
-          - github-profile
-          - instagram-profile
-          - periscope-profile
-          - grabcad
-          - instagram-image
-          - external-link
-          - avatar
-          type: string
-        foreign_key:
-          description: The key used to identify this media on the media site.
-          type: string
-        details:
-          description: If required, a JSON dict of additional media information.
-          properties: {}
-          type: object
-        preferred:
-          description: True if the media is of high quality.
-          type: boolean
-        direct_url:
-          description: Direct URL to the media.
-          type: string
-        view_url:
-          description: The URL that leads to the full web page for the media, if one
-            exists.
+        team_key:
+          description: TBA team key for this robot.
           type: string
       required:
       - key
-      - type
+      - robot_name
+      - team_key
+      - year
       type: object
-    Match_Score_Breakdown_2019:
-      description: See the 2019 FMS API documentation for a description of each value.
-        https://frcevents2.docs.apiary.io/#reference/match-results/score-details
+    Event_Simple:
+      example:
+        end_date: 2000-01-23
+        country: country
+        event_type: 0
+        city: city
+        year: 6
+        event_code: event_code
+        district:
+          year: 0
+          abbreviation: abbreviation
+          display_name: display_name
+          key: key
+        name: name
+        state_prov: state_prov
+        key: key
+        start_date: 2000-01-23
       properties:
-        blue:
-          $ref: '#/components/schemas/Match_Score_Breakdown_2019_Alliance'
-        red:
-          $ref: '#/components/schemas/Match_Score_Breakdown_2019_Alliance'
+        key:
+          description: TBA event key with the format yyyy[EVENT_CODE], where yyyy
+            is the year, and EVENT_CODE is the event code of the event.
+          type: string
+        name:
+          description: Official name of event on record either provided by FIRST or
+            organizers of offseason event.
+          type: string
+        event_code:
+          description: Event short code, as provided by FIRST.
+          type: string
+        event_type:
+          description: 'Event Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/event_type.py#L2'
+          type: integer
+        district:
+          $ref: '#/components/schemas/District_List'
+        city:
+          description: City, town, village, etc. the event is located in.
+          type: string
+        state_prov:
+          description: State or Province the event is located in.
+          type: string
+        country:
+          description: Country the event is located in.
+          type: string
+        start_date:
+          description: Event start date in `yyyy-mm-dd` format.
+          format: date
+          type: string
+        end_date:
+          description: Event end date in `yyyy-mm-dd` format.
+          format: date
+          type: string
+        year:
+          description: Year the event data is for.
+          type: integer
+      required:
+      - end_date
+      - event_code
+      - event_type
+      - key
+      - name
+      - start_date
+      - year
+      type: object
+    Event:
+      example:
+        end_date: 2000-01-23
+        country: country
+        week: 1
+        playoff_type: 2
+        city: city
+        year: 6
+        timezone: timezone
+        event_type: 0
+        event_code: event_code
+        playoff_type_string: playoff_type_string
+        event_type_string: event_type_string
+        webcasts:
+        - file: file
+          channel: channel
+          type: youtube
+        - file: file
+          channel: channel
+          type: youtube
+        key: key
+        lat: 5.962133916683182
+        start_date: 2000-01-23
+        first_event_code: first_event_code
+        parent_event_key: parent_event_key
+        website: website
+        division_keys:
+        - division_keys
+        - division_keys
+        address: address
+        lng: 5.637376656633329
+        gmaps_place_id: gmaps_place_id
+        gmaps_url: http://example.com/aeiou
+        location_name: location_name
+        district:
+          year: 0
+          abbreviation: abbreviation
+          display_name: display_name
+          key: key
+        name: name
+        state_prov: state_prov
+        short_name: short_name
+        first_event_id: first_event_id
+        postal_code: postal_code
+      properties:
+        key:
+          description: TBA event key with the format yyyy[EVENT_CODE], where yyyy
+            is the year, and EVENT_CODE is the event code of the event.
+          type: string
+        name:
+          description: Official name of event on record either provided by FIRST or
+            organizers of offseason event.
+          type: string
+        event_code:
+          description: Event short code, as provided by FIRST.
+          type: string
+        event_type:
+          description: 'Event Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/event_type.py#L2'
+          type: integer
+        district:
+          $ref: '#/components/schemas/District_List'
+        city:
+          description: City, town, village, etc. the event is located in.
+          type: string
+        state_prov:
+          description: State or Province the event is located in.
+          type: string
+        country:
+          description: Country the event is located in.
+          type: string
+        start_date:
+          description: Event start date in `yyyy-mm-dd` format.
+          format: date
+          type: string
+        end_date:
+          description: Event end date in `yyyy-mm-dd` format.
+          format: date
+          type: string
+        year:
+          description: Year the event data is for.
+          type: integer
+        short_name:
+          description: Same as `name` but doesn't include event specifiers, such as
+            'Regional' or 'District'. May be null.
+          type: string
+        event_type_string:
+          description: Event Type, eg Regional, District, or Offseason.
+          type: string
+        week:
+          description: Week of the event relative to the first official season event,
+            zero-indexed. Only valid for Regionals, Districts, and District Championships.
+            Null otherwise. (Eg. A season with a week 0 'preseason' event does not
+            count, and week 1 events will show 0 here. Seasons with a week 0.5 regional
+            event will show week 0 for those event(s) and week 1 for week 1 events
+            and so on.)
+          type: integer
+        address:
+          description: Address of the event's venue, if available.
+          type: string
+        postal_code:
+          description: Postal code from the event address.
+          type: string
+        gmaps_place_id:
+          description: Google Maps Place ID for the event address.
+          type: string
+        gmaps_url:
+          description: Link to address location on Google Maps.
+          format: url
+          type: string
+        lat:
+          description: Latitude for the event address.
+          format: double
+          type: number
+        lng:
+          description: Longitude for the event address.
+          format: double
+          type: number
+        location_name:
+          description: Name of the location at the address for the event, eg. Blue
+            Alliance High School.
+          type: string
+        timezone:
+          description: Timezone name.
+          type: string
+        website:
+          description: The event's website, if any.
+          type: string
+        first_event_id:
+          description: The FIRST internal Event ID, used to link to the event on the
+            FRC webpage.
+          type: string
+        first_event_code:
+          description: Public facing event code used by FIRST (on frc-events.firstinspires.org,
+            for example)
+          type: string
+        webcasts:
+          items:
+            $ref: '#/components/schemas/Webcast'
+          type: array
+        division_keys:
+          description: An array of event keys for the divisions at this event.
+          items:
+            type: string
+          type: array
+        parent_event_key:
+          description: The TBA Event key that represents the event's parent. Used
+            to link back to the event from a division event. It is also the inverse
+            relation of `divison_keys`.
+          type: string
+        playoff_type:
+          description: 'Playoff Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/playoff_type.py#L4,
+            or null.'
+          type: integer
+        playoff_type_string:
+          description: String representation of the `playoff_type`, or null.
+          type: string
+      required:
+      - end_date
+      - event_code
+      - event_type
+      - event_type_string
+      - key
+      - name
+      - start_date
+      - year
       type: object
     Team_Event_Status:
       example:
@@ -3903,6 +4473,403 @@ components:
           description: TBA match key for the last match the team played in at this
             event, or null.
           type: string
+      type: object
+    Team_Event_Status_rank:
+      example:
+        sort_order_info:
+        - precision: 2
+          name: name
+        - precision: 2
+          name: name
+        ranking:
+          matches_played: 6
+          qual_average: 1.4658129805029452
+          sort_orders:
+          - 5.962133916683182
+          - 5.962133916683182
+          record:
+            wins: 2
+            ties: 7
+            losses: 5
+          rank: 9
+          dq: 3
+          team_key: team_key
+        num_teams: 0
+        status: status
+      properties:
+        num_teams:
+          description: Number of teams ranked.
+          type: integer
+        ranking:
+          $ref: '#/components/schemas/Team_Event_Status_rank_ranking'
+        sort_order_info:
+          description: Ordered list of names corresponding to the elements of the
+            `sort_orders` array.
+          items:
+            $ref: '#/components/schemas/Team_Event_Status_rank_sort_order_info'
+          type: array
+        status:
+          type: string
+      type: object
+    Team_Event_Status_alliance:
+      example:
+        number: 4
+        backup:
+          in: in
+          out: out
+        pick: 7
+        name: name
+      properties:
+        name:
+          description: Alliance name, may be null.
+          type: string
+        number:
+          description: Alliance number.
+          type: integer
+        backup:
+          $ref: '#/components/schemas/Team_Event_Status_alliance_backup'
+        pick:
+          description: Order the team was picked in the alliance from 0-2, with 0
+            being alliance captain.
+          type: integer
+      required:
+      - number
+      - pick
+      type: object
+    Team_Event_Status_alliance_backup:
+      description: Backup status, may be null.
+      example:
+        in: in
+        out: out
+      properties:
+        out:
+          description: TBA key for the team replaced by the backup.
+          type: string
+        in:
+          description: TBA key for the backup team called in.
+          type: string
+      type: object
+    Team_Event_Status_playoff:
+      description: Playoff status for this team, may be null if the team did not make
+        playoffs, or playoffs have not begun.
+      example:
+        playoff_average: 1
+        level: qm
+        record:
+          wins: 2
+          ties: 7
+          losses: 5
+        current_level_record:
+          wins: 2
+          ties: 7
+          losses: 5
+        status: won
+      properties:
+        level:
+          description: The highest playoff level the team reached.
+          enum:
+          - qm
+          - ef
+          - qf
+          - sf
+          - f
+          type: string
+        current_level_record:
+          $ref: '#/components/schemas/WLT_Record'
+        record:
+          $ref: '#/components/schemas/WLT_Record'
+        status:
+          description: Current competition status for the playoffs.
+          enum:
+          - won
+          - eliminated
+          - playing
+          type: string
+        playoff_average:
+          description: The average match score during playoffs. Year specific. May
+            be null if not relevant for a given year.
+          type: integer
+      type: object
+    Event_Ranking:
+      example:
+        rankings:
+        - matches_played: 0
+          qual_average: 6
+          extra_stats:
+          - 1.4658129805029452
+          - 1.4658129805029452
+          sort_orders:
+          - 5.962133916683182
+          - 5.962133916683182
+          record:
+            wins: 2
+            ties: 7
+            losses: 5
+          rank: 5
+          dq: 2
+          team_key: team_key
+        - matches_played: 0
+          qual_average: 6
+          extra_stats:
+          - 1.4658129805029452
+          - 1.4658129805029452
+          sort_orders:
+          - 5.962133916683182
+          - 5.962133916683182
+          record:
+            wins: 2
+            ties: 7
+            losses: 5
+          rank: 5
+          dq: 2
+          team_key: team_key
+        sort_order_info:
+        - precision: 9
+          name: name
+        - precision: 9
+          name: name
+        extra_stats_info:
+        - precision: 7.061401241503109
+          name: name
+        - precision: 7.061401241503109
+          name: name
+      properties:
+        rankings:
+          description: List of rankings at the event.
+          items:
+            $ref: '#/components/schemas/Event_Ranking_rankings'
+          type: array
+        extra_stats_info:
+          description: List of special TBA-generated values provided in the `extra_stats`
+            array for each item.
+          items:
+            $ref: '#/components/schemas/Event_Ranking_extra_stats_info'
+          type: array
+        sort_order_info:
+          description: List of year-specific values provided in the `sort_orders`
+            array for each team.
+          items:
+            $ref: '#/components/schemas/Event_Ranking_sort_order_info'
+          type: array
+      required:
+      - rankings
+      - sort_order_info
+      type: object
+    Event_District_Points:
+      example:
+        tiebreakers:
+          key:
+            highest_qual_scores:
+            - 2
+            - 2
+            qual_wins: 7
+        points:
+          key:
+            total: 0
+            alliance_points: 6
+            elim_points: 1
+            award_points: 5
+            qual_points: 5
+      properties:
+        points:
+          additionalProperties:
+            $ref: '#/components/schemas/Event_District_Points_points'
+          description: Points gained for each team at the event. Stored as a key-value
+            pair with the team key as the key, and an object describing the points
+            as its value.
+          type: object
+        tiebreakers:
+          additionalProperties:
+            $ref: '#/components/schemas/Event_District_Points_tiebreakers'
+          description: Tiebreaker values for each team at the event. Stored as a key-value
+            pair with the team key as the key, and an object describing the tiebreaker
+            elements as its value.
+          type: object
+      required:
+      - points
+      type: object
+    Event_Insights:
+      description: A year-specific event insight object expressed as a JSON string,
+        separated in to `qual` and `playoff` fields. See also Event_Insights_2016,
+        Event_Insights_2017, etc.
+      example:
+        qual: '{}'
+        playoff: '{}'
+      properties:
+        qual:
+          description: Inights for the qualification round of an event
+          properties: {}
+          type: object
+        playoff:
+          description: Insights for the playoff round of an event
+          properties: {}
+          type: object
+      type: object
+    Event_Insights_2016:
+      description: Insights for FIRST Stronghold qualification and elimination matches.
+      properties:
+        LowBar:
+          description: For the Low Bar - An array with three values, number of times
+            damaged, number of opportunities to damage, and percentage.
+          items:
+            format: float
+            type: number
+          type: array
+        A_ChevalDeFrise:
+          description: For the Cheval De Frise - An array with three values, number
+            of times damaged, number of opportunities to damage, and percentage.
+          items:
+            format: float
+            type: number
+          type: array
+        A_Portcullis:
+          description: For the Portcullis - An array with three values, number of
+            times damaged, number of opportunities to damage, and percentage.
+          items:
+            format: float
+            type: number
+          type: array
+        B_Ramparts:
+          description: For the Ramparts - An array with three values, number of times
+            damaged, number of opportunities to damage, and percentage.
+          items:
+            format: float
+            type: number
+          type: array
+        B_Moat:
+          description: For the Moat - An array with three values, number of times
+            damaged, number of opportunities to damage, and percentage.
+          items:
+            format: float
+            type: number
+          type: array
+        C_SallyPort:
+          description: For the Sally Port - An array with three values, number of
+            times damaged, number of opportunities to damage, and percentage.
+          items:
+            format: float
+            type: number
+          type: array
+        C_Drawbridge:
+          description: For the Drawbridge - An array with three values, number of
+            times damaged, number of opportunities to damage, and percentage.
+          items:
+            format: float
+            type: number
+          type: array
+        D_RoughTerrain:
+          description: For the Rough Terrain - An array with three values, number
+            of times damaged, number of opportunities to damage, and percentage.
+          items:
+            format: float
+            type: number
+          type: array
+        D_RockWall:
+          description: For the Rock Wall - An array with three values, number of times
+            damaged, number of opportunities to damage, and percentage.
+          items:
+            format: float
+            type: number
+          type: array
+        average_high_goals:
+          description: Average number of high goals scored.
+          format: float
+          type: number
+        average_low_goals:
+          description: Average number of low goals scored.
+          format: float
+          type: number
+        breaches:
+          description: An array with three values, number of times breached, number
+            of opportunities to breach, and percentage.
+          items:
+            format: float
+            type: number
+          type: array
+        scales:
+          description: An array with three values, number of times scaled, number
+            of opportunities to scale, and percentage.
+          items:
+            format: float
+            type: number
+          type: array
+        challenges:
+          description: An array with three values, number of times challenged, number
+            of opportunities to challenge, and percentage.
+          items:
+            format: float
+            type: number
+          type: array
+        captures:
+          description: An array with three values, number of times captured, number
+            of opportunities to capture, and percentage.
+          items:
+            format: float
+            type: number
+          type: array
+        average_win_score:
+          description: Average winning score.
+          format: float
+          type: number
+        average_win_margin:
+          description: Average margin of victory.
+          format: float
+          type: number
+        average_score:
+          description: Average total score.
+          format: float
+          type: number
+        average_auto_score:
+          description: Average autonomous score.
+          format: float
+          type: number
+        average_crossing_score:
+          description: Average crossing score.
+          format: float
+          type: number
+        average_boulder_score:
+          description: Average boulder score.
+          format: float
+          type: number
+        average_tower_score:
+          description: Average tower score.
+          format: float
+          type: number
+        average_foul_score:
+          description: Average foul score.
+          format: float
+          type: number
+        high_score:
+          description: An array with three values, high score, match key from the
+            match with the high score, and the name of the match.
+          items:
+            type: string
+          type: array
+      required:
+      - A_ChevalDeFrise
+      - A_Portcullis
+      - B_Moat
+      - B_Ramparts
+      - C_Drawbridge
+      - C_SallyPort
+      - D_RockWall
+      - D_RoughTerrain
+      - LowBar
+      - average_auto_score
+      - average_boulder_score
+      - average_crossing_score
+      - average_foul_score
+      - average_high_goals
+      - average_low_goals
+      - average_score
+      - average_tower_score
+      - average_win_margin
+      - average_win_score
+      - breaches
+      - captures
+      - challenges
+      - high_score
+      - scales
       type: object
     Event_Insights_2017:
       description: Insights for FIRST STEAMWORKS qualification and elimination matches.
@@ -4103,284 +5070,6 @@ components:
       - rotor_4_engaged
       - takeoff_counts
       - unicorn_matches
-      type: object
-    Match_Score_Breakdown_2016:
-      description: See the 2016 FMS API documentation for a description of each value.
-      properties:
-        blue:
-          $ref: '#/components/schemas/Match_Score_Breakdown_2016_Alliance'
-        red:
-          $ref: '#/components/schemas/Match_Score_Breakdown_2016_Alliance'
-      type: object
-    Event_Insights_2016:
-      description: Insights for FIRST Stronghold qualification and elimination matches.
-      properties:
-        LowBar:
-          description: For the Low Bar - An array with three values, number of times
-            damaged, number of opportunities to damage, and percentage.
-          items:
-            format: float
-            type: number
-          type: array
-        A_ChevalDeFrise:
-          description: For the Cheval De Frise - An array with three values, number
-            of times damaged, number of opportunities to damage, and percentage.
-          items:
-            format: float
-            type: number
-          type: array
-        A_Portcullis:
-          description: For the Portcullis - An array with three values, number of
-            times damaged, number of opportunities to damage, and percentage.
-          items:
-            format: float
-            type: number
-          type: array
-        B_Ramparts:
-          description: For the Ramparts - An array with three values, number of times
-            damaged, number of opportunities to damage, and percentage.
-          items:
-            format: float
-            type: number
-          type: array
-        B_Moat:
-          description: For the Moat - An array with three values, number of times
-            damaged, number of opportunities to damage, and percentage.
-          items:
-            format: float
-            type: number
-          type: array
-        C_SallyPort:
-          description: For the Sally Port - An array with three values, number of
-            times damaged, number of opportunities to damage, and percentage.
-          items:
-            format: float
-            type: number
-          type: array
-        C_Drawbridge:
-          description: For the Drawbridge - An array with three values, number of
-            times damaged, number of opportunities to damage, and percentage.
-          items:
-            format: float
-            type: number
-          type: array
-        D_RoughTerrain:
-          description: For the Rough Terrain - An array with three values, number
-            of times damaged, number of opportunities to damage, and percentage.
-          items:
-            format: float
-            type: number
-          type: array
-        D_RockWall:
-          description: For the Rock Wall - An array with three values, number of times
-            damaged, number of opportunities to damage, and percentage.
-          items:
-            format: float
-            type: number
-          type: array
-        average_high_goals:
-          description: Average number of high goals scored.
-          format: float
-          type: number
-        average_low_goals:
-          description: Average number of low goals scored.
-          format: float
-          type: number
-        breaches:
-          description: An array with three values, number of times breached, number
-            of opportunities to breach, and percentage.
-          items:
-            format: float
-            type: number
-          type: array
-        scales:
-          description: An array with three values, number of times scaled, number
-            of opportunities to scale, and percentage.
-          items:
-            format: float
-            type: number
-          type: array
-        challenges:
-          description: An array with three values, number of times challenged, number
-            of opportunities to challenge, and percentage.
-          items:
-            format: float
-            type: number
-          type: array
-        captures:
-          description: An array with three values, number of times captured, number
-            of opportunities to capture, and percentage.
-          items:
-            format: float
-            type: number
-          type: array
-        average_win_score:
-          description: Average winning score.
-          format: float
-          type: number
-        average_win_margin:
-          description: Average margin of victory.
-          format: float
-          type: number
-        average_score:
-          description: Average total score.
-          format: float
-          type: number
-        average_auto_score:
-          description: Average autonomous score.
-          format: float
-          type: number
-        average_crossing_score:
-          description: Average crossing score.
-          format: float
-          type: number
-        average_boulder_score:
-          description: Average boulder score.
-          format: float
-          type: number
-        average_tower_score:
-          description: Average tower score.
-          format: float
-          type: number
-        average_foul_score:
-          description: Average foul score.
-          format: float
-          type: number
-        high_score:
-          description: An array with three values, high score, match key from the
-            match with the high score, and the name of the match.
-          items:
-            type: string
-          type: array
-      required:
-      - A_ChevalDeFrise
-      - A_Portcullis
-      - B_Moat
-      - B_Ramparts
-      - C_Drawbridge
-      - C_SallyPort
-      - D_RockWall
-      - D_RoughTerrain
-      - LowBar
-      - average_auto_score
-      - average_boulder_score
-      - average_crossing_score
-      - average_foul_score
-      - average_high_goals
-      - average_low_goals
-      - average_score
-      - average_tower_score
-      - average_win_margin
-      - average_win_score
-      - breaches
-      - captures
-      - challenges
-      - high_score
-      - scales
-      type: object
-    Match_alliance:
-      example:
-        score: 1
-        team_keys:
-        - team_keys
-        - team_keys
-        surrogate_team_keys:
-        - surrogate_team_keys
-        - surrogate_team_keys
-        dq_team_keys:
-        - dq_team_keys
-        - dq_team_keys
-      properties:
-        score:
-          description: Score for this alliance. Will be null or -1 for an unplayed
-            match.
-          type: integer
-        team_keys:
-          items:
-            description: TBA Team keys (eg `frc254`) for teams on this alliance.
-            type: string
-          type: array
-        surrogate_team_keys:
-          description: TBA team keys (eg `frc254`) of any teams playing as a surrogate.
-          items:
-            description: Team key of a surrogate team.
-            type: string
-          type: array
-        dq_team_keys:
-          description: TBA team keys (eg `frc254`) of any disqualified teams.
-          items:
-            description: Team key of a disqualified team.
-            type: string
-          type: array
-      required:
-      - score
-      - team_keys
-      type: object
-    Match_Score_Breakdown_2017:
-      description: See the 2017 FMS API documentation for a description of each value.
-      properties:
-        blue:
-          $ref: '#/components/schemas/Match_Score_Breakdown_2017_Alliance'
-        red:
-          $ref: '#/components/schemas/Match_Score_Breakdown_2017_Alliance'
-      type: object
-    Event_Insights:
-      description: A year-specific event insight object expressed as a JSON string,
-        separated in to `qual` and `playoff` fields. See also Event_Insights_2016,
-        Event_Insights_2017, etc.
-      example:
-        qual: '{}'
-        playoff: '{}'
-      properties:
-        qual:
-          description: Inights for the qualification round of an event
-          properties: {}
-          type: object
-        playoff:
-          description: Insights for the playoff round of an event
-          properties: {}
-          type: object
-      type: object
-    Team_Event_Status_playoff:
-      description: Playoff status for this team, may be null if the team did not make
-        playoffs, or playoffs have not begun.
-      example:
-        playoff_average: 1
-        level: qm
-        record:
-          wins: 2
-          ties: 7
-          losses: 5
-        current_level_record:
-          wins: 2
-          ties: 7
-          losses: 5
-        status: won
-      properties:
-        level:
-          description: The highest playoff level the team reached.
-          enum:
-          - qm
-          - ef
-          - qf
-          - sf
-          - f
-          type: string
-        current_level_record:
-          $ref: '#/components/schemas/WLT_Record'
-        record:
-          $ref: '#/components/schemas/WLT_Record'
-        status:
-          description: Current competition status for the playoffs.
-          enum:
-          - won
-          - eliminated
-          - playing
-          type: string
-        playoff_average:
-          description: The average match score during playoffs. Year specific. May
-            be null if not relevant for a given year.
-          type: integer
       type: object
     Event_Insights_2018:
       description: Insights for FIRST Power Up qualification and elimination matches.
@@ -4610,148 +5299,44 @@ components:
       - winning_scale_ownership_percentage_auto
       - winning_scale_ownership_percentage_teleop
       type: object
-    API_Status_App_Version:
+    Event_OPRs:
+      description: OPR, DPR, and CCWM for teams at the event.
       example:
-        min_app_version: 1
-        latest_app_version: 5
+        dprs:
+          key: 6.0274563
+        oprs:
+          key: 0.8008282
+        ccwms:
+          key: 1.4658129
       properties:
-        min_app_version:
-          description: Internal use - Minimum application version required to correctly
-            connect and process data.
-          type: integer
-        latest_app_version:
-          description: Internal use - Latest application version available.
-          type: integer
-      required:
-      - latest_app_version
-      - min_app_version
+        oprs:
+          additionalProperties:
+            description: OPR for team.
+            format: float
+            type: number
+          description: A key-value pair with team key (eg `frc254`) as key and OPR
+            as value.
+          type: object
+        dprs:
+          additionalProperties:
+            description: DPR for team.
+            format: float
+            type: number
+          description: A key-value pair with team key (eg `frc254`) as key and DPR
+            as value.
+          type: object
+        ccwms:
+          additionalProperties:
+            description: CCWM for team.
+            format: float
+            type: number
+          description: A key-value pair with team key (eg `frc254`) as key and CCWM
+            as value.
+          type: object
       type: object
-    District_List:
-      example:
-        year: 0
-        abbreviation: abbreviation
-        display_name: display_name
-        key: key
-      properties:
-        abbreviation:
-          description: The short identifier for the district.
-          type: string
-        display_name:
-          description: The long name for the district.
-          type: string
-        key:
-          description: Key for this district, e.g. `2016ne`.
-          type: string
-        year:
-          description: Year this district participated.
-          type: integer
-      required:
-      - abbreviation
-      - display_name
-      - key
-      - year
-      type: object
-    Event_Simple:
-      example:
-        end_date: 2000-01-23
-        country: country
-        event_type: 0
-        city: city
-        year: 6
-        event_code: event_code
-        district:
-          year: 0
-          abbreviation: abbreviation
-          display_name: display_name
-          key: key
-        name: name
-        state_prov: state_prov
-        key: key
-        start_date: 2000-01-23
-      properties:
-        key:
-          description: TBA event key with the format yyyy[EVENT_CODE], where yyyy
-            is the year, and EVENT_CODE is the event code of the event.
-          type: string
-        name:
-          description: Official name of event on record either provided by FIRST or
-            organizers of offseason event.
-          type: string
-        event_code:
-          description: Event short code, as provided by FIRST.
-          type: string
-        event_type:
-          description: 'Event Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/event_type.py#L2'
-          type: integer
-        district:
-          $ref: '#/components/schemas/District_List'
-        city:
-          description: City, town, village, etc. the event is located in.
-          type: string
-        state_prov:
-          description: State or Province the event is located in.
-          type: string
-        country:
-          description: Country the event is located in.
-          type: string
-        start_date:
-          description: Event start date in `yyyy-mm-dd` format.
-          format: date
-          type: string
-        end_date:
-          description: Event end date in `yyyy-mm-dd` format.
-          format: date
-          type: string
-        year:
-          description: Year the event data is for.
-          type: integer
-      required:
-      - end_date
-      - event_code
-      - event_type
-      - key
-      - name
-      - start_date
-      - year
-      type: object
-    Award:
-      example:
-        year: 6
-        name: name
-        recipient_list:
-        - awardee: awardee
-          team_key: team_key
-        - awardee: awardee
-          team_key: team_key
-        award_type: 0
-        event_key: event_key
-      properties:
-        name:
-          description: The name of the award as provided by FIRST. May vary for the
-            same award type.
-          type: string
-        award_type:
-          description: Type of award given. See https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/award_type.py#L6
-          type: integer
-        event_key:
-          description: The event_key of the event the award was won at.
-          type: string
-        recipient_list:
-          description: A list of recipients of the award at the event. May have either
-            a team_key or an awardee, both, or neither (in the case the award wasn't
-            awarded at the event).
-          items:
-            $ref: '#/components/schemas/Award_Recipient'
-          type: array
-        year:
-          description: The year this award was won.
-          type: integer
-      required:
-      - award_type
-      - event_key
-      - name
-      - recipient_list
-      - year
+    Event_Predictions:
+      description: JSON Object containing prediction information for the event. Contains
+        year-specific information and is subject to change.
       type: object
     Match_Simple:
       example:
@@ -4812,7 +5397,7 @@ components:
           description: The match number of the match in the competition level.
           type: integer
         alliances:
-          $ref: '#/components/schemas/Match_alliances'
+          $ref: '#/components/schemas/Match_Simple_alliances'
         winning_alliance:
           description: The color (red/blue) of the winning alliance. Will contain
             an empty string in the event of no winner, or a tie.
@@ -4845,171 +5430,229 @@ components:
       - match_number
       - set_number
       type: object
-    Event:
+    Match:
       example:
-        end_date: 2000-01-23
-        country: country
-        week: 1
-        playoff_type: 2
-        city: city
-        year: 6
-        timezone: timezone
-        event_type: 0
-        event_code: event_code
-        playoff_type_string: playoff_type_string
-        event_type_string: event_type_string
-        webcasts:
-        - file: file
-          channel: channel
-          type: youtube
-        - file: file
-          channel: channel
-          type: youtube
-        key: key
-        lat: 5.962133916683182
-        start_date: 2000-01-23
-        first_event_code: first_event_code
-        parent_event_key: parent_event_key
-        website: website
-        division_keys:
-        - division_keys
-        - division_keys
-        address: address
-        lng: 5.637376656633329
-        gmaps_place_id: gmaps_place_id
-        gmaps_url: http://example.com/aeiou
-        location_name: location_name
-        district:
-          year: 0
-          abbreviation: abbreviation
-          display_name: display_name
+        predicted_time: 2
+        set_number: 0
+        videos:
+        - type: type
           key: key
-        name: name
-        state_prov: state_prov
-        short_name: short_name
-        first_event_id: first_event_id
-        postal_code: postal_code
+        - type: type
+          key: key
+        winning_alliance: winning_alliance
+        actual_time: 5
+        post_result_time: 7
+        match_number: 6
+        score_breakdown: '{}'
+        alliances:
+          red:
+            score: 1
+            team_keys:
+            - team_keys
+            - team_keys
+            surrogate_team_keys:
+            - surrogate_team_keys
+            - surrogate_team_keys
+            dq_team_keys:
+            - dq_team_keys
+            - dq_team_keys
+          blue:
+            score: 1
+            team_keys:
+            - team_keys
+            - team_keys
+            surrogate_team_keys:
+            - surrogate_team_keys
+            - surrogate_team_keys
+            dq_team_keys:
+            - dq_team_keys
+            - dq_team_keys
+        time: 5
+        key: key
+        comp_level: qm
+        event_key: event_key
       properties:
         key:
-          description: TBA event key with the format yyyy[EVENT_CODE], where yyyy
-            is the year, and EVENT_CODE is the event code of the event.
+          description: TBA match key with the format `yyyy[EVENT_CODE]_[COMP_LEVEL]m[MATCH_NUMBER]`,
+            where `yyyy` is the year, and `EVENT_CODE` is the event code of the event,
+            `COMP_LEVEL` is (qm, ef, qf, sf, f), and `MATCH_NUMBER` is the match number
+            in the competition level. A set number may be appended to the competition
+            level if more than one match in required per set.
           type: string
-        name:
-          description: Official name of event on record either provided by FIRST or
-            organizers of offseason event.
+        comp_level:
+          description: The competition level the match was played at.
+          enum:
+          - qm
+          - ef
+          - qf
+          - sf
+          - f
           type: string
-        event_code:
-          description: Event short code, as provided by FIRST.
-          type: string
-        event_type:
-          description: 'Event Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/event_type.py#L2'
+        set_number:
+          description: The set number in a series of matches where more than one match
+            is required in the match series.
           type: integer
-        district:
-          $ref: '#/components/schemas/District_List'
-        city:
-          description: City, town, village, etc. the event is located in.
-          type: string
-        state_prov:
-          description: State or Province the event is located in.
-          type: string
-        country:
-          description: Country the event is located in.
-          type: string
-        start_date:
-          description: Event start date in `yyyy-mm-dd` format.
-          format: date
-          type: string
-        end_date:
-          description: Event end date in `yyyy-mm-dd` format.
-          format: date
-          type: string
-        year:
-          description: Year the event data is for.
+        match_number:
+          description: The match number of the match in the competition level.
           type: integer
-        short_name:
-          description: Same as `name` but doesn't include event specifiers, such as
-            'Regional' or 'District'. May be null.
+        alliances:
+          $ref: '#/components/schemas/Match_Simple_alliances'
+        winning_alliance:
+          description: The color (red/blue) of the winning alliance. Will contain
+            an empty string in the event of no winner, or a tie.
           type: string
-        event_type_string:
-          description: Event Type, eg Regional, District, or Offseason.
+        event_key:
+          description: Event key of the event the match was played at.
           type: string
-        week:
-          description: Week of the event relative to the first official season event,
-            zero-indexed. Only valid for Regionals, Districts, and District Championships.
-            Null otherwise. (Eg. A season with a week 0 'preseason' event does not
-            count, and week 1 events will show 0 here. Seasons with a week 0.5 regional
-            event will show week 0 for those event(s) and week 1 for week 1 events
-            and so on.)
+        time:
+          description: UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the scheduled
+            match time, as taken from the published schedule.
+          format: int64
           type: integer
-        address:
-          description: Address of the event's venue, if available.
-          type: string
-        postal_code:
-          description: Postal code from the event address.
-          type: string
-        gmaps_place_id:
-          description: Google Maps Place ID for the event address.
-          type: string
-        gmaps_url:
-          description: Link to address location on Google Maps.
-          format: url
-          type: string
-        lat:
-          description: Latitude for the event address.
-          format: double
-          type: number
-        lng:
-          description: Longitude for the event address.
-          format: double
-          type: number
-        location_name:
-          description: Name of the location at the address for the event, eg. Blue
-            Alliance High School.
-          type: string
-        timezone:
-          description: Timezone name.
-          type: string
-        website:
-          description: The event's website, if any.
-          type: string
-        first_event_id:
-          description: The FIRST internal Event ID, used to link to the event on the
-            FRC webpage.
-          type: string
-        first_event_code:
-          description: Public facing event code used by FIRST (on frc-events.firstinspires.org,
-            for example)
-          type: string
-        webcasts:
+        actual_time:
+          description: UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of actual
+            match start time.
+          format: int64
+          type: integer
+        predicted_time:
+          description: UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the TBA
+            predicted match start time.
+          format: int64
+          type: integer
+        post_result_time:
+          description: UNIX timestamp (seconds since 1-Jan-1970 00:00:00) when the
+            match result was posted.
+          format: int64
+          type: integer
+        score_breakdown:
+          description: Score breakdown for auto, teleop, etc. points. Varies from
+            year to year. May be null.
+          properties: {}
+          type: object
+        videos:
+          description: Array of video objects associated with this match.
           items:
-            $ref: '#/components/schemas/Webcast'
+            $ref: '#/components/schemas/Match_videos'
           type: array
-        division_keys:
-          description: An array of event keys for the divisions at this event.
+      required:
+      - comp_level
+      - event_key
+      - key
+      - match_number
+      - set_number
+      type: object
+    Match_alliance:
+      example:
+        score: 1
+        team_keys:
+        - team_keys
+        - team_keys
+        surrogate_team_keys:
+        - surrogate_team_keys
+        - surrogate_team_keys
+        dq_team_keys:
+        - dq_team_keys
+        - dq_team_keys
+      properties:
+        score:
+          description: Score for this alliance. Will be null or -1 for an unplayed
+            match.
+          type: integer
+        team_keys:
           items:
+            description: TBA Team keys (eg `frc254`) for teams on this alliance.
             type: string
           type: array
-        parent_event_key:
-          description: The TBA Event key that represents the event's parent. Used
-            to link back to the event from a division event. It is also the inverse
-            relation of `divison_keys`.
-          type: string
-        playoff_type:
-          description: 'Playoff Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/playoff_type.py#L4,
-            or null.'
-          type: integer
-        playoff_type_string:
-          description: String representation of the `playoff_type`, or null.
-          type: string
+        surrogate_team_keys:
+          description: TBA team keys (eg `frc254`) of any teams playing as a surrogate.
+          items:
+            description: Team key of a surrogate team.
+            type: string
+          type: array
+        dq_team_keys:
+          description: TBA team keys (eg `frc254`) of any disqualified teams.
+          items:
+            description: Team key of a disqualified team.
+            type: string
+          type: array
       required:
-      - end_date
-      - event_code
-      - event_type
-      - event_type_string
-      - key
-      - name
-      - start_date
-      - year
+      - score
+      - team_keys
+      type: object
+    Match_Score_Breakdown_2015:
+      description: See the 2015 FMS API documentation for a description of each value
+      properties:
+        blue:
+          $ref: '#/components/schemas/Match_Score_Breakdown_2015_Alliance'
+        red:
+          $ref: '#/components/schemas/Match_Score_Breakdown_2015_Alliance'
+        coopertition:
+          enum:
+          - None
+          - Unknown
+          - Stack
+          type: string
+        coopertition_points:
+          type: integer
+      type: object
+    Match_Score_Breakdown_2015_Alliance:
+      properties:
+        auto_points:
+          type: integer
+        teleop_points:
+          type: integer
+        container_points:
+          type: integer
+        tote_points:
+          type: integer
+        litter_points:
+          type: integer
+        foul_points:
+          type: integer
+        adjust_points:
+          type: integer
+        total_points:
+          type: integer
+        foul_count:
+          type: integer
+        tote_count_far:
+          type: integer
+        tote_count_near:
+          type: integer
+        tote_set:
+          type: boolean
+        tote_stack:
+          type: boolean
+        container_count_level1:
+          type: integer
+        container_count_level2:
+          type: integer
+        container_count_level3:
+          type: integer
+        container_count_level4:
+          type: integer
+        container_count_level5:
+          type: integer
+        container_count_level6:
+          type: integer
+        container_set:
+          type: boolean
+        litter_count_container:
+          type: integer
+        litter_count_landfill:
+          type: integer
+        litter_count_unprocessed:
+          type: integer
+        robot_set:
+          type: boolean
+      type: object
+    Match_Score_Breakdown_2016:
+      description: See the 2016 FMS API documentation for a description of each value.
+      properties:
+        blue:
+          $ref: '#/components/schemas/Match_Score_Breakdown_2016_Alliance'
+        red:
+          $ref: '#/components/schemas/Match_Score_Breakdown_2016_Alliance'
       type: object
     Match_Score_Breakdown_2016_Alliance:
       properties:
@@ -5101,6 +5744,319 @@ components:
           type: integer
         position5crossings:
           type: integer
+      type: object
+    Match_Score_Breakdown_2017:
+      description: See the 2017 FMS API documentation for a description of each value.
+      properties:
+        blue:
+          $ref: '#/components/schemas/Match_Score_Breakdown_2017_Alliance'
+        red:
+          $ref: '#/components/schemas/Match_Score_Breakdown_2017_Alliance'
+      type: object
+    Match_Score_Breakdown_2017_Alliance:
+      properties:
+        autoPoints:
+          type: integer
+        teleopPoints:
+          type: integer
+        foulPoints:
+          type: integer
+        adjustPoints:
+          type: integer
+        totalPoints:
+          type: integer
+        robot1Auto:
+          enum:
+          - Unknown
+          - Mobility
+          - None
+          type: string
+        robot2Auto:
+          enum:
+          - Unknown
+          - Mobility
+          - None
+          type: string
+        robot3Auto:
+          enum:
+          - Unknown
+          - Mobility
+          - None
+          type: string
+        rotor1Auto:
+          type: boolean
+        rotor2Auto:
+          type: boolean
+        autoFuelLow:
+          type: integer
+        autoFuelHigh:
+          type: integer
+        autoMobilityPoints:
+          type: integer
+        autoRotorPoints:
+          type: integer
+        autoFuelPoints:
+          type: integer
+        teleopFuelPoints:
+          type: integer
+        teleopFuelLow:
+          type: integer
+        teleopFuelHigh:
+          type: integer
+        teleopRotorPoints:
+          type: integer
+        kPaRankingPointAchieved:
+          type: boolean
+        teleopTakeoffPoints:
+          type: integer
+        kPaBonusPoints:
+          type: integer
+        rotorBonusPoints:
+          type: integer
+        rotor1Engaged:
+          type: boolean
+        rotor2Engaged:
+          type: boolean
+        rotor3Engaged:
+          type: boolean
+        rotor4Engaged:
+          type: boolean
+        rotorRankingPointAchieved:
+          type: boolean
+        techFoulCount:
+          type: integer
+        foulCount:
+          type: integer
+        touchpadNear:
+          type: string
+        touchpadMiddle:
+          type: string
+        touchpadFar:
+          type: string
+      type: object
+    Match_Score_Breakdown_2018:
+      description: See the 2018 FMS API documentation for a description of each value.
+      properties:
+        blue:
+          $ref: '#/components/schemas/Match_Score_Breakdown_2018_Alliance'
+        red:
+          $ref: '#/components/schemas/Match_Score_Breakdown_2018_Alliance'
+      type: object
+    Match_Score_Breakdown_2018_Alliance:
+      properties:
+        adjustPoints:
+          type: integer
+        autoOwnershipPoints:
+          type: integer
+        autoPoints:
+          type: integer
+        autoQuestRankingPoint:
+          type: boolean
+        autoRobot1:
+          type: string
+        autoRobot2:
+          type: string
+        autoRobot3:
+          type: string
+        autoRunPoints:
+          type: integer
+        autoScaleOwnershipSec:
+          type: integer
+        autoSwitchAtZero:
+          type: boolean
+        autoSwitchOwnershipSec:
+          type: integer
+        endgamePoints:
+          type: integer
+        endgameRobot1:
+          type: string
+        endgameRobot2:
+          type: string
+        endgameRobot3:
+          type: string
+        faceTheBossRankingPoint:
+          type: boolean
+        foulCount:
+          type: integer
+        foulPoints:
+          type: integer
+        rp:
+          type: integer
+        techFoulCount:
+          type: integer
+        teleopOwnershipPoints:
+          type: integer
+        teleopPoints:
+          type: integer
+        teleopScaleBoostSec:
+          type: integer
+        teleopScaleForceSec:
+          type: integer
+        teleopScaleOwnershipSec:
+          type: integer
+        teleopSwitchBoostSec:
+          type: integer
+        teleopSwitchForceSec:
+          type: integer
+        teleopSwitchOwnershipSec:
+          type: integer
+        totalPoints:
+          type: integer
+        vaultBoostPlayed:
+          type: integer
+        vaultBoostTotal:
+          type: integer
+        vaultForcePlayed:
+          type: integer
+        vaultForceTotal:
+          type: integer
+        vaultLevitatePlayed:
+          type: integer
+        vaultLevitateTotal:
+          type: integer
+        vaultPoints:
+          type: integer
+        tba_gameData:
+          description: Unofficial TBA-computed value of the FMS provided GameData
+            given to the alliance teams at the start of the match. 3 Character String
+            containing `L` and `R` only. The first character represents the near switch,
+            the 2nd the scale, and the 3rd the far, opposing, switch from the alliance's
+            perspective. An `L` in a position indicates the platform on the left will
+            be lit for the alliance while an `R` will indicate the right platform
+            will be lit for the alliance. See also [WPI Screen Steps](https://wpilib.screenstepslive.com/s/currentCS/m/getting_started/l/826278-2018-game-data-details).
+          type: string
+      type: object
+    Match_Timeseries_2018:
+      description: |-
+        Timeseries data for the 2018 game *FIRST* POWER UP.
+        *WARNING:* This is *not* official data, and is subject to a significant possibility of error, or missing data. Do not rely on this data for any purpose. In fact, pretend we made it up.
+        *WARNING:* This model is currently under active development and may change at any time, including in breaking ways.
+      properties:
+        event_key:
+          description: TBA event key with the format yyyy[EVENT_CODE], where yyyy
+            is the year, and EVENT_CODE is the event code of the event.
+          type: string
+        match_id:
+          description: Match ID consisting of the level, match number, and set number,
+            eg `qm45` or `f1m1`.
+          type: string
+        mode:
+          description: Current mode of play, can be `pre_match`, `auto`, `telop`,
+            or `post_match`.
+          type: string
+        play:
+          type: integer
+        time_remaining:
+          description: Amount of time remaining in the match, only valid during `auto`
+            and `teleop` modes.
+          type: integer
+        blue_auto_quest:
+          description: 1 if the blue alliance is credited with the AUTO QUEST, 0 if
+            not.
+          type: integer
+        blue_boost_count:
+          description: Number of POWER CUBES in the BOOST section of the blue alliance
+            VAULT.
+          type: integer
+        blue_boost_played:
+          description: Returns 1 if the blue alliance BOOST was played, or 0 if not
+            played.
+          type: integer
+        blue_current_powerup:
+          description: Name of the current blue alliance POWER UP being played, or
+            `null`.
+          type: string
+        blue_face_the_boss:
+          description: 1 if the blue alliance is credited with FACING THE BOSS, 0
+            if not.
+          type: integer
+        blue_force_count:
+          description: Number of POWER CUBES in the FORCE section of the blue alliance
+            VAULT.
+          type: integer
+        blue_force_played:
+          description: Returns 1 if the blue alliance FORCE was played, or 0 if not
+            played.
+          type: integer
+        blue_levitate_count:
+          description: Number of POWER CUBES in the LEVITATE section of the blue alliance
+            VAULT.
+          type: integer
+        blue_levitate_played:
+          description: Returns 1 if the blue alliance LEVITATE was played, or 0 if
+            not played.
+          type: integer
+        blue_powerup_time_remaining:
+          description: Number of seconds remaining in the blue alliance POWER UP time,
+            or 0 if none is active.
+          type: string
+        blue_scale_owned:
+          description: 1 if the blue alliance owns the SCALE, 0 if not.
+          type: integer
+        blue_score:
+          description: Current score for the blue alliance.
+          type: integer
+        blue_switch_owned:
+          description: 1 if the blue alliance owns their SWITCH, 0 if not.
+          type: integer
+        red_auto_quest:
+          description: 1 if the red alliance is credited with the AUTO QUEST, 0 if
+            not.
+          type: integer
+        red_boost_count:
+          description: Number of POWER CUBES in the BOOST section of the red alliance
+            VAULT.
+          type: integer
+        red_boost_played:
+          description: Returns 1 if the red alliance BOOST was played, or 0 if not
+            played.
+          type: integer
+        red_current_powerup:
+          description: Name of the current red alliance POWER UP being played, or
+            `null`.
+          type: string
+        red_face_the_boss:
+          description: 1 if the red alliance is credited with FACING THE BOSS, 0 if
+            not.
+          type: integer
+        red_force_count:
+          description: Number of POWER CUBES in the FORCE section of the red alliance
+            VAULT.
+          type: integer
+        red_force_played:
+          description: Returns 1 if the red alliance FORCE was played, or 0 if not
+            played.
+          type: integer
+        red_levitate_count:
+          description: Number of POWER CUBES in the LEVITATE section of the red alliance
+            VAULT.
+          type: integer
+        red_levitate_played:
+          description: Returns 1 if the red alliance LEVITATE was played, or 0 if
+            not played.
+          type: integer
+        red_powerup_time_remaining:
+          description: Number of seconds remaining in the red alliance POWER UP time,
+            or 0 if none is active.
+          type: string
+        red_scale_owned:
+          description: 1 if the red alliance owns the SCALE, 0 if not.
+          type: integer
+        red_score:
+          description: Current score for the red alliance.
+          type: integer
+        red_switch_owned:
+          description: 1 if the red alliance owns their SWITCH, 0 if not.
+          type: integer
+      type: object
+    Match_Score_Breakdown_2019:
+      description: See the 2019 FMS API documentation for a description of each value.
+        https://frcevents2.docs.apiary.io/#reference/match-results/score-details
+      properties:
+        blue:
+          $ref: '#/components/schemas/Match_Score_Breakdown_2019_Alliance'
+        red:
+          $ref: '#/components/schemas/Match_Score_Breakdown_2019_Alliance'
       type: object
     Match_Score_Breakdown_2019_Alliance:
       properties:
@@ -5206,6 +6162,282 @@ components:
           type: string
         totalPoints:
           type: integer
+      type: object
+    Media:
+      description: The `Media` object contains a reference for most any media associated
+        with a team or event on TBA.
+      example:
+        direct_url: direct_url
+        foreign_key: foreign_key
+        view_url: view_url
+        details: '{}'
+        type: youtube
+        key: key
+        preferred: true
+      properties:
+        key:
+          description: TBA identifier for this media.
+          type: string
+        type:
+          description: String type of the media element.
+          enum:
+          - youtube
+          - cdphotothread
+          - imgur
+          - facebook-profile
+          - youtube-channel
+          - twitter-profile
+          - github-profile
+          - instagram-profile
+          - periscope-profile
+          - grabcad
+          - instagram-image
+          - external-link
+          - avatar
+          type: string
+        foreign_key:
+          description: The key used to identify this media on the media site.
+          type: string
+        details:
+          description: If required, a JSON dict of additional media information.
+          properties: {}
+          type: object
+        preferred:
+          description: True if the media is of high quality.
+          type: boolean
+        direct_url:
+          description: Direct URL to the media.
+          type: string
+        view_url:
+          description: The URL that leads to the full web page for the media, if one
+            exists.
+          type: string
+      required:
+      - key
+      - type
+      type: object
+    Elimination_Alliance:
+      example:
+        declines:
+        - declines
+        - declines
+        backup:
+          in: in
+          out: out
+        name: name
+        picks:
+        - picks
+        - picks
+        status:
+          playoff_average: 0.8008281904610115
+          level: level
+          record:
+            wins: 2
+            ties: 7
+            losses: 5
+          current_level_record:
+            wins: 2
+            ties: 7
+            losses: 5
+          status: status
+      properties:
+        name:
+          description: Alliance name, may be null.
+          type: string
+        backup:
+          $ref: '#/components/schemas/Elimination_Alliance_backup'
+        declines:
+          description: List of teams that declined the alliance.
+          items:
+            description: Team key that declined the alliance.
+            type: string
+          type: array
+        picks:
+          description: List of team keys picked for the alliance. First pick is captain.
+          items:
+            description: Team key picked for the alliance.
+            type: string
+          type: array
+        status:
+          $ref: '#/components/schemas/Elimination_Alliance_status'
+      required:
+      - picks
+      type: object
+    Award:
+      example:
+        year: 6
+        name: name
+        recipient_list:
+        - awardee: awardee
+          team_key: team_key
+        - awardee: awardee
+          team_key: team_key
+        award_type: 0
+        event_key: event_key
+      properties:
+        name:
+          description: The name of the award as provided by FIRST. May vary for the
+            same award type.
+          type: string
+        award_type:
+          description: Type of award given. See https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/award_type.py#L6
+          type: integer
+        event_key:
+          description: The event_key of the event the award was won at.
+          type: string
+        recipient_list:
+          description: A list of recipients of the award at the event. May have either
+            a team_key or an awardee, both, or neither (in the case the award wasn't
+            awarded at the event).
+          items:
+            $ref: '#/components/schemas/Award_Recipient'
+          type: array
+        year:
+          description: The year this award was won.
+          type: integer
+      required:
+      - award_type
+      - event_key
+      - name
+      - recipient_list
+      - year
+      type: object
+    Award_Recipient:
+      description: An `Award_Recipient` object represents the team and/or person who
+        received an award at an event.
+      example:
+        awardee: awardee
+        team_key: team_key
+      properties:
+        team_key:
+          description: The TBA team key for the team that was given the award. May
+            be null.
+          type: string
+        awardee:
+          description: The name of the individual given the award. May be null.
+          type: string
+      type: object
+    District_List:
+      example:
+        year: 0
+        abbreviation: abbreviation
+        display_name: display_name
+        key: key
+      properties:
+        abbreviation:
+          description: The short identifier for the district.
+          type: string
+        display_name:
+          description: The long name for the district.
+          type: string
+        key:
+          description: Key for this district, e.g. `2016ne`.
+          type: string
+        year:
+          description: Year this district participated.
+          type: integer
+      required:
+      - abbreviation
+      - display_name
+      - key
+      - year
+      type: object
+    District_Ranking:
+      description: Rank of a team in a district.
+      example:
+        rookie_bonus: 6
+        rank: 0
+        point_total: 1
+        team_key: team_key
+        event_points:
+        - district_cmp: true
+          total: 5
+          alliance_points: 5
+          elim_points: 2
+          award_points: 7
+          event_key: event_key
+          qual_points: 9
+        - district_cmp: true
+          total: 5
+          alliance_points: 5
+          elim_points: 2
+          award_points: 7
+          event_key: event_key
+          qual_points: 9
+      properties:
+        team_key:
+          description: TBA team key for the team.
+          type: string
+        rank:
+          description: Numerical rank of the team, 1 being top rank.
+          type: integer
+        rookie_bonus:
+          description: Any points added to a team as a result of the rookie bonus.
+          type: integer
+        point_total:
+          description: Total district points for the team.
+          type: integer
+        event_points:
+          description: List of events that contributed to the point total for the
+            team.
+          items:
+            $ref: '#/components/schemas/District_Ranking_event_points'
+          type: array
+      required:
+      - point_total
+      - rank
+      - team_key
+      type: object
+    WLT_Record:
+      description: A Win-Loss-Tie record for a team, or an alliance.
+      example:
+        wins: 2
+        ties: 7
+        losses: 5
+      properties:
+        losses:
+          description: Number of losses.
+          type: integer
+        wins:
+          description: Number of wins.
+          type: integer
+        ties:
+          description: Number of ties.
+          type: integer
+      required:
+      - losses
+      - ties
+      - wins
+      type: object
+    Webcast:
+      example:
+        file: file
+        channel: channel
+        type: youtube
+      properties:
+        type:
+          description: Type of webcast, typically descriptive of the streaming provider.
+          enum:
+          - youtube
+          - twitch
+          - ustream
+          - iframe
+          - html5
+          - rtmp
+          - livestream
+          type: string
+        channel:
+          description: Type specific channel information. May be the YouTube stream,
+            or Twitch channel name. In the case of iframe types, contains HTML to
+            embed the stream in an HTML iframe.
+          type: string
+        file:
+          description: File identification as may be required for some types. May
+            be null.
+          type: string
+      required:
+      - channel
+      - type
       type: object
     Team_Event_Status_rank_ranking:
       example:
@@ -5343,43 +6575,6 @@ components:
       required:
       - name
       - precision
-    Elimination_Alliance_backup:
-      description: Backup team called in, may be null.
-      example:
-        in: in
-        out: out
-      properties:
-        in:
-          description: Team key that was called in as the backup.
-          type: string
-        out:
-          description: Team key that was replaced by the backup team.
-          type: string
-    Elimination_Alliance_status:
-      example:
-        playoff_average: 0.8008281904610115
-        level: level
-        record:
-          wins: 2
-          ties: 7
-          losses: 5
-        current_level_record:
-          wins: 2
-          ties: 7
-          losses: 5
-        status: status
-      properties:
-        playoff_average:
-          format: double
-          type: number
-        level:
-          type: string
-        record:
-          $ref: '#/components/schemas/WLT_Record'
-        current_level_record:
-          $ref: '#/components/schemas/WLT_Record'
-        status:
-          type: string
     Event_District_Points_points:
       example:
         total: 0
@@ -5422,7 +6617,7 @@ components:
           type: array
         qual_wins:
           type: integer
-    Match_alliances:
+    Match_Simple_alliances:
       description: A list of alliances, the teams on the alliances, and their score.
       example:
         red:
@@ -5462,6 +6657,43 @@ components:
           type: string
         key:
           description: Unique key representing this video
+          type: string
+    Elimination_Alliance_backup:
+      description: Backup team called in, may be null.
+      example:
+        in: in
+        out: out
+      properties:
+        in:
+          description: Team key that was called in as the backup.
+          type: string
+        out:
+          description: Team key that was replaced by the backup team.
+          type: string
+    Elimination_Alliance_status:
+      example:
+        playoff_average: 0.8008281904610115
+        level: level
+        record:
+          wins: 2
+          ties: 7
+          losses: 5
+        current_level_record:
+          wins: 2
+          ties: 7
+          losses: 5
+        status: status
+      properties:
+        playoff_average:
+          format: double
+          type: number
+        level:
+          type: string
+        record:
+          $ref: '#/components/schemas/WLT_Record'
+        current_level_record:
+          $ref: '#/components/schemas/WLT_Record'
+        status:
           type: string
     District_Ranking_event_points:
       example:
