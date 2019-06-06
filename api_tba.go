@@ -15,7 +15,6 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
-	"github.com/antihax/optional"
 )
 
 // Linger please
@@ -29,16 +28,9 @@ type TBAApiService service
 TBAApiService
 Returns API status, and TBA status information.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *GetStatusOpts - Optional Parameters:
- * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
 @return ApiStatus
 */
-
-type GetStatusOpts struct {
-	IfModifiedSince optional.String
-}
-
-func (a *TBAApiService) GetStatus(ctx context.Context, localVarOptionals *GetStatusOpts) (ApiStatus, *http.Response, error) {
+func (a *TBAApiService) GetStatus(ctx context.Context) (ApiStatus, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -71,9 +63,6 @@ func (a *TBAApiService) GetStatus(ctx context.Context, localVarOptionals *GetSta
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.IfModifiedSince.IsSet() {
-		localVarHeaderParams["If-Modified-Since"] = parameterToString(localVarOptionals.IfModifiedSince.Value(), "")
 	}
 	if ctx != nil {
 		// API Key Authentication

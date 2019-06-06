@@ -19,29 +19,14 @@ Method | HTTP request | Description
 
 ## GetDistrictEvents
 
-> []Event GetDistrictEvents(ctx, districtKey, optional)
+> []Event GetDistrictEvents(ctx, )
 
 
 Gets a list of events in the given district.
 
 ### Required Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**districtKey** | **string**| TBA District Key, eg &#x60;2016fim&#x60; | 
- **optional** | ***GetDistrictEventsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a GetDistrictEventsOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **ifModifiedSince** | **optional.String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,29 +48,14 @@ Name | Type | Description  | Notes
 
 ## GetDistrictEventsKeys
 
-> []string GetDistrictEventsKeys(ctx, districtKey, optional)
+> []string GetDistrictEventsKeys(ctx, )
 
 
 Gets a list of event keys for events in the given district.
 
 ### Required Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**districtKey** | **string**| TBA District Key, eg &#x60;2016fim&#x60; | 
- **optional** | ***GetDistrictEventsKeysOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a GetDistrictEventsKeysOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **ifModifiedSince** | **optional.String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -107,7 +77,7 @@ Name | Type | Description  | Notes
 
 ## GetDistrictEventsSimple
 
-> []EventSimple GetDistrictEventsSimple(ctx, districtKey, optional)
+> []EventSimple GetDistrictEventsSimple(ctx, districtKey)
 
 
 Gets a short-form list of events in the given district.
@@ -119,17 +89,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **districtKey** | **string**| TBA District Key, eg &#x60;2016fim&#x60; | 
- **optional** | ***GetDistrictEventsSimpleOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a GetDistrictEventsSimpleOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **ifModifiedSince** | **optional.String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | 
 
 ### Return type
 
@@ -151,29 +110,14 @@ Name | Type | Description  | Notes
 
 ## GetDistrictRankings
 
-> []DistrictRanking GetDistrictRankings(ctx, districtKey, optional)
+> []DistrictRanking GetDistrictRankings(ctx, )
 
 
 Gets a list of team district rankings for the given district.
 
 ### Required Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**districtKey** | **string**| TBA District Key, eg &#x60;2016fim&#x60; | 
- **optional** | ***GetDistrictRankingsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a GetDistrictRankingsOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **ifModifiedSince** | **optional.String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -195,29 +139,14 @@ Name | Type | Description  | Notes
 
 ## GetDistrictTeams
 
-> []Team GetDistrictTeams(ctx, districtKey, optional)
+> []Team GetDistrictTeams(ctx, )
 
 
 Gets a list of `Team` objects that competed in events in the given district.
 
 ### Required Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**districtKey** | **string**| TBA District Key, eg &#x60;2016fim&#x60; | 
- **optional** | ***GetDistrictTeamsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a GetDistrictTeamsOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **ifModifiedSince** | **optional.String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -239,29 +168,14 @@ Name | Type | Description  | Notes
 
 ## GetDistrictTeamsKeys
 
-> []string GetDistrictTeamsKeys(ctx, districtKey, optional)
+> []string GetDistrictTeamsKeys(ctx, )
 
 
 Gets a list of `Team` objects that competed in events in the given district.
 
 ### Required Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**districtKey** | **string**| TBA District Key, eg &#x60;2016fim&#x60; | 
- **optional** | ***GetDistrictTeamsKeysOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a GetDistrictTeamsKeysOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **ifModifiedSince** | **optional.String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -283,29 +197,14 @@ Name | Type | Description  | Notes
 
 ## GetDistrictTeamsSimple
 
-> []TeamSimple GetDistrictTeamsSimple(ctx, districtKey, optional)
+> []TeamSimple GetDistrictTeamsSimple(ctx, )
 
 
 Gets a short-form list of `Team` objects that competed in events in the given district.
 
 ### Required Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**districtKey** | **string**| TBA District Key, eg &#x60;2016fim&#x60; | 
- **optional** | ***GetDistrictTeamsSimpleOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a GetDistrictTeamsSimpleOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **ifModifiedSince** | **optional.String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -327,29 +226,14 @@ Name | Type | Description  | Notes
 
 ## GetDistrictsByYear
 
-> []DistrictList GetDistrictsByYear(ctx, year, optional)
+> []DistrictList GetDistrictsByYear(ctx, )
 
 
 Gets a list of districts and their corresponding district key, for the given year.
 
 ### Required Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**year** | **int32**| Competition Year (or Season). Must be 4 digits. | 
- **optional** | ***GetDistrictsByYearOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a GetDistrictsByYearOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **ifModifiedSince** | **optional.String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -371,29 +255,14 @@ Name | Type | Description  | Notes
 
 ## GetEventDistrictPoints
 
-> EventDistrictPoints GetEventDistrictPoints(ctx, eventKey, optional)
+> EventDistrictPoints GetEventDistrictPoints(ctx, )
 
 
 Gets a list of team rankings for the Event.
 
 ### Required Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**eventKey** | **string**| TBA Event Key, eg &#x60;2016nytr&#x60; | 
- **optional** | ***GetEventDistrictPointsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a GetEventDistrictPointsOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **ifModifiedSince** | **optional.String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -415,29 +284,14 @@ Name | Type | Description  | Notes
 
 ## GetTeamDistricts
 
-> []DistrictList GetTeamDistricts(ctx, teamKey, optional)
+> []DistrictList GetTeamDistricts(ctx, )
 
 
 Gets an array of districts representing each year the team was in a district. Will return an empty array if the team was never in a district.
 
 ### Required Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**teamKey** | **string**| TBA Team Key, eg &#x60;frc254&#x60; | 
- **optional** | ***GetTeamDistrictsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a GetTeamDistrictsOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **ifModifiedSince** | **optional.String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | 
+This endpoint does not need any parameter.
 
 ### Return type
 

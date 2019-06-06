@@ -15,8 +15,6 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
-	"fmt"
-	"github.com/antihax/optional"
 )
 
 // Linger please
@@ -30,17 +28,9 @@ type MatchApiService service
 MatchApiService
 Gets an array of Match Keys for the given event key that have timeseries data. Returns an empty array if no matches have timeseries data. *WARNING:* This is *not* official data, and is subject to a significant possibility of error, or missing data. Do not rely on this data for any purpose. In fact, pretend we made it up. *WARNING:* This endpoint and corresponding data models are under *active development* and may change at any time, including in breaking ways.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param eventKey TBA Event Key, eg `2016nytr`
- * @param optional nil or *GetEventMatchTimeseriesOpts - Optional Parameters:
- * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
 @return []string
 */
-
-type GetEventMatchTimeseriesOpts struct {
-	IfModifiedSince optional.String
-}
-
-func (a *MatchApiService) GetEventMatchTimeseries(ctx context.Context, eventKey string, localVarOptionals *GetEventMatchTimeseriesOpts) ([]string, *http.Response, error) {
+func (a *MatchApiService) GetEventMatchTimeseries(ctx context.Context) ([]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -52,7 +42,6 @@ func (a *MatchApiService) GetEventMatchTimeseries(ctx context.Context, eventKey 
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/event/{event_key}/matches/timeseries"
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -74,9 +63,6 @@ func (a *MatchApiService) GetEventMatchTimeseries(ctx context.Context, eventKey 
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.IfModifiedSince.IsSet() {
-		localVarHeaderParams["If-Modified-Since"] = parameterToString(localVarOptionals.IfModifiedSince.Value(), "")
 	}
 	if ctx != nil {
 		// API Key Authentication
@@ -140,17 +126,9 @@ func (a *MatchApiService) GetEventMatchTimeseries(ctx context.Context, eventKey 
 MatchApiService
 Gets a list of matches for the given event.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param eventKey TBA Event Key, eg `2016nytr`
- * @param optional nil or *GetEventMatchesOpts - Optional Parameters:
- * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
 @return []Match
 */
-
-type GetEventMatchesOpts struct {
-	IfModifiedSince optional.String
-}
-
-func (a *MatchApiService) GetEventMatches(ctx context.Context, eventKey string, localVarOptionals *GetEventMatchesOpts) ([]Match, *http.Response, error) {
+func (a *MatchApiService) GetEventMatches(ctx context.Context) ([]Match, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -162,7 +140,6 @@ func (a *MatchApiService) GetEventMatches(ctx context.Context, eventKey string, 
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/event/{event_key}/matches"
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -184,9 +161,6 @@ func (a *MatchApiService) GetEventMatches(ctx context.Context, eventKey string, 
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.IfModifiedSince.IsSet() {
-		localVarHeaderParams["If-Modified-Since"] = parameterToString(localVarOptionals.IfModifiedSince.Value(), "")
 	}
 	if ctx != nil {
 		// API Key Authentication
@@ -250,17 +224,9 @@ func (a *MatchApiService) GetEventMatches(ctx context.Context, eventKey string, 
 MatchApiService
 Gets a list of match keys for the given event.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param eventKey TBA Event Key, eg `2016nytr`
- * @param optional nil or *GetEventMatchesKeysOpts - Optional Parameters:
- * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
 @return []string
 */
-
-type GetEventMatchesKeysOpts struct {
-	IfModifiedSince optional.String
-}
-
-func (a *MatchApiService) GetEventMatchesKeys(ctx context.Context, eventKey string, localVarOptionals *GetEventMatchesKeysOpts) ([]string, *http.Response, error) {
+func (a *MatchApiService) GetEventMatchesKeys(ctx context.Context) ([]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -272,7 +238,6 @@ func (a *MatchApiService) GetEventMatchesKeys(ctx context.Context, eventKey stri
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/event/{event_key}/matches/keys"
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -294,9 +259,6 @@ func (a *MatchApiService) GetEventMatchesKeys(ctx context.Context, eventKey stri
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.IfModifiedSince.IsSet() {
-		localVarHeaderParams["If-Modified-Since"] = parameterToString(localVarOptionals.IfModifiedSince.Value(), "")
 	}
 	if ctx != nil {
 		// API Key Authentication
@@ -360,17 +322,9 @@ func (a *MatchApiService) GetEventMatchesKeys(ctx context.Context, eventKey stri
 MatchApiService
 Gets a short-form list of matches for the given event.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param eventKey TBA Event Key, eg `2016nytr`
- * @param optional nil or *GetEventMatchesSimpleOpts - Optional Parameters:
- * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
 @return []MatchSimple
 */
-
-type GetEventMatchesSimpleOpts struct {
-	IfModifiedSince optional.String
-}
-
-func (a *MatchApiService) GetEventMatchesSimple(ctx context.Context, eventKey string, localVarOptionals *GetEventMatchesSimpleOpts) ([]MatchSimple, *http.Response, error) {
+func (a *MatchApiService) GetEventMatchesSimple(ctx context.Context) ([]MatchSimple, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -382,7 +336,6 @@ func (a *MatchApiService) GetEventMatchesSimple(ctx context.Context, eventKey st
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/event/{event_key}/matches/simple"
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -404,9 +357,6 @@ func (a *MatchApiService) GetEventMatchesSimple(ctx context.Context, eventKey st
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.IfModifiedSince.IsSet() {
-		localVarHeaderParams["If-Modified-Since"] = parameterToString(localVarOptionals.IfModifiedSince.Value(), "")
 	}
 	if ctx != nil {
 		// API Key Authentication
@@ -470,17 +420,9 @@ func (a *MatchApiService) GetEventMatchesSimple(ctx context.Context, eventKey st
 MatchApiService
 Gets a &#x60;Match&#x60; object for the given match key.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param matchKey TBA Match Key, eg `2016nytr_qm1`
- * @param optional nil or *GetMatchOpts - Optional Parameters:
- * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
 @return Match
 */
-
-type GetMatchOpts struct {
-	IfModifiedSince optional.String
-}
-
-func (a *MatchApiService) GetMatch(ctx context.Context, matchKey string, localVarOptionals *GetMatchOpts) (Match, *http.Response, error) {
+func (a *MatchApiService) GetMatch(ctx context.Context) (Match, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -492,7 +434,6 @@ func (a *MatchApiService) GetMatch(ctx context.Context, matchKey string, localVa
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/match/{match_key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"match_key"+"}", fmt.Sprintf("%v", matchKey), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -514,9 +455,6 @@ func (a *MatchApiService) GetMatch(ctx context.Context, matchKey string, localVa
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.IfModifiedSince.IsSet() {
-		localVarHeaderParams["If-Modified-Since"] = parameterToString(localVarOptionals.IfModifiedSince.Value(), "")
 	}
 	if ctx != nil {
 		// API Key Authentication
@@ -580,17 +518,9 @@ func (a *MatchApiService) GetMatch(ctx context.Context, matchKey string, localVa
 MatchApiService
 Gets a short-form &#x60;Match&#x60; object for the given match key.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param matchKey TBA Match Key, eg `2016nytr_qm1`
- * @param optional nil or *GetMatchSimpleOpts - Optional Parameters:
- * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
 @return MatchSimple
 */
-
-type GetMatchSimpleOpts struct {
-	IfModifiedSince optional.String
-}
-
-func (a *MatchApiService) GetMatchSimple(ctx context.Context, matchKey string, localVarOptionals *GetMatchSimpleOpts) (MatchSimple, *http.Response, error) {
+func (a *MatchApiService) GetMatchSimple(ctx context.Context) (MatchSimple, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -602,7 +532,6 @@ func (a *MatchApiService) GetMatchSimple(ctx context.Context, matchKey string, l
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/match/{match_key}/simple"
-	localVarPath = strings.Replace(localVarPath, "{"+"match_key"+"}", fmt.Sprintf("%v", matchKey), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -624,9 +553,6 @@ func (a *MatchApiService) GetMatchSimple(ctx context.Context, matchKey string, l
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.IfModifiedSince.IsSet() {
-		localVarHeaderParams["If-Modified-Since"] = parameterToString(localVarOptionals.IfModifiedSince.Value(), "")
 	}
 	if ctx != nil {
 		// API Key Authentication
@@ -690,17 +616,9 @@ func (a *MatchApiService) GetMatchSimple(ctx context.Context, matchKey string, l
 MatchApiService
 Gets an array of game-specific Match Timeseries objects for the given match key or an empty array if not available. *WARNING:* This is *not* official data, and is subject to a significant possibility of error, or missing data. Do not rely on this data for any purpose. In fact, pretend we made it up. *WARNING:* This endpoint and corresponding data models are under *active development* and may change at any time, including in breaking ways.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param matchKey TBA Match Key, eg `2016nytr_qm1`
- * @param optional nil or *GetMatchTimeseriesOpts - Optional Parameters:
- * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
 @return []map[string]interface{}
 */
-
-type GetMatchTimeseriesOpts struct {
-	IfModifiedSince optional.String
-}
-
-func (a *MatchApiService) GetMatchTimeseries(ctx context.Context, matchKey string, localVarOptionals *GetMatchTimeseriesOpts) ([]map[string]interface{}, *http.Response, error) {
+func (a *MatchApiService) GetMatchTimeseries(ctx context.Context) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -712,7 +630,6 @@ func (a *MatchApiService) GetMatchTimeseries(ctx context.Context, matchKey strin
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/match/{match_key}/timeseries"
-	localVarPath = strings.Replace(localVarPath, "{"+"match_key"+"}", fmt.Sprintf("%v", matchKey), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -734,9 +651,6 @@ func (a *MatchApiService) GetMatchTimeseries(ctx context.Context, matchKey strin
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.IfModifiedSince.IsSet() {
-		localVarHeaderParams["If-Modified-Since"] = parameterToString(localVarOptionals.IfModifiedSince.Value(), "")
 	}
 	if ctx != nil {
 		// API Key Authentication
@@ -800,18 +714,9 @@ func (a *MatchApiService) GetMatchTimeseries(ctx context.Context, matchKey strin
 MatchApiService
 Gets a list of matches for the given team and event.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param teamKey TBA Team Key, eg `frc254`
- * @param eventKey TBA Event Key, eg `2016nytr`
- * @param optional nil or *GetTeamEventMatchesOpts - Optional Parameters:
- * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
 @return []Match
 */
-
-type GetTeamEventMatchesOpts struct {
-	IfModifiedSince optional.String
-}
-
-func (a *MatchApiService) GetTeamEventMatches(ctx context.Context, teamKey string, eventKey string, localVarOptionals *GetTeamEventMatchesOpts) ([]Match, *http.Response, error) {
+func (a *MatchApiService) GetTeamEventMatches(ctx context.Context) ([]Match, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -823,8 +728,6 @@ func (a *MatchApiService) GetTeamEventMatches(ctx context.Context, teamKey strin
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/team/{team_key}/event/{event_key}/matches"
-	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", fmt.Sprintf("%v", teamKey), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -846,9 +749,6 @@ func (a *MatchApiService) GetTeamEventMatches(ctx context.Context, teamKey strin
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.IfModifiedSince.IsSet() {
-		localVarHeaderParams["If-Modified-Since"] = parameterToString(localVarOptionals.IfModifiedSince.Value(), "")
 	}
 	if ctx != nil {
 		// API Key Authentication
@@ -912,18 +812,9 @@ func (a *MatchApiService) GetTeamEventMatches(ctx context.Context, teamKey strin
 MatchApiService
 Gets a list of match keys for matches for the given team and event.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param teamKey TBA Team Key, eg `frc254`
- * @param eventKey TBA Event Key, eg `2016nytr`
- * @param optional nil or *GetTeamEventMatchesKeysOpts - Optional Parameters:
- * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
 @return []string
 */
-
-type GetTeamEventMatchesKeysOpts struct {
-	IfModifiedSince optional.String
-}
-
-func (a *MatchApiService) GetTeamEventMatchesKeys(ctx context.Context, teamKey string, eventKey string, localVarOptionals *GetTeamEventMatchesKeysOpts) ([]string, *http.Response, error) {
+func (a *MatchApiService) GetTeamEventMatchesKeys(ctx context.Context) ([]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -935,8 +826,6 @@ func (a *MatchApiService) GetTeamEventMatchesKeys(ctx context.Context, teamKey s
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/team/{team_key}/event/{event_key}/matches/keys"
-	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", fmt.Sprintf("%v", teamKey), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -958,9 +847,6 @@ func (a *MatchApiService) GetTeamEventMatchesKeys(ctx context.Context, teamKey s
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.IfModifiedSince.IsSet() {
-		localVarHeaderParams["If-Modified-Since"] = parameterToString(localVarOptionals.IfModifiedSince.Value(), "")
 	}
 	if ctx != nil {
 		// API Key Authentication
@@ -1024,18 +910,9 @@ func (a *MatchApiService) GetTeamEventMatchesKeys(ctx context.Context, teamKey s
 MatchApiService
 Gets a short-form list of matches for the given team and event.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param teamKey TBA Team Key, eg `frc254`
- * @param eventKey TBA Event Key, eg `2016nytr`
- * @param optional nil or *GetTeamEventMatchesSimpleOpts - Optional Parameters:
- * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
 @return []Match
 */
-
-type GetTeamEventMatchesSimpleOpts struct {
-	IfModifiedSince optional.String
-}
-
-func (a *MatchApiService) GetTeamEventMatchesSimple(ctx context.Context, teamKey string, eventKey string, localVarOptionals *GetTeamEventMatchesSimpleOpts) ([]Match, *http.Response, error) {
+func (a *MatchApiService) GetTeamEventMatchesSimple(ctx context.Context) ([]Match, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1047,8 +924,6 @@ func (a *MatchApiService) GetTeamEventMatchesSimple(ctx context.Context, teamKey
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/team/{team_key}/event/{event_key}/matches/simple"
-	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", fmt.Sprintf("%v", teamKey), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1070,9 +945,6 @@ func (a *MatchApiService) GetTeamEventMatchesSimple(ctx context.Context, teamKey
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.IfModifiedSince.IsSet() {
-		localVarHeaderParams["If-Modified-Since"] = parameterToString(localVarOptionals.IfModifiedSince.Value(), "")
 	}
 	if ctx != nil {
 		// API Key Authentication
@@ -1136,18 +1008,9 @@ func (a *MatchApiService) GetTeamEventMatchesSimple(ctx context.Context, teamKey
 MatchApiService
 Gets a list of matches for the given team and year.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param teamKey TBA Team Key, eg `frc254`
- * @param year Competition Year (or Season). Must be 4 digits.
- * @param optional nil or *GetTeamMatchesByYearOpts - Optional Parameters:
- * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
 @return []Match
 */
-
-type GetTeamMatchesByYearOpts struct {
-	IfModifiedSince optional.String
-}
-
-func (a *MatchApiService) GetTeamMatchesByYear(ctx context.Context, teamKey string, year int32, localVarOptionals *GetTeamMatchesByYearOpts) ([]Match, *http.Response, error) {
+func (a *MatchApiService) GetTeamMatchesByYear(ctx context.Context) ([]Match, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1159,8 +1022,6 @@ func (a *MatchApiService) GetTeamMatchesByYear(ctx context.Context, teamKey stri
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/team/{team_key}/matches/{year}"
-	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", fmt.Sprintf("%v", teamKey), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"year"+"}", fmt.Sprintf("%v", year), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1182,9 +1043,6 @@ func (a *MatchApiService) GetTeamMatchesByYear(ctx context.Context, teamKey stri
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.IfModifiedSince.IsSet() {
-		localVarHeaderParams["If-Modified-Since"] = parameterToString(localVarOptionals.IfModifiedSince.Value(), "")
 	}
 	if ctx != nil {
 		// API Key Authentication
@@ -1248,18 +1106,9 @@ func (a *MatchApiService) GetTeamMatchesByYear(ctx context.Context, teamKey stri
 MatchApiService
 Gets a list of match keys for matches for the given team and year.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param teamKey TBA Team Key, eg `frc254`
- * @param year Competition Year (or Season). Must be 4 digits.
- * @param optional nil or *GetTeamMatchesByYearKeysOpts - Optional Parameters:
- * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
 @return []string
 */
-
-type GetTeamMatchesByYearKeysOpts struct {
-	IfModifiedSince optional.String
-}
-
-func (a *MatchApiService) GetTeamMatchesByYearKeys(ctx context.Context, teamKey string, year int32, localVarOptionals *GetTeamMatchesByYearKeysOpts) ([]string, *http.Response, error) {
+func (a *MatchApiService) GetTeamMatchesByYearKeys(ctx context.Context) ([]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1271,8 +1120,6 @@ func (a *MatchApiService) GetTeamMatchesByYearKeys(ctx context.Context, teamKey 
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/team/{team_key}/matches/{year}/keys"
-	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", fmt.Sprintf("%v", teamKey), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"year"+"}", fmt.Sprintf("%v", year), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1294,9 +1141,6 @@ func (a *MatchApiService) GetTeamMatchesByYearKeys(ctx context.Context, teamKey 
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.IfModifiedSince.IsSet() {
-		localVarHeaderParams["If-Modified-Since"] = parameterToString(localVarOptionals.IfModifiedSince.Value(), "")
 	}
 	if ctx != nil {
 		// API Key Authentication
@@ -1360,18 +1204,9 @@ func (a *MatchApiService) GetTeamMatchesByYearKeys(ctx context.Context, teamKey 
 MatchApiService
 Gets a short-form list of matches for the given team and year.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param teamKey TBA Team Key, eg `frc254`
- * @param year Competition Year (or Season). Must be 4 digits.
- * @param optional nil or *GetTeamMatchesByYearSimpleOpts - Optional Parameters:
- * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
 @return []MatchSimple
 */
-
-type GetTeamMatchesByYearSimpleOpts struct {
-	IfModifiedSince optional.String
-}
-
-func (a *MatchApiService) GetTeamMatchesByYearSimple(ctx context.Context, teamKey string, year int32, localVarOptionals *GetTeamMatchesByYearSimpleOpts) ([]MatchSimple, *http.Response, error) {
+func (a *MatchApiService) GetTeamMatchesByYearSimple(ctx context.Context) ([]MatchSimple, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1383,8 +1218,6 @@ func (a *MatchApiService) GetTeamMatchesByYearSimple(ctx context.Context, teamKe
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/team/{team_key}/matches/{year}/simple"
-	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", fmt.Sprintf("%v", teamKey), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"year"+"}", fmt.Sprintf("%v", year), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1406,9 +1239,6 @@ func (a *MatchApiService) GetTeamMatchesByYearSimple(ctx context.Context, teamKe
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.IfModifiedSince.IsSet() {
-		localVarHeaderParams["If-Modified-Since"] = parameterToString(localVarOptionals.IfModifiedSince.Value(), "")
 	}
 	if ctx != nil {
 		// API Key Authentication

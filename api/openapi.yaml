@@ -61,16 +61,7 @@ paths:
     get:
       description: Returns API status, and TBA status information.
       operationId: getStatus
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -96,12 +87,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -110,24 +98,7 @@ paths:
     get:
       description: Gets a list of `Team` objects, paginated in groups of 500.
       operationId: getTeams
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: Page number of results to return, zero-indexed
-        explode: false
-        in: path
-        name: page_num
-        required: true
-        schema:
-          type: integer
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -155,12 +126,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -171,24 +139,7 @@ paths:
       description: Gets a list of short form `Team_Simple` objects, paginated in groups
         of 500.
       operationId: getTeamsSimple
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: Page number of results to return, zero-indexed
-        explode: false
-        in: path
-        name: page_num
-        required: true
-        schema:
-          type: integer
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -216,12 +167,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -235,24 +183,7 @@ paths:
         page will not have 500 teams, but will include the teams within that range
         of 500.)
       operationId: getTeamsKeys
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: Page number of results to return, zero-indexed
-        explode: false
-        in: path
-        name: page_num
-        required: true
-        schema:
-          type: integer
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -280,12 +211,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -296,32 +224,7 @@ paths:
       description: Gets a list of `Team` objects that competed in the given year,
         paginated in groups of 500.
       operationId: getTeamsByYear
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: Competition Year (or Season). Must be 4 digits.
-        explode: false
-        in: path
-        name: year
-        required: true
-        schema:
-          type: integer
-        style: simple
-      - description: Page number of results to return, zero-indexed
-        explode: false
-        in: path
-        name: page_num
-        required: true
-        schema:
-          type: integer
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -349,12 +252,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -365,32 +265,7 @@ paths:
       description: Gets a list of short form `Team_Simple` objects that competed in
         the given year, paginated in groups of 500.
       operationId: getTeamsByYearSimple
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: Competition Year (or Season). Must be 4 digits.
-        explode: false
-        in: path
-        name: year
-        required: true
-        schema:
-          type: integer
-        style: simple
-      - description: Page number of results to return, zero-indexed
-        explode: false
-        in: path
-        name: page_num
-        required: true
-        schema:
-          type: integer
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -418,12 +293,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -434,32 +306,7 @@ paths:
       description: Gets a list Team Keys that competed in the given year, paginated
         in groups of 500.
       operationId: getTeamsByYearKeys
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: Competition Year (or Season). Must be 4 digits.
-        explode: false
-        in: path
-        name: year
-        required: true
-        schema:
-          type: integer
-        style: simple
-      - description: Page number of results to return, zero-indexed
-        explode: false
-        in: path
-        name: page_num
-        required: true
-        schema:
-          type: integer
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -488,12 +335,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -503,24 +347,7 @@ paths:
     get:
       description: Gets a `Team` object for the team referenced by the given key.
       operationId: getTeam
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -546,12 +373,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -561,24 +385,7 @@ paths:
       description: Gets a `Team_Simple` object for the team referenced by the given
         key.
       operationId: getTeamSimple
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -604,12 +411,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -619,24 +423,7 @@ paths:
       description: Gets a list of years in which the team participated in at least
         one competition.
       operationId: getTeamYearsParticipated
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -664,12 +451,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -679,24 +463,7 @@ paths:
       description: Gets an array of districts representing each year the team was
         in a district. Will return an empty array if the team was never in a district.
       operationId: getTeamDistricts
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -724,12 +491,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -741,24 +505,7 @@ paths:
         name was provided. Will return an empty array if the team has never named
         a robot.
       operationId: getTeamRobots
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -786,12 +533,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -800,24 +544,7 @@ paths:
     get:
       description: Gets a list of all events this team has competed at.
       operationId: getTeamEvents
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -845,12 +572,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -860,24 +584,7 @@ paths:
     get:
       description: Gets a short-form list of all events this team has competed at.
       operationId: getTeamEventsSimple
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -905,12 +612,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -921,24 +625,7 @@ paths:
       description: Gets a list of the event keys for all events this team has competed
         at.
       operationId: getTeamEventsKeys
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -967,12 +654,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -982,32 +666,7 @@ paths:
     get:
       description: Gets a list of events this team has competed at in the given year.
       operationId: getTeamEventsByYear
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: Competition Year (or Season). Must be 4 digits.
-        explode: false
-        in: path
-        name: year
-        required: true
-        schema:
-          type: integer
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -1035,12 +694,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1051,32 +707,7 @@ paths:
       description: Gets a short-form list of events this team has competed at in the
         given year.
       operationId: getTeamEventsByYearSimple
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: Competition Year (or Season). Must be 4 digits.
-        explode: false
-        in: path
-        name: year
-        required: true
-        schema:
-          type: integer
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -1104,12 +735,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1120,32 +748,7 @@ paths:
       description: Gets a list of the event keys for events this team has competed
         at in the given year.
       operationId: getTeamEventsByYearKeys
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: Competition Year (or Season). Must be 4 digits.
-        explode: false
-        in: path
-        name: year
-        required: true
-        schema:
-          type: integer
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -1174,12 +777,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1190,32 +790,7 @@ paths:
       description: Gets a key-value list of the event statuses for events this team
         has competed at in the given year.
       operationId: getTeamEventsStatusesByYear
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: Competition Year (or Season). Must be 4 digits.
-        explode: false
-        in: path
-        name: year
-        required: true
-        schema:
-          type: integer
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -1245,12 +820,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1261,32 +833,7 @@ paths:
     get:
       description: Gets a list of matches for the given team and event.
       operationId: getTeamEventMatches
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: TBA Event Key, eg `2016nytr`
-        explode: false
-        in: path
-        name: event_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -1314,12 +861,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1330,32 +874,7 @@ paths:
     get:
       description: Gets a short-form list of matches for the given team and event.
       operationId: getTeamEventMatchesSimple
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: TBA Event Key, eg `2016nytr`
-        explode: false
-        in: path
-        name: event_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -1383,12 +902,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1399,32 +915,7 @@ paths:
     get:
       description: Gets a list of match keys for matches for the given team and event.
       operationId: getTeamEventMatchesKeys
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: TBA Event Key, eg `2016nytr`
-        explode: false
-        in: path
-        name: event_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -1453,12 +944,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1469,32 +957,7 @@ paths:
     get:
       description: Gets a list of awards the given team won at the given event.
       operationId: getTeamEventAwards
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: TBA Event Key, eg `2016nytr`
-        explode: false
-        in: path
-        name: event_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -1522,12 +985,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1537,32 +997,7 @@ paths:
     get:
       description: Gets the competition rank and status of the team at the given event.
       operationId: getTeamEventStatus
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: TBA Event Key, eg `2016nytr`
-        explode: false
-        in: path
-        name: event_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -1588,12 +1023,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1603,24 +1035,7 @@ paths:
     get:
       description: Gets a list of awards the given team has won.
       operationId: getTeamAwards
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -1648,12 +1063,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1662,32 +1074,7 @@ paths:
     get:
       description: Gets a list of awards the given team has won in a given year.
       operationId: getTeamAwardsByYear
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: Competition Year (or Season). Must be 4 digits.
-        explode: false
-        in: path
-        name: year
-        required: true
-        schema:
-          type: integer
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -1715,12 +1102,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1729,32 +1113,7 @@ paths:
     get:
       description: Gets a list of matches for the given team and year.
       operationId: getTeamMatchesByYear
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: Competition Year (or Season). Must be 4 digits.
-        explode: false
-        in: path
-        name: year
-        required: true
-        schema:
-          type: integer
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -1782,12 +1141,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1797,32 +1153,7 @@ paths:
     get:
       description: Gets a short-form list of matches for the given team and year.
       operationId: getTeamMatchesByYearSimple
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: Competition Year (or Season). Must be 4 digits.
-        explode: false
-        in: path
-        name: year
-        required: true
-        schema:
-          type: integer
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -1850,12 +1181,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1865,32 +1193,7 @@ paths:
     get:
       description: Gets a list of match keys for matches for the given team and year.
       operationId: getTeamMatchesByYearKeys
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: Competition Year (or Season). Must be 4 digits.
-        explode: false
-        in: path
-        name: year
-        required: true
-        schema:
-          type: integer
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -1919,12 +1222,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1935,32 +1235,7 @@ paths:
       description: Gets a list of Media (videos / pictures) for the given team and
         year.
       operationId: getTeamMediaByYear
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: Competition Year (or Season). Must be 4 digits.
-        explode: false
-        in: path
-        name: year
-        required: true
-        schema:
-          type: integer
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -1988,12 +1263,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2003,32 +1275,7 @@ paths:
       description: Gets a list of Media (videos / pictures) for the given team and
         tag.
       operationId: getTeamMediaByTag
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: Media Tag which describes the Media.
-        explode: false
-        in: path
-        name: media_tag
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -2056,12 +1303,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2071,40 +1315,7 @@ paths:
       description: Gets a list of Media (videos / pictures) for the given team, tag
         and year.
       operationId: getTeamMediaByTagYear
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: Media Tag which describes the Media.
-        explode: false
-        in: path
-        name: media_tag
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: Competition Year (or Season). Must be 4 digits.
-        explode: false
-        in: path
-        name: year
-        required: true
-        schema:
-          type: integer
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -2132,12 +1343,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2146,24 +1354,7 @@ paths:
     get:
       description: Gets a list of Media (social media) for the given team.
       operationId: getTeamSocialMedia
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Team Key, eg `frc254`
-        explode: false
-        in: path
-        name: team_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -2191,12 +1382,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2205,24 +1393,7 @@ paths:
     get:
       description: Gets a list of events in the given year.
       operationId: getEventsByYear
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: Competition Year (or Season). Must be 4 digits.
-        explode: false
-        in: path
-        name: year
-        required: true
-        schema:
-          type: integer
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -2250,12 +1421,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2265,24 +1433,7 @@ paths:
     get:
       description: Gets a short-form list of events in the given year.
       operationId: getEventsByYearSimple
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: Competition Year (or Season). Must be 4 digits.
-        explode: false
-        in: path
-        name: year
-        required: true
-        schema:
-          type: integer
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -2310,12 +1461,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2325,24 +1473,7 @@ paths:
     get:
       description: Gets a list of event keys in the given year.
       operationId: getEventsByYearKeys
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: Competition Year (or Season). Must be 4 digits.
-        explode: false
-        in: path
-        name: year
-        required: true
-        schema:
-          type: integer
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -2371,12 +1502,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2386,24 +1514,7 @@ paths:
     get:
       description: Gets an Event.
       operationId: getEvent
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Event Key, eg `2016nytr`
-        explode: false
-        in: path
-        name: event_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -2429,12 +1540,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2443,24 +1551,7 @@ paths:
     get:
       description: Gets a short-form Event.
       operationId: getEventSimple
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Event Key, eg `2016nytr`
-        explode: false
-        in: path
-        name: event_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -2486,12 +1577,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2500,24 +1588,7 @@ paths:
     get:
       description: Gets a list of Elimination Alliances for the given Event.
       operationId: getEventAlliances
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Event Key, eg `2016nytr`
-        explode: false
-        in: path
-        name: event_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -2545,12 +1616,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2559,24 +1627,7 @@ paths:
     get:
       description: Gets a set of Event-specific insights for the given Event.
       operationId: getEventInsights
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Event Key, eg `2016nytr`
-        explode: false
-        in: path
-        name: event_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -2602,12 +1653,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2617,24 +1665,7 @@ paths:
       description: Gets a set of Event OPRs (including OPR, DPR, and CCWM) for the
         given Event.
       operationId: getEventOPRs
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Event Key, eg `2016nytr`
-        explode: false
-        in: path
-        name: event_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -2660,12 +1691,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2676,24 +1704,7 @@ paths:
         Contains year-specific information. *WARNING* This endpoint is currently under
         development and may change at any time.
       operationId: getEventPredictions
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Event Key, eg `2016nytr`
-        explode: false
-        in: path
-        name: event_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -2719,12 +1730,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2733,24 +1741,7 @@ paths:
     get:
       description: Gets a list of team rankings for the Event.
       operationId: getEventRankings
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Event Key, eg `2016nytr`
-        explode: false
-        in: path
-        name: event_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -2776,12 +1767,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2790,24 +1778,7 @@ paths:
     get:
       description: Gets a list of team rankings for the Event.
       operationId: getEventDistrictPoints
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Event Key, eg `2016nytr`
-        explode: false
-        in: path
-        name: event_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -2833,12 +1804,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2848,24 +1816,7 @@ paths:
     get:
       description: Gets a list of `Team` objects that competed in the given event.
       operationId: getEventTeams
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Event Key, eg `2016nytr`
-        explode: false
-        in: path
-        name: event_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -2893,12 +1844,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2910,24 +1858,7 @@ paths:
       description: Gets a short-form list of `Team` objects that competed in the given
         event.
       operationId: getEventTeamsSimple
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Event Key, eg `2016nytr`
-        explode: false
-        in: path
-        name: event_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -2955,12 +1886,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2971,24 +1899,7 @@ paths:
     get:
       description: Gets a list of `Team` keys that competed in the given event.
       operationId: getEventTeamsKeys
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Event Key, eg `2016nytr`
-        explode: false
-        in: path
-        name: event_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -3017,12 +1928,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3034,24 +1942,7 @@ paths:
       description: Gets a key-value list of the event statuses for teams competing
         at the given event.
       operationId: getEventTeamsStatuses
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Event Key, eg `2016nytr`
-        explode: false
-        in: path
-        name: event_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -3081,12 +1972,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3097,24 +1985,7 @@ paths:
     get:
       description: Gets a list of matches for the given event.
       operationId: getEventMatches
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Event Key, eg `2016nytr`
-        explode: false
-        in: path
-        name: event_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -3142,12 +2013,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3157,24 +2025,7 @@ paths:
     get:
       description: Gets a short-form list of matches for the given event.
       operationId: getEventMatchesSimple
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Event Key, eg `2016nytr`
-        explode: false
-        in: path
-        name: event_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -3202,12 +2053,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3217,24 +2065,7 @@ paths:
     get:
       description: Gets a list of match keys for the given event.
       operationId: getEventMatchesKeys
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Event Key, eg `2016nytr`
-        explode: false
-        in: path
-        name: event_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -3263,12 +2094,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3281,24 +2109,7 @@ paths:
         *WARNING:* This is *not* official data, and is subject to a significant possibility of error, or missing data. Do not rely on this data for any purpose. In fact, pretend we made it up.
         *WARNING:* This endpoint and corresponding data models are under *active development* and may change at any time, including in breaking ways.
       operationId: getEventMatchTimeseries
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Event Key, eg `2016nytr`
-        explode: false
-        in: path
-        name: event_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -3327,12 +2138,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3342,24 +2150,7 @@ paths:
     get:
       description: Gets a list of awards from the given event.
       operationId: getEventAwards
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Event Key, eg `2016nytr`
-        explode: false
-        in: path
-        name: event_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -3387,12 +2178,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3401,24 +2189,7 @@ paths:
     get:
       description: Gets a `Match` object for the given match key.
       operationId: getMatch
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Match Key, eg `2016nytr_qm1`
-        explode: false
-        in: path
-        name: match_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -3444,12 +2215,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3458,24 +2226,7 @@ paths:
     get:
       description: Gets a short-form `Match` object for the given match key.
       operationId: getMatchSimple
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Match Key, eg `2016nytr_qm1`
-        explode: false
-        in: path
-        name: match_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -3501,12 +2252,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3518,24 +2266,7 @@ paths:
         *WARNING:* This is *not* official data, and is subject to a significant possibility of error, or missing data. Do not rely on this data for any purpose. In fact, pretend we made it up.
         *WARNING:* This endpoint and corresponding data models are under *active development* and may change at any time, including in breaking ways.
       operationId: getMatchTimeseries
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA Match Key, eg `2016nytr_qm1`
-        explode: false
-        in: path
-        name: match_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -3564,12 +2295,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3579,24 +2307,7 @@ paths:
       description: Gets a list of districts and their corresponding district key,
         for the given year.
       operationId: getDistrictsByYear
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: Competition Year (or Season). Must be 4 digits.
-        explode: false
-        in: path
-        name: year
-        required: true
-        schema:
-          type: integer
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -3624,12 +2335,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3638,24 +2346,7 @@ paths:
     get:
       description: Gets a list of events in the given district.
       operationId: getDistrictEvents
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA District Key, eg `2016fim`
-        explode: false
-        in: path
-        name: district_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -3683,12 +2374,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3700,15 +2388,6 @@ paths:
       description: Gets a short-form list of events in the given district.
       operationId: getDistrictEventsSimple
       parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
       - description: TBA District Key, eg `2016fim`
         explode: false
         in: path
@@ -3744,12 +2423,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3760,24 +2436,7 @@ paths:
     get:
       description: Gets a list of event keys for events in the given district.
       operationId: getDistrictEventsKeys
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA District Key, eg `2016fim`
-        explode: false
-        in: path
-        name: district_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -3806,12 +2465,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3823,24 +2479,7 @@ paths:
       description: Gets a list of `Team` objects that competed in events in the given
         district.
       operationId: getDistrictTeams
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA District Key, eg `2016fim`
-        explode: false
-        in: path
-        name: district_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -3868,12 +2507,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3885,24 +2521,7 @@ paths:
       description: Gets a short-form list of `Team` objects that competed in events
         in the given district.
       operationId: getDistrictTeamsSimple
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA District Key, eg `2016fim`
-        explode: false
-        in: path
-        name: district_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -3930,12 +2549,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3947,24 +2563,7 @@ paths:
       description: Gets a list of `Team` objects that competed in events in the given
         district.
       operationId: getDistrictTeamsKeys
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA District Key, eg `2016fim`
-        explode: false
-        in: path
-        name: district_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -3993,12 +2592,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -4009,24 +2605,7 @@ paths:
     get:
       description: Gets a list of team district rankings for the given district.
       operationId: getDistrictRankings
-      parameters:
-      - description: Value of the `Last-Modified` header in the most recently cached
-          response by the client.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: TBA District Key, eg `2016fim`
-        explode: false
-        in: path
-        name: district_key
-        required: true
-        schema:
-          type: string
-        style: simple
+      parameters: []
       responses:
         200:
           content:
@@ -4054,12 +2633,9 @@ paths:
                 type: string
               style: simple
         304:
-          content: {}
-          description: Not Modified - Use Local Cached Value
+          $ref: '#/responses/NotModified'
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -4143,10 +2719,8 @@ components:
       style: simple
   responses:
     Unauthorized:
-      content: {}
-      description: Not Authorized - No TBA v3 API Key was provided, or it is not valid.
+      $ref: '#/responses/Unauthorized'
     NotModified:
-      content: {}
       description: Not Modified - Use Local Cached Value
   schemas:
     Team_Event_Status_rank:

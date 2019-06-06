@@ -10,27 +10,14 @@ Method | HTTP request | Description
 
 ## GetStatus
 
-> ApiStatus GetStatus(ctx, optional)
+> ApiStatus GetStatus(ctx, )
 
 
 Returns API status, and TBA status information.
 
 ### Required Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***GetStatusOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a GetStatusOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ifModifiedSince** | **optional.String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | 
+This endpoint does not need any parameter.
 
 ### Return type
 
