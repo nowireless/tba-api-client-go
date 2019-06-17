@@ -62,7 +62,7 @@ func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		BasePath:      "https://www.thebluealliance.com/api/v3",
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "OpenAPI-Generator//go",
+		UserAgent:     "OpenAPI-Generator/3.5/go",
 	}
 	return cfg
 }
