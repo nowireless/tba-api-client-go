@@ -64,10 +64,13 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -81,20 +84,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -106,16 +110,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: Page number of results to return, zero-indexed
+        explode: false
         in: path
         name: page_num
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         200:
           content:
@@ -131,20 +140,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -158,16 +168,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: Page number of results to return, zero-indexed
+        explode: false
         in: path
         name: page_num
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         200:
           content:
@@ -183,20 +198,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -213,16 +229,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: Page number of results to return, zero-indexed
+        explode: false
         in: path
         name: page_num
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         200:
           content:
@@ -238,20 +259,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -265,22 +287,29 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
         in: path
         name: year
         required: true
         schema:
           type: integer
+        style: simple
       - description: Page number of results to return, zero-indexed
+        explode: false
         in: path
         name: page_num
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         200:
           content:
@@ -296,20 +325,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -323,22 +353,29 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
         in: path
         name: year
         required: true
         schema:
           type: integer
+        style: simple
       - description: Page number of results to return, zero-indexed
+        explode: false
         in: path
         name: page_num
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         200:
           content:
@@ -354,20 +391,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -381,22 +419,29 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
         in: path
         name: year
         required: true
         schema:
           type: integer
+        style: simple
       - description: Page number of results to return, zero-indexed
+        explode: false
         in: path
         name: page_num
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         200:
           content:
@@ -413,20 +458,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -439,16 +485,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -462,20 +513,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -488,16 +540,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -511,20 +568,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -537,16 +595,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -562,20 +625,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -588,16 +652,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -613,20 +682,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -641,16 +711,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -666,20 +741,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -691,16 +767,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -716,20 +797,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -742,16 +824,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -767,20 +854,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -794,16 +882,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -820,20 +913,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -846,22 +940,29 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
         in: path
         name: year
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         200:
           content:
@@ -877,20 +978,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -904,22 +1006,29 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
         in: path
         name: year
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         200:
           content:
@@ -935,20 +1044,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -962,22 +1072,29 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
         in: path
         name: year
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         200:
           content:
@@ -994,20 +1111,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1021,22 +1139,29 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
         in: path
         name: year
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         200:
           content:
@@ -1054,20 +1179,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1081,22 +1207,29 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       - description: TBA Event Key, eg `2016nytr`
+        explode: false
         in: path
         name: event_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -1112,20 +1245,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1139,22 +1273,29 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       - description: TBA Event Key, eg `2016nytr`
+        explode: false
         in: path
         name: event_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -1170,20 +1311,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1197,22 +1339,29 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       - description: TBA Event Key, eg `2016nytr`
+        explode: false
         in: path
         name: event_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -1229,20 +1378,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1256,22 +1406,29 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       - description: TBA Event Key, eg `2016nytr`
+        explode: false
         in: path
         name: event_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -1287,20 +1444,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1313,22 +1471,29 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       - description: TBA Event Key, eg `2016nytr`
+        explode: false
         in: path
         name: event_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -1342,20 +1507,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1368,16 +1534,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -1393,20 +1564,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1418,22 +1590,29 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
         in: path
         name: year
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         200:
           content:
@@ -1449,20 +1628,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1474,22 +1654,29 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
         in: path
         name: year
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         200:
           content:
@@ -1505,20 +1692,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1531,22 +1719,29 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
         in: path
         name: year
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         200:
           content:
@@ -1562,20 +1757,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1588,22 +1784,29 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
         in: path
         name: year
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         200:
           content:
@@ -1620,20 +1823,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1647,22 +1851,29 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
         in: path
         name: year
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         200:
           content:
@@ -1678,20 +1889,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1704,22 +1916,29 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       - description: Media Tag which describes the Media.
+        explode: false
         in: path
         name: media_tag
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -1735,20 +1954,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1761,28 +1981,37 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       - description: Media Tag which describes the Media.
+        explode: false
         in: path
         name: media_tag
         required: true
         schema:
           type: string
+        style: simple
       - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
         in: path
         name: year
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         200:
           content:
@@ -1798,20 +2027,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1823,16 +2053,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Team Key, eg `frc254`
+        explode: false
         in: path
         name: team_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -1848,20 +2083,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1873,16 +2109,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
         in: path
         name: year
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         200:
           content:
@@ -1898,20 +2139,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1924,16 +2166,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
         in: path
         name: year
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         200:
           content:
@@ -1949,20 +2196,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -1975,16 +2223,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
         in: path
         name: year
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         200:
           content:
@@ -2001,20 +2254,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2027,16 +2281,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Event Key, eg `2016nytr`
+        explode: false
         in: path
         name: event_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -2050,20 +2309,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2075,16 +2335,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Event Key, eg `2016nytr`
+        explode: false
         in: path
         name: event_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -2098,20 +2363,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2123,16 +2389,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Event Key, eg `2016nytr`
+        explode: false
         in: path
         name: event_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -2148,20 +2419,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2173,16 +2445,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Event Key, eg `2016nytr`
+        explode: false
         in: path
         name: event_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -2196,20 +2473,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2222,16 +2500,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Event Key, eg `2016nytr`
+        explode: false
         in: path
         name: event_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -2245,20 +2528,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2272,16 +2556,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Event Key, eg `2016nytr`
+        explode: false
         in: path
         name: event_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -2295,20 +2584,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2320,16 +2610,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Event Key, eg `2016nytr`
+        explode: false
         in: path
         name: event_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -2343,20 +2638,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2368,16 +2664,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Event Key, eg `2016nytr`
+        explode: false
         in: path
         name: event_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -2391,20 +2692,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2417,16 +2719,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Event Key, eg `2016nytr`
+        explode: false
         in: path
         name: event_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -2442,20 +2749,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2470,16 +2778,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Event Key, eg `2016nytr`
+        explode: false
         in: path
         name: event_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -2495,20 +2808,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2522,16 +2836,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Event Key, eg `2016nytr`
+        explode: false
         in: path
         name: event_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -2548,20 +2867,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2576,16 +2896,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Event Key, eg `2016nytr`
+        explode: false
         in: path
         name: event_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -2603,20 +2928,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2630,16 +2956,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Event Key, eg `2016nytr`
+        explode: false
         in: path
         name: event_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -2655,20 +2986,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2681,16 +3013,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Event Key, eg `2016nytr`
+        explode: false
         in: path
         name: event_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -2706,20 +3043,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2732,16 +3070,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Event Key, eg `2016nytr`
+        explode: false
         in: path
         name: event_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -2758,20 +3101,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2787,16 +3131,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Event Key, eg `2016nytr`
+        explode: false
         in: path
         name: event_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -2813,20 +3162,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2839,16 +3189,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Event Key, eg `2016nytr`
+        explode: false
         in: path
         name: event_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -2864,20 +3219,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2889,16 +3245,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Match Key, eg `2016nytr_qm1`
+        explode: false
         in: path
         name: match_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -2912,20 +3273,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2937,16 +3299,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Match Key, eg `2016nytr_qm1`
+        explode: false
         in: path
         name: match_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -2960,20 +3327,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -2988,16 +3356,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA Match Key, eg `2016nytr_qm1`
+        explode: false
         in: path
         name: match_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -3014,20 +3387,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3040,16 +3414,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: Competition Year (or Season). Must be 4 digits.
+        explode: false
         in: path
         name: year
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         200:
           content:
@@ -3065,20 +3444,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3090,16 +3470,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA District Key, eg `2016fim`
+        explode: false
         in: path
         name: district_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -3115,20 +3500,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3142,16 +3528,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA District Key, eg `2016fim`
+        explode: false
         in: path
         name: district_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -3167,20 +3558,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3194,16 +3586,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA District Key, eg `2016fim`
+        explode: false
         in: path
         name: district_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -3220,20 +3617,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3248,16 +3646,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA District Key, eg `2016fim`
+        explode: false
         in: path
         name: district_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -3273,20 +3676,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3301,16 +3705,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA District Key, eg `2016fim`
+        explode: false
         in: path
         name: district_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -3326,20 +3735,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3354,16 +3764,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA District Key, eg `2016fim`
+        explode: false
         in: path
         name: district_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -3380,20 +3795,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3407,16 +3823,21 @@ paths:
       parameters:
       - description: Value of the `Last-Modified` header in the most recently cached
           response by the client.
+        explode: false
         in: header
         name: If-Modified-Since
+        required: false
         schema:
           type: string
+        style: simple
       - description: TBA District Key, eg `2016fim`
+        explode: false
         in: path
         name: district_key
         required: true
         schema:
           type: string
+        style: simple
       responses:
         200:
           content:
@@ -3432,20 +3853,21 @@ paths:
                 value, contains the number of seconds the result should be considered
                 valid for. During this time subsequent calls should return from the
                 local cache directly.
+              explode: false
               schema:
                 type: string
+              style: simple
             Last-Modified:
               description: Indicates the date and time the data returned was last
                 updated. Used by clients in the `If-Modified-Since` request header.
+              explode: false
               schema:
                 type: string
+              style: simple
         304:
-          content: {}
           description: Not Modified - Use Local Cached Value
         401:
-          content: {}
-          description: Not Authorized - No TBA v3 API Key was provided, or it is not
-            valid.
+          $ref: '#/components/responses/Unauthorized'
       security:
       - apiKey: []
       tags:
@@ -3454,69 +3876,84 @@ paths:
       - list
 components:
   parameters:
-    If-Modified-Since:
-      description: Value of the `Last-Modified` header in the most recently cached
-        response by the client.
-      in: header
-      name: If-Modified-Since
-      schema:
-        type: string
-    page_num:
-      description: Page number of results to return, zero-indexed
-      in: path
-      name: page_num
-      required: true
-      schema:
-        type: integer
     year:
       description: Competition Year (or Season). Must be 4 digits.
+      explode: false
       in: path
       name: year
       required: true
       schema:
         type: integer
+      style: simple
     media_tag:
       description: Media Tag which describes the Media.
+      explode: false
       in: path
       name: media_tag
       required: true
       schema:
         type: string
-    team_key:
-      description: TBA Team Key, eg `frc254`
-      in: path
-      name: team_key
-      required: true
+      style: simple
+    If-Modified-Since:
+      description: Value of the `Last-Modified` header in the most recently cached
+        response by the client.
+      explode: false
+      in: header
+      name: If-Modified-Since
+      required: false
       schema:
         type: string
-    event_key:
-      description: TBA Event Key, eg `2016nytr`
+      style: simple
+    page_num:
+      description: Page number of results to return, zero-indexed
+      explode: false
       in: path
-      name: event_key
+      name: page_num
       required: true
       schema:
-        type: string
+        type: integer
+      style: simple
     match_key:
       description: TBA Match Key, eg `2016nytr_qm1`
+      explode: false
       in: path
       name: match_key
       required: true
       schema:
         type: string
+      style: simple
     district_key:
       description: TBA District Key, eg `2016fim`
+      explode: false
       in: path
       name: district_key
       required: true
       schema:
         type: string
+      style: simple
+    team_key:
+      description: TBA Team Key, eg `frc254`
+      explode: false
+      in: path
+      name: team_key
+      required: true
+      schema:
+        type: string
+      style: simple
+    event_key:
+      description: TBA Event Key, eg `2016nytr`
+      explode: false
+      in: path
+      name: event_key
+      required: true
+      schema:
+        type: string
+      style: simple
   responses:
-    NotModified:
-      content: {}
-      description: Not Modified - Use Local Cached Value
     Unauthorized:
-      content: {}
-      description: Not Authorized - No TBA v3 API Key was provided, or it is not valid.
+      $ref: '#/components/responses/Unauthorized'
+    NotModified:
+      description: Not Modified - Use Local Cached Value
   schemas:
     API_Status:
       example:
@@ -4901,36 +5338,6 @@ components:
       description: JSON Object containing prediction information for the event. Contains
         year-specific information and is subject to change.
       type: object
-    Webcast:
-      example:
-        file: file
-        channel: channel
-        type: youtube
-      properties:
-        type:
-          description: Type of webcast, typically descriptive of the streaming provider.
-          enum:
-          - youtube
-          - twitch
-          - ustream
-          - iframe
-          - html5
-          - rtmp
-          - livestream
-          type: string
-        channel:
-          description: Type specific channel information. May be the YouTube stream,
-            or Twitch channel name. In the case of iframe types, contains HTML to
-            embed the stream in an HTML iframe.
-          type: string
-        file:
-          description: File identification as may be required for some types. May
-            be null.
-          type: string
-      required:
-      - channel
-      - type
-      type: object
     Match_Simple:
       example:
         predicted_time: 5
@@ -6001,6 +6408,36 @@ components:
       - losses
       - ties
       - wins
+      type: object
+    Webcast:
+      example:
+        file: file
+        channel: channel
+        type: youtube
+      properties:
+        type:
+          description: Type of webcast, typically descriptive of the streaming provider.
+          enum:
+          - youtube
+          - twitch
+          - ustream
+          - iframe
+          - html5
+          - rtmp
+          - livestream
+          type: string
+        channel:
+          description: Type specific channel information. May be the YouTube stream,
+            or Twitch channel name. In the case of iframe types, contains HTML to
+            embed the stream in an HTML iframe.
+          type: string
+        file:
+          description: File identification as may be required for some types. May
+            be null.
+          type: string
+      required:
+      - channel
+      - type
       type: object
     Team_Event_Status_rank_ranking:
       example:
