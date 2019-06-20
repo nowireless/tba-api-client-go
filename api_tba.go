@@ -14,7 +14,6 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"github.com/antihax/optional"
 )
 
@@ -40,7 +39,7 @@ type GetStatusOpts struct {
 
 func (a *TBAApiService) GetStatus(ctx context.Context, localVarOptionals *GetStatusOpts) (ApiStatus, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string

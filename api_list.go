@@ -14,8 +14,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"fmt"
+	"strings"
 	"github.com/antihax/optional"
 )
 
@@ -42,7 +42,7 @@ type GetDistrictEventsOpts struct {
 
 func (a *ListApiService) GetDistrictEvents(ctx context.Context, districtKey string, localVarOptionals *GetDistrictEventsOpts) ([]Event, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -152,7 +152,7 @@ type GetDistrictEventsKeysOpts struct {
 
 func (a *ListApiService) GetDistrictEventsKeys(ctx context.Context, districtKey string, localVarOptionals *GetDistrictEventsKeysOpts) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -262,7 +262,7 @@ type GetDistrictEventsSimpleOpts struct {
 
 func (a *ListApiService) GetDistrictEventsSimple(ctx context.Context, districtKey string, localVarOptionals *GetDistrictEventsSimpleOpts) ([]EventSimple, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -372,7 +372,7 @@ type GetDistrictRankingsOpts struct {
 
 func (a *ListApiService) GetDistrictRankings(ctx context.Context, districtKey string, localVarOptionals *GetDistrictRankingsOpts) ([]DistrictRanking, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -482,7 +482,7 @@ type GetDistrictTeamsOpts struct {
 
 func (a *ListApiService) GetDistrictTeams(ctx context.Context, districtKey string, localVarOptionals *GetDistrictTeamsOpts) ([]Team, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -592,7 +592,7 @@ type GetDistrictTeamsKeysOpts struct {
 
 func (a *ListApiService) GetDistrictTeamsKeys(ctx context.Context, districtKey string, localVarOptionals *GetDistrictTeamsKeysOpts) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -702,7 +702,7 @@ type GetDistrictTeamsSimpleOpts struct {
 
 func (a *ListApiService) GetDistrictTeamsSimple(ctx context.Context, districtKey string, localVarOptionals *GetDistrictTeamsSimpleOpts) ([]TeamSimple, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -812,7 +812,7 @@ type GetEventTeamsOpts struct {
 
 func (a *ListApiService) GetEventTeams(ctx context.Context, eventKey string, localVarOptionals *GetEventTeamsOpts) ([]Team, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -922,7 +922,7 @@ type GetEventTeamsKeysOpts struct {
 
 func (a *ListApiService) GetEventTeamsKeys(ctx context.Context, eventKey string, localVarOptionals *GetEventTeamsKeysOpts) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1032,7 +1032,7 @@ type GetEventTeamsSimpleOpts struct {
 
 func (a *ListApiService) GetEventTeamsSimple(ctx context.Context, eventKey string, localVarOptionals *GetEventTeamsSimpleOpts) ([]TeamSimple, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1142,7 +1142,7 @@ type GetEventTeamsStatusesOpts struct {
 
 func (a *ListApiService) GetEventTeamsStatuses(ctx context.Context, eventKey string, localVarOptionals *GetEventTeamsStatusesOpts) (map[string]TeamEventStatus, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1252,7 +1252,7 @@ type GetEventsByYearOpts struct {
 
 func (a *ListApiService) GetEventsByYear(ctx context.Context, year int32, localVarOptionals *GetEventsByYearOpts) ([]Event, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1362,7 +1362,7 @@ type GetEventsByYearKeysOpts struct {
 
 func (a *ListApiService) GetEventsByYearKeys(ctx context.Context, year int32, localVarOptionals *GetEventsByYearKeysOpts) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1472,7 +1472,7 @@ type GetEventsByYearSimpleOpts struct {
 
 func (a *ListApiService) GetEventsByYearSimple(ctx context.Context, year int32, localVarOptionals *GetEventsByYearSimpleOpts) ([]EventSimple, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1583,7 +1583,7 @@ type GetTeamEventsStatusesByYearOpts struct {
 
 func (a *ListApiService) GetTeamEventsStatusesByYear(ctx context.Context, teamKey string, year int32, localVarOptionals *GetTeamEventsStatusesByYearOpts) (map[string]TeamEventStatus, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1694,7 +1694,7 @@ type GetTeamsOpts struct {
 
 func (a *ListApiService) GetTeams(ctx context.Context, pageNum int32, localVarOptionals *GetTeamsOpts) ([]Team, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1805,7 +1805,7 @@ type GetTeamsByYearOpts struct {
 
 func (a *ListApiService) GetTeamsByYear(ctx context.Context, year int32, pageNum int32, localVarOptionals *GetTeamsByYearOpts) ([]Team, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1917,7 +1917,7 @@ type GetTeamsByYearKeysOpts struct {
 
 func (a *ListApiService) GetTeamsByYearKeys(ctx context.Context, year int32, pageNum int32, localVarOptionals *GetTeamsByYearKeysOpts) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2029,7 +2029,7 @@ type GetTeamsByYearSimpleOpts struct {
 
 func (a *ListApiService) GetTeamsByYearSimple(ctx context.Context, year int32, pageNum int32, localVarOptionals *GetTeamsByYearSimpleOpts) ([]TeamSimple, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2140,7 +2140,7 @@ type GetTeamsKeysOpts struct {
 
 func (a *ListApiService) GetTeamsKeys(ctx context.Context, pageNum int32, localVarOptionals *GetTeamsKeysOpts) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2250,7 +2250,7 @@ type GetTeamsSimpleOpts struct {
 
 func (a *ListApiService) GetTeamsSimple(ctx context.Context, pageNum int32, localVarOptionals *GetTeamsSimpleOpts) ([]TeamSimple, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string

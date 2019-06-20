@@ -14,8 +14,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"fmt"
+	"strings"
 	"github.com/antihax/optional"
 )
 
@@ -42,7 +42,7 @@ type GetDistrictEventsOpts struct {
 
 func (a *DistrictApiService) GetDistrictEvents(ctx context.Context, districtKey string, localVarOptionals *GetDistrictEventsOpts) ([]Event, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -152,7 +152,7 @@ type GetDistrictEventsKeysOpts struct {
 
 func (a *DistrictApiService) GetDistrictEventsKeys(ctx context.Context, districtKey string, localVarOptionals *GetDistrictEventsKeysOpts) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -262,7 +262,7 @@ type GetDistrictEventsSimpleOpts struct {
 
 func (a *DistrictApiService) GetDistrictEventsSimple(ctx context.Context, districtKey string, localVarOptionals *GetDistrictEventsSimpleOpts) ([]EventSimple, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -372,7 +372,7 @@ type GetDistrictRankingsOpts struct {
 
 func (a *DistrictApiService) GetDistrictRankings(ctx context.Context, districtKey string, localVarOptionals *GetDistrictRankingsOpts) ([]DistrictRanking, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -482,7 +482,7 @@ type GetDistrictTeamsOpts struct {
 
 func (a *DistrictApiService) GetDistrictTeams(ctx context.Context, districtKey string, localVarOptionals *GetDistrictTeamsOpts) ([]Team, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -592,7 +592,7 @@ type GetDistrictTeamsKeysOpts struct {
 
 func (a *DistrictApiService) GetDistrictTeamsKeys(ctx context.Context, districtKey string, localVarOptionals *GetDistrictTeamsKeysOpts) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -702,7 +702,7 @@ type GetDistrictTeamsSimpleOpts struct {
 
 func (a *DistrictApiService) GetDistrictTeamsSimple(ctx context.Context, districtKey string, localVarOptionals *GetDistrictTeamsSimpleOpts) ([]TeamSimple, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -812,7 +812,7 @@ type GetDistrictsByYearOpts struct {
 
 func (a *DistrictApiService) GetDistrictsByYear(ctx context.Context, year int32, localVarOptionals *GetDistrictsByYearOpts) ([]DistrictList, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -922,7 +922,7 @@ type GetEventDistrictPointsOpts struct {
 
 func (a *DistrictApiService) GetEventDistrictPoints(ctx context.Context, eventKey string, localVarOptionals *GetEventDistrictPointsOpts) (EventDistrictPoints, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1032,7 +1032,7 @@ type GetTeamDistrictsOpts struct {
 
 func (a *DistrictApiService) GetTeamDistricts(ctx context.Context, teamKey string, localVarOptionals *GetTeamDistrictsOpts) ([]DistrictList, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
