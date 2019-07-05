@@ -41,7 +41,7 @@ type Team struct {
 	// Official website associated with the team.
 	Website string `json:"website,omitempty"`
 	// First year the team officially competed.
-	RookieYear int32 `json:"rookie_year"`
+	RookieYear int32 `json:"rookie_year,omitempty"`
 	// Team's motto as provided by FIRST. This field is deprecated and will return null - will be removed at end-of-season in 2019.
 	Motto string `json:"motto,omitempty"`
 	// Location of the team's home championship each year as a key-value pair. The year (as a string) is the key, and the city is the value.

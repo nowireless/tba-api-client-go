@@ -4143,7 +4143,6 @@ components:
       required:
       - key
       - name
-      - rookie_year
       - team_number
       type: object
     Team_Robot:
@@ -6426,6 +6425,7 @@ components:
           - html5
           - rtmp
           - livestream
+          - direct_link
           type: string
         channel:
           description: Type specific channel information. May be the YouTube stream,
