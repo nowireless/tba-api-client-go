@@ -6426,6 +6426,10 @@ components:
           - rtmp
           - livestream
           - direct_link
+          - mms
+          - justin
+          - stemtv
+          - dacast
           type: string
         channel:
           description: Type specific channel information. May be the YouTube stream,
