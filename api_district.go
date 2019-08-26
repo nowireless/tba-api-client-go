@@ -10,10 +10,10 @@
 package openapi
 
 import (
-	"context"
-	"io/ioutil"
-	"net/http"
-	"net/url"
+	_context "context"
+	_ioutil "io/ioutil"
+	_nethttp "net/http"
+	_neturl "net/url"
 	"fmt"
 	"strings"
 	"github.com/antihax/optional"
@@ -21,7 +21,7 @@ import (
 
 // Linger please
 var (
-	_ context.Context
+	_ _context.Context
 )
 
 type DistrictApiService service
@@ -29,7 +29,7 @@ type DistrictApiService service
 /*
 DistrictApiService
 Gets a list of events in the given district.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param districtKey TBA District Key, eg `2016fim`
  * @param optional nil or *GetDistrictEventsOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -40,9 +40,9 @@ type GetDistrictEventsOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *DistrictApiService) GetDistrictEvents(ctx context.Context, districtKey string, localVarOptionals *GetDistrictEventsOpts) ([]Event, *http.Response, error) {
+func (a *DistrictApiService) GetDistrictEvents(ctx _context.Context, districtKey string, localVarOptionals *GetDistrictEventsOpts) ([]Event, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -52,11 +52,11 @@ func (a *DistrictApiService) GetDistrictEvents(ctx context.Context, districtKey 
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/district/{district_key}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"district_key"+"}", fmt.Sprintf("%v", districtKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"district_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", districtKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -100,7 +100,7 @@ func (a *DistrictApiService) GetDistrictEvents(ctx context.Context, districtKey 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -139,7 +139,7 @@ func (a *DistrictApiService) GetDistrictEvents(ctx context.Context, districtKey 
 /*
 DistrictApiService
 Gets a list of event keys for events in the given district.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param districtKey TBA District Key, eg `2016fim`
  * @param optional nil or *GetDistrictEventsKeysOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -150,9 +150,9 @@ type GetDistrictEventsKeysOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *DistrictApiService) GetDistrictEventsKeys(ctx context.Context, districtKey string, localVarOptionals *GetDistrictEventsKeysOpts) ([]string, *http.Response, error) {
+func (a *DistrictApiService) GetDistrictEventsKeys(ctx _context.Context, districtKey string, localVarOptionals *GetDistrictEventsKeysOpts) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -162,11 +162,11 @@ func (a *DistrictApiService) GetDistrictEventsKeys(ctx context.Context, district
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/district/{district_key}/events/keys"
-	localVarPath = strings.Replace(localVarPath, "{"+"district_key"+"}", fmt.Sprintf("%v", districtKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"district_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", districtKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -210,7 +210,7 @@ func (a *DistrictApiService) GetDistrictEventsKeys(ctx context.Context, district
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -249,7 +249,7 @@ func (a *DistrictApiService) GetDistrictEventsKeys(ctx context.Context, district
 /*
 DistrictApiService
 Gets a short-form list of events in the given district.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param districtKey TBA District Key, eg `2016fim`
  * @param optional nil or *GetDistrictEventsSimpleOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -260,9 +260,9 @@ type GetDistrictEventsSimpleOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *DistrictApiService) GetDistrictEventsSimple(ctx context.Context, districtKey string, localVarOptionals *GetDistrictEventsSimpleOpts) ([]EventSimple, *http.Response, error) {
+func (a *DistrictApiService) GetDistrictEventsSimple(ctx _context.Context, districtKey string, localVarOptionals *GetDistrictEventsSimpleOpts) ([]EventSimple, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -272,11 +272,11 @@ func (a *DistrictApiService) GetDistrictEventsSimple(ctx context.Context, distri
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/district/{district_key}/events/simple"
-	localVarPath = strings.Replace(localVarPath, "{"+"district_key"+"}", fmt.Sprintf("%v", districtKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"district_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", districtKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -320,7 +320,7 @@ func (a *DistrictApiService) GetDistrictEventsSimple(ctx context.Context, distri
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -359,7 +359,7 @@ func (a *DistrictApiService) GetDistrictEventsSimple(ctx context.Context, distri
 /*
 DistrictApiService
 Gets a list of team district rankings for the given district.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param districtKey TBA District Key, eg `2016fim`
  * @param optional nil or *GetDistrictRankingsOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -370,9 +370,9 @@ type GetDistrictRankingsOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *DistrictApiService) GetDistrictRankings(ctx context.Context, districtKey string, localVarOptionals *GetDistrictRankingsOpts) ([]DistrictRanking, *http.Response, error) {
+func (a *DistrictApiService) GetDistrictRankings(ctx _context.Context, districtKey string, localVarOptionals *GetDistrictRankingsOpts) ([]DistrictRanking, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -382,11 +382,11 @@ func (a *DistrictApiService) GetDistrictRankings(ctx context.Context, districtKe
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/district/{district_key}/rankings"
-	localVarPath = strings.Replace(localVarPath, "{"+"district_key"+"}", fmt.Sprintf("%v", districtKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"district_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", districtKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -430,7 +430,7 @@ func (a *DistrictApiService) GetDistrictRankings(ctx context.Context, districtKe
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -469,7 +469,7 @@ func (a *DistrictApiService) GetDistrictRankings(ctx context.Context, districtKe
 /*
 DistrictApiService
 Gets a list of &#x60;Team&#x60; objects that competed in events in the given district.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param districtKey TBA District Key, eg `2016fim`
  * @param optional nil or *GetDistrictTeamsOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -480,9 +480,9 @@ type GetDistrictTeamsOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *DistrictApiService) GetDistrictTeams(ctx context.Context, districtKey string, localVarOptionals *GetDistrictTeamsOpts) ([]Team, *http.Response, error) {
+func (a *DistrictApiService) GetDistrictTeams(ctx _context.Context, districtKey string, localVarOptionals *GetDistrictTeamsOpts) ([]Team, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -492,11 +492,11 @@ func (a *DistrictApiService) GetDistrictTeams(ctx context.Context, districtKey s
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/district/{district_key}/teams"
-	localVarPath = strings.Replace(localVarPath, "{"+"district_key"+"}", fmt.Sprintf("%v", districtKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"district_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", districtKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -540,7 +540,7 @@ func (a *DistrictApiService) GetDistrictTeams(ctx context.Context, districtKey s
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -579,7 +579,7 @@ func (a *DistrictApiService) GetDistrictTeams(ctx context.Context, districtKey s
 /*
 DistrictApiService
 Gets a list of &#x60;Team&#x60; objects that competed in events in the given district.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param districtKey TBA District Key, eg `2016fim`
  * @param optional nil or *GetDistrictTeamsKeysOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -590,9 +590,9 @@ type GetDistrictTeamsKeysOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *DistrictApiService) GetDistrictTeamsKeys(ctx context.Context, districtKey string, localVarOptionals *GetDistrictTeamsKeysOpts) ([]string, *http.Response, error) {
+func (a *DistrictApiService) GetDistrictTeamsKeys(ctx _context.Context, districtKey string, localVarOptionals *GetDistrictTeamsKeysOpts) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -602,11 +602,11 @@ func (a *DistrictApiService) GetDistrictTeamsKeys(ctx context.Context, districtK
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/district/{district_key}/teams/keys"
-	localVarPath = strings.Replace(localVarPath, "{"+"district_key"+"}", fmt.Sprintf("%v", districtKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"district_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", districtKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -650,7 +650,7 @@ func (a *DistrictApiService) GetDistrictTeamsKeys(ctx context.Context, districtK
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -689,7 +689,7 @@ func (a *DistrictApiService) GetDistrictTeamsKeys(ctx context.Context, districtK
 /*
 DistrictApiService
 Gets a short-form list of &#x60;Team&#x60; objects that competed in events in the given district.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param districtKey TBA District Key, eg `2016fim`
  * @param optional nil or *GetDistrictTeamsSimpleOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -700,9 +700,9 @@ type GetDistrictTeamsSimpleOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *DistrictApiService) GetDistrictTeamsSimple(ctx context.Context, districtKey string, localVarOptionals *GetDistrictTeamsSimpleOpts) ([]TeamSimple, *http.Response, error) {
+func (a *DistrictApiService) GetDistrictTeamsSimple(ctx _context.Context, districtKey string, localVarOptionals *GetDistrictTeamsSimpleOpts) ([]TeamSimple, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -712,11 +712,11 @@ func (a *DistrictApiService) GetDistrictTeamsSimple(ctx context.Context, distric
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/district/{district_key}/teams/simple"
-	localVarPath = strings.Replace(localVarPath, "{"+"district_key"+"}", fmt.Sprintf("%v", districtKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"district_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", districtKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -760,7 +760,7 @@ func (a *DistrictApiService) GetDistrictTeamsSimple(ctx context.Context, distric
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -799,7 +799,7 @@ func (a *DistrictApiService) GetDistrictTeamsSimple(ctx context.Context, distric
 /*
 DistrictApiService
 Gets a list of districts and their corresponding district key, for the given year.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param year Competition Year (or Season). Must be 4 digits.
  * @param optional nil or *GetDistrictsByYearOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -810,9 +810,9 @@ type GetDistrictsByYearOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *DistrictApiService) GetDistrictsByYear(ctx context.Context, year int32, localVarOptionals *GetDistrictsByYearOpts) ([]DistrictList, *http.Response, error) {
+func (a *DistrictApiService) GetDistrictsByYear(ctx _context.Context, year int32, localVarOptionals *GetDistrictsByYearOpts) ([]DistrictList, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -822,11 +822,11 @@ func (a *DistrictApiService) GetDistrictsByYear(ctx context.Context, year int32,
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/districts/{year}"
-	localVarPath = strings.Replace(localVarPath, "{"+"year"+"}", fmt.Sprintf("%v", year), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"year"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", year)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -870,7 +870,7 @@ func (a *DistrictApiService) GetDistrictsByYear(ctx context.Context, year int32,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -909,7 +909,7 @@ func (a *DistrictApiService) GetDistrictsByYear(ctx context.Context, year int32,
 /*
 DistrictApiService
 Gets a list of team rankings for the Event.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param eventKey TBA Event Key, eg `2016nytr`
  * @param optional nil or *GetEventDistrictPointsOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -920,9 +920,9 @@ type GetEventDistrictPointsOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *DistrictApiService) GetEventDistrictPoints(ctx context.Context, eventKey string, localVarOptionals *GetEventDistrictPointsOpts) (EventDistrictPoints, *http.Response, error) {
+func (a *DistrictApiService) GetEventDistrictPoints(ctx _context.Context, eventKey string, localVarOptionals *GetEventDistrictPointsOpts) (EventDistrictPoints, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -932,11 +932,11 @@ func (a *DistrictApiService) GetEventDistrictPoints(ctx context.Context, eventKe
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/event/{event_key}/district_points"
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", eventKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -980,7 +980,7 @@ func (a *DistrictApiService) GetEventDistrictPoints(ctx context.Context, eventKe
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1019,7 +1019,7 @@ func (a *DistrictApiService) GetEventDistrictPoints(ctx context.Context, eventKe
 /*
 DistrictApiService
 Gets an array of districts representing each year the team was in a district. Will return an empty array if the team was never in a district.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param teamKey TBA Team Key, eg `frc254`
  * @param optional nil or *GetTeamDistrictsOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -1030,9 +1030,9 @@ type GetTeamDistrictsOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *DistrictApiService) GetTeamDistricts(ctx context.Context, teamKey string, localVarOptionals *GetTeamDistrictsOpts) ([]DistrictList, *http.Response, error) {
+func (a *DistrictApiService) GetTeamDistricts(ctx _context.Context, teamKey string, localVarOptionals *GetTeamDistrictsOpts) ([]DistrictList, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1042,11 +1042,11 @@ func (a *DistrictApiService) GetTeamDistricts(ctx context.Context, teamKey strin
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/team/{team_key}/districts"
-	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", fmt.Sprintf("%v", teamKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", teamKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1090,7 +1090,7 @@ func (a *DistrictApiService) GetTeamDistricts(ctx context.Context, teamKey strin
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err

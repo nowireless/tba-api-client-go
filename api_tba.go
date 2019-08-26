@@ -10,16 +10,16 @@
 package openapi
 
 import (
-	"context"
-	"io/ioutil"
-	"net/http"
-	"net/url"
+	_context "context"
+	_ioutil "io/ioutil"
+	_nethttp "net/http"
+	_neturl "net/url"
 	"github.com/antihax/optional"
 )
 
 // Linger please
 var (
-	_ context.Context
+	_ _context.Context
 )
 
 type TBAApiService service
@@ -27,7 +27,7 @@ type TBAApiService service
 /*
 TBAApiService
 Returns API status, and TBA status information.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetStatusOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
 @return ApiStatus
@@ -37,9 +37,9 @@ type GetStatusOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *TBAApiService) GetStatus(ctx context.Context, localVarOptionals *GetStatusOpts) (ApiStatus, *http.Response, error) {
+func (a *TBAApiService) GetStatus(ctx _context.Context, localVarOptionals *GetStatusOpts) (ApiStatus, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -51,8 +51,8 @@ func (a *TBAApiService) GetStatus(ctx context.Context, localVarOptionals *GetSta
 	localVarPath := a.client.cfg.BasePath + "/status"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -96,7 +96,7 @@ func (a *TBAApiService) GetStatus(ctx context.Context, localVarOptionals *GetSta
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err

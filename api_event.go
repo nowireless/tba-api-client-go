@@ -10,10 +10,10 @@
 package openapi
 
 import (
-	"context"
-	"io/ioutil"
-	"net/http"
-	"net/url"
+	_context "context"
+	_ioutil "io/ioutil"
+	_nethttp "net/http"
+	_neturl "net/url"
 	"fmt"
 	"strings"
 	"github.com/antihax/optional"
@@ -21,7 +21,7 @@ import (
 
 // Linger please
 var (
-	_ context.Context
+	_ _context.Context
 )
 
 type EventApiService service
@@ -29,7 +29,7 @@ type EventApiService service
 /*
 EventApiService
 Gets a list of events in the given district.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param districtKey TBA District Key, eg `2016fim`
  * @param optional nil or *GetDistrictEventsOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -40,9 +40,9 @@ type GetDistrictEventsOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetDistrictEvents(ctx context.Context, districtKey string, localVarOptionals *GetDistrictEventsOpts) ([]Event, *http.Response, error) {
+func (a *EventApiService) GetDistrictEvents(ctx _context.Context, districtKey string, localVarOptionals *GetDistrictEventsOpts) ([]Event, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -52,11 +52,11 @@ func (a *EventApiService) GetDistrictEvents(ctx context.Context, districtKey str
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/district/{district_key}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"district_key"+"}", fmt.Sprintf("%v", districtKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"district_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", districtKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -100,7 +100,7 @@ func (a *EventApiService) GetDistrictEvents(ctx context.Context, districtKey str
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -139,7 +139,7 @@ func (a *EventApiService) GetDistrictEvents(ctx context.Context, districtKey str
 /*
 EventApiService
 Gets a list of event keys for events in the given district.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param districtKey TBA District Key, eg `2016fim`
  * @param optional nil or *GetDistrictEventsKeysOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -150,9 +150,9 @@ type GetDistrictEventsKeysOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetDistrictEventsKeys(ctx context.Context, districtKey string, localVarOptionals *GetDistrictEventsKeysOpts) ([]string, *http.Response, error) {
+func (a *EventApiService) GetDistrictEventsKeys(ctx _context.Context, districtKey string, localVarOptionals *GetDistrictEventsKeysOpts) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -162,11 +162,11 @@ func (a *EventApiService) GetDistrictEventsKeys(ctx context.Context, districtKey
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/district/{district_key}/events/keys"
-	localVarPath = strings.Replace(localVarPath, "{"+"district_key"+"}", fmt.Sprintf("%v", districtKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"district_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", districtKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -210,7 +210,7 @@ func (a *EventApiService) GetDistrictEventsKeys(ctx context.Context, districtKey
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -249,7 +249,7 @@ func (a *EventApiService) GetDistrictEventsKeys(ctx context.Context, districtKey
 /*
 EventApiService
 Gets a short-form list of events in the given district.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param districtKey TBA District Key, eg `2016fim`
  * @param optional nil or *GetDistrictEventsSimpleOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -260,9 +260,9 @@ type GetDistrictEventsSimpleOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetDistrictEventsSimple(ctx context.Context, districtKey string, localVarOptionals *GetDistrictEventsSimpleOpts) ([]EventSimple, *http.Response, error) {
+func (a *EventApiService) GetDistrictEventsSimple(ctx _context.Context, districtKey string, localVarOptionals *GetDistrictEventsSimpleOpts) ([]EventSimple, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -272,11 +272,11 @@ func (a *EventApiService) GetDistrictEventsSimple(ctx context.Context, districtK
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/district/{district_key}/events/simple"
-	localVarPath = strings.Replace(localVarPath, "{"+"district_key"+"}", fmt.Sprintf("%v", districtKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"district_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", districtKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -320,7 +320,7 @@ func (a *EventApiService) GetDistrictEventsSimple(ctx context.Context, districtK
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -359,7 +359,7 @@ func (a *EventApiService) GetDistrictEventsSimple(ctx context.Context, districtK
 /*
 EventApiService
 Gets an Event.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param eventKey TBA Event Key, eg `2016nytr`
  * @param optional nil or *GetEventOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -370,9 +370,9 @@ type GetEventOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetEvent(ctx context.Context, eventKey string, localVarOptionals *GetEventOpts) (Event, *http.Response, error) {
+func (a *EventApiService) GetEvent(ctx _context.Context, eventKey string, localVarOptionals *GetEventOpts) (Event, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -382,11 +382,11 @@ func (a *EventApiService) GetEvent(ctx context.Context, eventKey string, localVa
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/event/{event_key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", eventKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -430,7 +430,7 @@ func (a *EventApiService) GetEvent(ctx context.Context, eventKey string, localVa
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -469,7 +469,7 @@ func (a *EventApiService) GetEvent(ctx context.Context, eventKey string, localVa
 /*
 EventApiService
 Gets a list of Elimination Alliances for the given Event.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param eventKey TBA Event Key, eg `2016nytr`
  * @param optional nil or *GetEventAlliancesOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -480,9 +480,9 @@ type GetEventAlliancesOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetEventAlliances(ctx context.Context, eventKey string, localVarOptionals *GetEventAlliancesOpts) ([]EliminationAlliance, *http.Response, error) {
+func (a *EventApiService) GetEventAlliances(ctx _context.Context, eventKey string, localVarOptionals *GetEventAlliancesOpts) ([]EliminationAlliance, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -492,11 +492,11 @@ func (a *EventApiService) GetEventAlliances(ctx context.Context, eventKey string
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/event/{event_key}/alliances"
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", eventKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -540,7 +540,7 @@ func (a *EventApiService) GetEventAlliances(ctx context.Context, eventKey string
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -579,7 +579,7 @@ func (a *EventApiService) GetEventAlliances(ctx context.Context, eventKey string
 /*
 EventApiService
 Gets a list of awards from the given event.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param eventKey TBA Event Key, eg `2016nytr`
  * @param optional nil or *GetEventAwardsOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -590,9 +590,9 @@ type GetEventAwardsOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetEventAwards(ctx context.Context, eventKey string, localVarOptionals *GetEventAwardsOpts) ([]Award, *http.Response, error) {
+func (a *EventApiService) GetEventAwards(ctx _context.Context, eventKey string, localVarOptionals *GetEventAwardsOpts) ([]Award, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -602,11 +602,11 @@ func (a *EventApiService) GetEventAwards(ctx context.Context, eventKey string, l
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/event/{event_key}/awards"
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", eventKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -650,7 +650,7 @@ func (a *EventApiService) GetEventAwards(ctx context.Context, eventKey string, l
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -689,7 +689,7 @@ func (a *EventApiService) GetEventAwards(ctx context.Context, eventKey string, l
 /*
 EventApiService
 Gets a list of team rankings for the Event.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param eventKey TBA Event Key, eg `2016nytr`
  * @param optional nil or *GetEventDistrictPointsOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -700,9 +700,9 @@ type GetEventDistrictPointsOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetEventDistrictPoints(ctx context.Context, eventKey string, localVarOptionals *GetEventDistrictPointsOpts) (EventDistrictPoints, *http.Response, error) {
+func (a *EventApiService) GetEventDistrictPoints(ctx _context.Context, eventKey string, localVarOptionals *GetEventDistrictPointsOpts) (EventDistrictPoints, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -712,11 +712,11 @@ func (a *EventApiService) GetEventDistrictPoints(ctx context.Context, eventKey s
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/event/{event_key}/district_points"
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", eventKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -760,7 +760,7 @@ func (a *EventApiService) GetEventDistrictPoints(ctx context.Context, eventKey s
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -799,7 +799,7 @@ func (a *EventApiService) GetEventDistrictPoints(ctx context.Context, eventKey s
 /*
 EventApiService
 Gets a set of Event-specific insights for the given Event.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param eventKey TBA Event Key, eg `2016nytr`
  * @param optional nil or *GetEventInsightsOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -810,9 +810,9 @@ type GetEventInsightsOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetEventInsights(ctx context.Context, eventKey string, localVarOptionals *GetEventInsightsOpts) (EventInsights, *http.Response, error) {
+func (a *EventApiService) GetEventInsights(ctx _context.Context, eventKey string, localVarOptionals *GetEventInsightsOpts) (EventInsights, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -822,11 +822,11 @@ func (a *EventApiService) GetEventInsights(ctx context.Context, eventKey string,
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/event/{event_key}/insights"
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", eventKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -870,7 +870,7 @@ func (a *EventApiService) GetEventInsights(ctx context.Context, eventKey string,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -909,7 +909,7 @@ func (a *EventApiService) GetEventInsights(ctx context.Context, eventKey string,
 /*
 EventApiService
 Gets an array of Match Keys for the given event key that have timeseries data. Returns an empty array if no matches have timeseries data. *WARNING:* This is *not* official data, and is subject to a significant possibility of error, or missing data. Do not rely on this data for any purpose. In fact, pretend we made it up. *WARNING:* This endpoint and corresponding data models are under *active development* and may change at any time, including in breaking ways.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param eventKey TBA Event Key, eg `2016nytr`
  * @param optional nil or *GetEventMatchTimeseriesOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -920,9 +920,9 @@ type GetEventMatchTimeseriesOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetEventMatchTimeseries(ctx context.Context, eventKey string, localVarOptionals *GetEventMatchTimeseriesOpts) ([]string, *http.Response, error) {
+func (a *EventApiService) GetEventMatchTimeseries(ctx _context.Context, eventKey string, localVarOptionals *GetEventMatchTimeseriesOpts) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -932,11 +932,11 @@ func (a *EventApiService) GetEventMatchTimeseries(ctx context.Context, eventKey 
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/event/{event_key}/matches/timeseries"
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", eventKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -980,7 +980,7 @@ func (a *EventApiService) GetEventMatchTimeseries(ctx context.Context, eventKey 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1019,7 +1019,7 @@ func (a *EventApiService) GetEventMatchTimeseries(ctx context.Context, eventKey 
 /*
 EventApiService
 Gets a list of matches for the given event.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param eventKey TBA Event Key, eg `2016nytr`
  * @param optional nil or *GetEventMatchesOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -1030,9 +1030,9 @@ type GetEventMatchesOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetEventMatches(ctx context.Context, eventKey string, localVarOptionals *GetEventMatchesOpts) ([]Match, *http.Response, error) {
+func (a *EventApiService) GetEventMatches(ctx _context.Context, eventKey string, localVarOptionals *GetEventMatchesOpts) ([]Match, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1042,11 +1042,11 @@ func (a *EventApiService) GetEventMatches(ctx context.Context, eventKey string, 
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/event/{event_key}/matches"
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", eventKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1090,7 +1090,7 @@ func (a *EventApiService) GetEventMatches(ctx context.Context, eventKey string, 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1129,7 +1129,7 @@ func (a *EventApiService) GetEventMatches(ctx context.Context, eventKey string, 
 /*
 EventApiService
 Gets a list of match keys for the given event.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param eventKey TBA Event Key, eg `2016nytr`
  * @param optional nil or *GetEventMatchesKeysOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -1140,9 +1140,9 @@ type GetEventMatchesKeysOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetEventMatchesKeys(ctx context.Context, eventKey string, localVarOptionals *GetEventMatchesKeysOpts) ([]string, *http.Response, error) {
+func (a *EventApiService) GetEventMatchesKeys(ctx _context.Context, eventKey string, localVarOptionals *GetEventMatchesKeysOpts) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1152,11 +1152,11 @@ func (a *EventApiService) GetEventMatchesKeys(ctx context.Context, eventKey stri
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/event/{event_key}/matches/keys"
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", eventKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1200,7 +1200,7 @@ func (a *EventApiService) GetEventMatchesKeys(ctx context.Context, eventKey stri
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1239,7 +1239,7 @@ func (a *EventApiService) GetEventMatchesKeys(ctx context.Context, eventKey stri
 /*
 EventApiService
 Gets a short-form list of matches for the given event.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param eventKey TBA Event Key, eg `2016nytr`
  * @param optional nil or *GetEventMatchesSimpleOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -1250,9 +1250,9 @@ type GetEventMatchesSimpleOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetEventMatchesSimple(ctx context.Context, eventKey string, localVarOptionals *GetEventMatchesSimpleOpts) ([]MatchSimple, *http.Response, error) {
+func (a *EventApiService) GetEventMatchesSimple(ctx _context.Context, eventKey string, localVarOptionals *GetEventMatchesSimpleOpts) ([]MatchSimple, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1262,11 +1262,11 @@ func (a *EventApiService) GetEventMatchesSimple(ctx context.Context, eventKey st
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/event/{event_key}/matches/simple"
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", eventKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1310,7 +1310,7 @@ func (a *EventApiService) GetEventMatchesSimple(ctx context.Context, eventKey st
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1349,7 +1349,7 @@ func (a *EventApiService) GetEventMatchesSimple(ctx context.Context, eventKey st
 /*
 EventApiService
 Gets a set of Event OPRs (including OPR, DPR, and CCWM) for the given Event.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param eventKey TBA Event Key, eg `2016nytr`
  * @param optional nil or *GetEventOPRsOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -1360,9 +1360,9 @@ type GetEventOPRsOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetEventOPRs(ctx context.Context, eventKey string, localVarOptionals *GetEventOPRsOpts) (EventOpRs, *http.Response, error) {
+func (a *EventApiService) GetEventOPRs(ctx _context.Context, eventKey string, localVarOptionals *GetEventOPRsOpts) (EventOpRs, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1372,11 +1372,11 @@ func (a *EventApiService) GetEventOPRs(ctx context.Context, eventKey string, loc
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/event/{event_key}/oprs"
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", eventKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1420,7 +1420,7 @@ func (a *EventApiService) GetEventOPRs(ctx context.Context, eventKey string, loc
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1459,7 +1459,7 @@ func (a *EventApiService) GetEventOPRs(ctx context.Context, eventKey string, loc
 /*
 EventApiService
 Gets information on TBA-generated predictions for the given Event. Contains year-specific information. *WARNING* This endpoint is currently under development and may change at any time.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param eventKey TBA Event Key, eg `2016nytr`
  * @param optional nil or *GetEventPredictionsOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -1470,9 +1470,9 @@ type GetEventPredictionsOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetEventPredictions(ctx context.Context, eventKey string, localVarOptionals *GetEventPredictionsOpts) (map[string]interface{}, *http.Response, error) {
+func (a *EventApiService) GetEventPredictions(ctx _context.Context, eventKey string, localVarOptionals *GetEventPredictionsOpts) (map[string]interface{}, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1482,11 +1482,11 @@ func (a *EventApiService) GetEventPredictions(ctx context.Context, eventKey stri
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/event/{event_key}/predictions"
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", eventKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1530,7 +1530,7 @@ func (a *EventApiService) GetEventPredictions(ctx context.Context, eventKey stri
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1569,7 +1569,7 @@ func (a *EventApiService) GetEventPredictions(ctx context.Context, eventKey stri
 /*
 EventApiService
 Gets a list of team rankings for the Event.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param eventKey TBA Event Key, eg `2016nytr`
  * @param optional nil or *GetEventRankingsOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -1580,9 +1580,9 @@ type GetEventRankingsOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetEventRankings(ctx context.Context, eventKey string, localVarOptionals *GetEventRankingsOpts) (EventRanking, *http.Response, error) {
+func (a *EventApiService) GetEventRankings(ctx _context.Context, eventKey string, localVarOptionals *GetEventRankingsOpts) (EventRanking, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1592,11 +1592,11 @@ func (a *EventApiService) GetEventRankings(ctx context.Context, eventKey string,
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/event/{event_key}/rankings"
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", eventKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1640,7 +1640,7 @@ func (a *EventApiService) GetEventRankings(ctx context.Context, eventKey string,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1679,7 +1679,7 @@ func (a *EventApiService) GetEventRankings(ctx context.Context, eventKey string,
 /*
 EventApiService
 Gets a short-form Event.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param eventKey TBA Event Key, eg `2016nytr`
  * @param optional nil or *GetEventSimpleOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -1690,9 +1690,9 @@ type GetEventSimpleOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetEventSimple(ctx context.Context, eventKey string, localVarOptionals *GetEventSimpleOpts) (EventSimple, *http.Response, error) {
+func (a *EventApiService) GetEventSimple(ctx _context.Context, eventKey string, localVarOptionals *GetEventSimpleOpts) (EventSimple, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1702,11 +1702,11 @@ func (a *EventApiService) GetEventSimple(ctx context.Context, eventKey string, l
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/event/{event_key}/simple"
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", eventKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1750,7 +1750,7 @@ func (a *EventApiService) GetEventSimple(ctx context.Context, eventKey string, l
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1789,7 +1789,7 @@ func (a *EventApiService) GetEventSimple(ctx context.Context, eventKey string, l
 /*
 EventApiService
 Gets a list of &#x60;Team&#x60; objects that competed in the given event.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param eventKey TBA Event Key, eg `2016nytr`
  * @param optional nil or *GetEventTeamsOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -1800,9 +1800,9 @@ type GetEventTeamsOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetEventTeams(ctx context.Context, eventKey string, localVarOptionals *GetEventTeamsOpts) ([]Team, *http.Response, error) {
+func (a *EventApiService) GetEventTeams(ctx _context.Context, eventKey string, localVarOptionals *GetEventTeamsOpts) ([]Team, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1812,11 +1812,11 @@ func (a *EventApiService) GetEventTeams(ctx context.Context, eventKey string, lo
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/event/{event_key}/teams"
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", eventKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1860,7 +1860,7 @@ func (a *EventApiService) GetEventTeams(ctx context.Context, eventKey string, lo
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1899,7 +1899,7 @@ func (a *EventApiService) GetEventTeams(ctx context.Context, eventKey string, lo
 /*
 EventApiService
 Gets a list of &#x60;Team&#x60; keys that competed in the given event.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param eventKey TBA Event Key, eg `2016nytr`
  * @param optional nil or *GetEventTeamsKeysOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -1910,9 +1910,9 @@ type GetEventTeamsKeysOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetEventTeamsKeys(ctx context.Context, eventKey string, localVarOptionals *GetEventTeamsKeysOpts) ([]string, *http.Response, error) {
+func (a *EventApiService) GetEventTeamsKeys(ctx _context.Context, eventKey string, localVarOptionals *GetEventTeamsKeysOpts) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1922,11 +1922,11 @@ func (a *EventApiService) GetEventTeamsKeys(ctx context.Context, eventKey string
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/event/{event_key}/teams/keys"
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", eventKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1970,7 +1970,7 @@ func (a *EventApiService) GetEventTeamsKeys(ctx context.Context, eventKey string
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2009,7 +2009,7 @@ func (a *EventApiService) GetEventTeamsKeys(ctx context.Context, eventKey string
 /*
 EventApiService
 Gets a short-form list of &#x60;Team&#x60; objects that competed in the given event.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param eventKey TBA Event Key, eg `2016nytr`
  * @param optional nil or *GetEventTeamsSimpleOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -2020,9 +2020,9 @@ type GetEventTeamsSimpleOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetEventTeamsSimple(ctx context.Context, eventKey string, localVarOptionals *GetEventTeamsSimpleOpts) ([]TeamSimple, *http.Response, error) {
+func (a *EventApiService) GetEventTeamsSimple(ctx _context.Context, eventKey string, localVarOptionals *GetEventTeamsSimpleOpts) ([]TeamSimple, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2032,11 +2032,11 @@ func (a *EventApiService) GetEventTeamsSimple(ctx context.Context, eventKey stri
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/event/{event_key}/teams/simple"
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", eventKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2080,7 +2080,7 @@ func (a *EventApiService) GetEventTeamsSimple(ctx context.Context, eventKey stri
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2119,7 +2119,7 @@ func (a *EventApiService) GetEventTeamsSimple(ctx context.Context, eventKey stri
 /*
 EventApiService
 Gets a key-value list of the event statuses for teams competing at the given event.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param eventKey TBA Event Key, eg `2016nytr`
  * @param optional nil or *GetEventTeamsStatusesOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -2130,9 +2130,9 @@ type GetEventTeamsStatusesOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetEventTeamsStatuses(ctx context.Context, eventKey string, localVarOptionals *GetEventTeamsStatusesOpts) (map[string]TeamEventStatus, *http.Response, error) {
+func (a *EventApiService) GetEventTeamsStatuses(ctx _context.Context, eventKey string, localVarOptionals *GetEventTeamsStatusesOpts) (map[string]TeamEventStatus, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2142,11 +2142,11 @@ func (a *EventApiService) GetEventTeamsStatuses(ctx context.Context, eventKey st
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/event/{event_key}/teams/statuses"
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", eventKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2190,7 +2190,7 @@ func (a *EventApiService) GetEventTeamsStatuses(ctx context.Context, eventKey st
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2229,7 +2229,7 @@ func (a *EventApiService) GetEventTeamsStatuses(ctx context.Context, eventKey st
 /*
 EventApiService
 Gets a list of events in the given year.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param year Competition Year (or Season). Must be 4 digits.
  * @param optional nil or *GetEventsByYearOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -2240,9 +2240,9 @@ type GetEventsByYearOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetEventsByYear(ctx context.Context, year int32, localVarOptionals *GetEventsByYearOpts) ([]Event, *http.Response, error) {
+func (a *EventApiService) GetEventsByYear(ctx _context.Context, year int32, localVarOptionals *GetEventsByYearOpts) ([]Event, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2252,11 +2252,11 @@ func (a *EventApiService) GetEventsByYear(ctx context.Context, year int32, local
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/events/{year}"
-	localVarPath = strings.Replace(localVarPath, "{"+"year"+"}", fmt.Sprintf("%v", year), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"year"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", year)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2300,7 +2300,7 @@ func (a *EventApiService) GetEventsByYear(ctx context.Context, year int32, local
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2339,7 +2339,7 @@ func (a *EventApiService) GetEventsByYear(ctx context.Context, year int32, local
 /*
 EventApiService
 Gets a list of event keys in the given year.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param year Competition Year (or Season). Must be 4 digits.
  * @param optional nil or *GetEventsByYearKeysOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -2350,9 +2350,9 @@ type GetEventsByYearKeysOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetEventsByYearKeys(ctx context.Context, year int32, localVarOptionals *GetEventsByYearKeysOpts) ([]string, *http.Response, error) {
+func (a *EventApiService) GetEventsByYearKeys(ctx _context.Context, year int32, localVarOptionals *GetEventsByYearKeysOpts) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2362,11 +2362,11 @@ func (a *EventApiService) GetEventsByYearKeys(ctx context.Context, year int32, l
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/events/{year}/keys"
-	localVarPath = strings.Replace(localVarPath, "{"+"year"+"}", fmt.Sprintf("%v", year), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"year"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", year)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2410,7 +2410,7 @@ func (a *EventApiService) GetEventsByYearKeys(ctx context.Context, year int32, l
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2449,7 +2449,7 @@ func (a *EventApiService) GetEventsByYearKeys(ctx context.Context, year int32, l
 /*
 EventApiService
 Gets a short-form list of events in the given year.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param year Competition Year (or Season). Must be 4 digits.
  * @param optional nil or *GetEventsByYearSimpleOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -2460,9 +2460,9 @@ type GetEventsByYearSimpleOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetEventsByYearSimple(ctx context.Context, year int32, localVarOptionals *GetEventsByYearSimpleOpts) ([]EventSimple, *http.Response, error) {
+func (a *EventApiService) GetEventsByYearSimple(ctx _context.Context, year int32, localVarOptionals *GetEventsByYearSimpleOpts) ([]EventSimple, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2472,11 +2472,11 @@ func (a *EventApiService) GetEventsByYearSimple(ctx context.Context, year int32,
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/events/{year}/simple"
-	localVarPath = strings.Replace(localVarPath, "{"+"year"+"}", fmt.Sprintf("%v", year), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"year"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", year)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2520,7 +2520,7 @@ func (a *EventApiService) GetEventsByYearSimple(ctx context.Context, year int32,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2559,7 +2559,7 @@ func (a *EventApiService) GetEventsByYearSimple(ctx context.Context, year int32,
 /*
 EventApiService
 Gets a list of awards the given team won at the given event.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param teamKey TBA Team Key, eg `frc254`
  * @param eventKey TBA Event Key, eg `2016nytr`
  * @param optional nil or *GetTeamEventAwardsOpts - Optional Parameters:
@@ -2571,9 +2571,9 @@ type GetTeamEventAwardsOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetTeamEventAwards(ctx context.Context, teamKey string, eventKey string, localVarOptionals *GetTeamEventAwardsOpts) ([]Award, *http.Response, error) {
+func (a *EventApiService) GetTeamEventAwards(ctx _context.Context, teamKey string, eventKey string, localVarOptionals *GetTeamEventAwardsOpts) ([]Award, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2583,12 +2583,12 @@ func (a *EventApiService) GetTeamEventAwards(ctx context.Context, teamKey string
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/team/{team_key}/event/{event_key}/awards"
-	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", fmt.Sprintf("%v", teamKey), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", teamKey)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", eventKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2632,7 +2632,7 @@ func (a *EventApiService) GetTeamEventAwards(ctx context.Context, teamKey string
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2671,7 +2671,7 @@ func (a *EventApiService) GetTeamEventAwards(ctx context.Context, teamKey string
 /*
 EventApiService
 Gets a list of matches for the given team and event.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param teamKey TBA Team Key, eg `frc254`
  * @param eventKey TBA Event Key, eg `2016nytr`
  * @param optional nil or *GetTeamEventMatchesOpts - Optional Parameters:
@@ -2683,9 +2683,9 @@ type GetTeamEventMatchesOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetTeamEventMatches(ctx context.Context, teamKey string, eventKey string, localVarOptionals *GetTeamEventMatchesOpts) ([]Match, *http.Response, error) {
+func (a *EventApiService) GetTeamEventMatches(ctx _context.Context, teamKey string, eventKey string, localVarOptionals *GetTeamEventMatchesOpts) ([]Match, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2695,12 +2695,12 @@ func (a *EventApiService) GetTeamEventMatches(ctx context.Context, teamKey strin
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/team/{team_key}/event/{event_key}/matches"
-	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", fmt.Sprintf("%v", teamKey), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", teamKey)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", eventKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2744,7 +2744,7 @@ func (a *EventApiService) GetTeamEventMatches(ctx context.Context, teamKey strin
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2783,7 +2783,7 @@ func (a *EventApiService) GetTeamEventMatches(ctx context.Context, teamKey strin
 /*
 EventApiService
 Gets a list of match keys for matches for the given team and event.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param teamKey TBA Team Key, eg `frc254`
  * @param eventKey TBA Event Key, eg `2016nytr`
  * @param optional nil or *GetTeamEventMatchesKeysOpts - Optional Parameters:
@@ -2795,9 +2795,9 @@ type GetTeamEventMatchesKeysOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetTeamEventMatchesKeys(ctx context.Context, teamKey string, eventKey string, localVarOptionals *GetTeamEventMatchesKeysOpts) ([]string, *http.Response, error) {
+func (a *EventApiService) GetTeamEventMatchesKeys(ctx _context.Context, teamKey string, eventKey string, localVarOptionals *GetTeamEventMatchesKeysOpts) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2807,12 +2807,12 @@ func (a *EventApiService) GetTeamEventMatchesKeys(ctx context.Context, teamKey s
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/team/{team_key}/event/{event_key}/matches/keys"
-	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", fmt.Sprintf("%v", teamKey), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", teamKey)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", eventKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2856,7 +2856,7 @@ func (a *EventApiService) GetTeamEventMatchesKeys(ctx context.Context, teamKey s
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2895,7 +2895,7 @@ func (a *EventApiService) GetTeamEventMatchesKeys(ctx context.Context, teamKey s
 /*
 EventApiService
 Gets a short-form list of matches for the given team and event.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param teamKey TBA Team Key, eg `frc254`
  * @param eventKey TBA Event Key, eg `2016nytr`
  * @param optional nil or *GetTeamEventMatchesSimpleOpts - Optional Parameters:
@@ -2907,9 +2907,9 @@ type GetTeamEventMatchesSimpleOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetTeamEventMatchesSimple(ctx context.Context, teamKey string, eventKey string, localVarOptionals *GetTeamEventMatchesSimpleOpts) ([]Match, *http.Response, error) {
+func (a *EventApiService) GetTeamEventMatchesSimple(ctx _context.Context, teamKey string, eventKey string, localVarOptionals *GetTeamEventMatchesSimpleOpts) ([]Match, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2919,12 +2919,12 @@ func (a *EventApiService) GetTeamEventMatchesSimple(ctx context.Context, teamKey
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/team/{team_key}/event/{event_key}/matches/simple"
-	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", fmt.Sprintf("%v", teamKey), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", teamKey)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", eventKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2968,7 +2968,7 @@ func (a *EventApiService) GetTeamEventMatchesSimple(ctx context.Context, teamKey
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3007,7 +3007,7 @@ func (a *EventApiService) GetTeamEventMatchesSimple(ctx context.Context, teamKey
 /*
 EventApiService
 Gets the competition rank and status of the team at the given event.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param teamKey TBA Team Key, eg `frc254`
  * @param eventKey TBA Event Key, eg `2016nytr`
  * @param optional nil or *GetTeamEventStatusOpts - Optional Parameters:
@@ -3019,9 +3019,9 @@ type GetTeamEventStatusOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetTeamEventStatus(ctx context.Context, teamKey string, eventKey string, localVarOptionals *GetTeamEventStatusOpts) (TeamEventStatus, *http.Response, error) {
+func (a *EventApiService) GetTeamEventStatus(ctx _context.Context, teamKey string, eventKey string, localVarOptionals *GetTeamEventStatusOpts) (TeamEventStatus, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3031,12 +3031,12 @@ func (a *EventApiService) GetTeamEventStatus(ctx context.Context, teamKey string
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/team/{team_key}/event/{event_key}/status"
-	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", fmt.Sprintf("%v", teamKey), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", fmt.Sprintf("%v", eventKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", teamKey)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", eventKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -3080,7 +3080,7 @@ func (a *EventApiService) GetTeamEventStatus(ctx context.Context, teamKey string
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3119,7 +3119,7 @@ func (a *EventApiService) GetTeamEventStatus(ctx context.Context, teamKey string
 /*
 EventApiService
 Gets a list of all events this team has competed at.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param teamKey TBA Team Key, eg `frc254`
  * @param optional nil or *GetTeamEventsOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -3130,9 +3130,9 @@ type GetTeamEventsOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetTeamEvents(ctx context.Context, teamKey string, localVarOptionals *GetTeamEventsOpts) ([]Event, *http.Response, error) {
+func (a *EventApiService) GetTeamEvents(ctx _context.Context, teamKey string, localVarOptionals *GetTeamEventsOpts) ([]Event, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3142,11 +3142,11 @@ func (a *EventApiService) GetTeamEvents(ctx context.Context, teamKey string, loc
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/team/{team_key}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", fmt.Sprintf("%v", teamKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", teamKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -3190,7 +3190,7 @@ func (a *EventApiService) GetTeamEvents(ctx context.Context, teamKey string, loc
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3229,7 +3229,7 @@ func (a *EventApiService) GetTeamEvents(ctx context.Context, teamKey string, loc
 /*
 EventApiService
 Gets a list of events this team has competed at in the given year.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param teamKey TBA Team Key, eg `frc254`
  * @param year Competition Year (or Season). Must be 4 digits.
  * @param optional nil or *GetTeamEventsByYearOpts - Optional Parameters:
@@ -3241,9 +3241,9 @@ type GetTeamEventsByYearOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetTeamEventsByYear(ctx context.Context, teamKey string, year int32, localVarOptionals *GetTeamEventsByYearOpts) ([]Event, *http.Response, error) {
+func (a *EventApiService) GetTeamEventsByYear(ctx _context.Context, teamKey string, year int32, localVarOptionals *GetTeamEventsByYearOpts) ([]Event, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3253,12 +3253,12 @@ func (a *EventApiService) GetTeamEventsByYear(ctx context.Context, teamKey strin
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/team/{team_key}/events/{year}"
-	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", fmt.Sprintf("%v", teamKey), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"year"+"}", fmt.Sprintf("%v", year), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", teamKey)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"year"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", year)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -3302,7 +3302,7 @@ func (a *EventApiService) GetTeamEventsByYear(ctx context.Context, teamKey strin
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3341,7 +3341,7 @@ func (a *EventApiService) GetTeamEventsByYear(ctx context.Context, teamKey strin
 /*
 EventApiService
 Gets a list of the event keys for events this team has competed at in the given year.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param teamKey TBA Team Key, eg `frc254`
  * @param year Competition Year (or Season). Must be 4 digits.
  * @param optional nil or *GetTeamEventsByYearKeysOpts - Optional Parameters:
@@ -3353,9 +3353,9 @@ type GetTeamEventsByYearKeysOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetTeamEventsByYearKeys(ctx context.Context, teamKey string, year int32, localVarOptionals *GetTeamEventsByYearKeysOpts) ([]string, *http.Response, error) {
+func (a *EventApiService) GetTeamEventsByYearKeys(ctx _context.Context, teamKey string, year int32, localVarOptionals *GetTeamEventsByYearKeysOpts) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3365,12 +3365,12 @@ func (a *EventApiService) GetTeamEventsByYearKeys(ctx context.Context, teamKey s
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/team/{team_key}/events/{year}/keys"
-	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", fmt.Sprintf("%v", teamKey), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"year"+"}", fmt.Sprintf("%v", year), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", teamKey)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"year"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", year)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -3414,7 +3414,7 @@ func (a *EventApiService) GetTeamEventsByYearKeys(ctx context.Context, teamKey s
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3453,7 +3453,7 @@ func (a *EventApiService) GetTeamEventsByYearKeys(ctx context.Context, teamKey s
 /*
 EventApiService
 Gets a short-form list of events this team has competed at in the given year.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param teamKey TBA Team Key, eg `frc254`
  * @param year Competition Year (or Season). Must be 4 digits.
  * @param optional nil or *GetTeamEventsByYearSimpleOpts - Optional Parameters:
@@ -3465,9 +3465,9 @@ type GetTeamEventsByYearSimpleOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetTeamEventsByYearSimple(ctx context.Context, teamKey string, year int32, localVarOptionals *GetTeamEventsByYearSimpleOpts) ([]EventSimple, *http.Response, error) {
+func (a *EventApiService) GetTeamEventsByYearSimple(ctx _context.Context, teamKey string, year int32, localVarOptionals *GetTeamEventsByYearSimpleOpts) ([]EventSimple, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3477,12 +3477,12 @@ func (a *EventApiService) GetTeamEventsByYearSimple(ctx context.Context, teamKey
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/team/{team_key}/events/{year}/simple"
-	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", fmt.Sprintf("%v", teamKey), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"year"+"}", fmt.Sprintf("%v", year), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", teamKey)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"year"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", year)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -3526,7 +3526,7 @@ func (a *EventApiService) GetTeamEventsByYearSimple(ctx context.Context, teamKey
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3565,7 +3565,7 @@ func (a *EventApiService) GetTeamEventsByYearSimple(ctx context.Context, teamKey
 /*
 EventApiService
 Gets a list of the event keys for all events this team has competed at.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param teamKey TBA Team Key, eg `frc254`
  * @param optional nil or *GetTeamEventsKeysOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -3576,9 +3576,9 @@ type GetTeamEventsKeysOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetTeamEventsKeys(ctx context.Context, teamKey string, localVarOptionals *GetTeamEventsKeysOpts) ([]string, *http.Response, error) {
+func (a *EventApiService) GetTeamEventsKeys(ctx _context.Context, teamKey string, localVarOptionals *GetTeamEventsKeysOpts) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3588,11 +3588,11 @@ func (a *EventApiService) GetTeamEventsKeys(ctx context.Context, teamKey string,
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/team/{team_key}/events/keys"
-	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", fmt.Sprintf("%v", teamKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", teamKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -3636,7 +3636,7 @@ func (a *EventApiService) GetTeamEventsKeys(ctx context.Context, teamKey string,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3675,7 +3675,7 @@ func (a *EventApiService) GetTeamEventsKeys(ctx context.Context, teamKey string,
 /*
 EventApiService
 Gets a short-form list of all events this team has competed at.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param teamKey TBA Team Key, eg `frc254`
  * @param optional nil or *GetTeamEventsSimpleOpts - Optional Parameters:
  * @param "IfModifiedSince" (optional.String) -  Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -3686,9 +3686,9 @@ type GetTeamEventsSimpleOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetTeamEventsSimple(ctx context.Context, teamKey string, localVarOptionals *GetTeamEventsSimpleOpts) ([]EventSimple, *http.Response, error) {
+func (a *EventApiService) GetTeamEventsSimple(ctx _context.Context, teamKey string, localVarOptionals *GetTeamEventsSimpleOpts) ([]EventSimple, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3698,11 +3698,11 @@ func (a *EventApiService) GetTeamEventsSimple(ctx context.Context, teamKey strin
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/team/{team_key}/events/simple"
-	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", fmt.Sprintf("%v", teamKey), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", teamKey)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -3746,7 +3746,7 @@ func (a *EventApiService) GetTeamEventsSimple(ctx context.Context, teamKey strin
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3785,7 +3785,7 @@ func (a *EventApiService) GetTeamEventsSimple(ctx context.Context, teamKey strin
 /*
 EventApiService
 Gets a key-value list of the event statuses for events this team has competed at in the given year.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param teamKey TBA Team Key, eg `frc254`
  * @param year Competition Year (or Season). Must be 4 digits.
  * @param optional nil or *GetTeamEventsStatusesByYearOpts - Optional Parameters:
@@ -3797,9 +3797,9 @@ type GetTeamEventsStatusesByYearOpts struct {
 	IfModifiedSince optional.String
 }
 
-func (a *EventApiService) GetTeamEventsStatusesByYear(ctx context.Context, teamKey string, year int32, localVarOptionals *GetTeamEventsStatusesByYearOpts) (map[string]TeamEventStatus, *http.Response, error) {
+func (a *EventApiService) GetTeamEventsStatusesByYear(ctx _context.Context, teamKey string, year int32, localVarOptionals *GetTeamEventsStatusesByYearOpts) (map[string]TeamEventStatus, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3809,12 +3809,12 @@ func (a *EventApiService) GetTeamEventsStatusesByYear(ctx context.Context, teamK
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/team/{team_key}/events/{year}/statuses"
-	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", fmt.Sprintf("%v", teamKey), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"year"+"}", fmt.Sprintf("%v", year), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", teamKey)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"year"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", year)), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -3858,7 +3858,7 @@ func (a *EventApiService) GetTeamEventsStatusesByYear(ctx context.Context, teamK
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
