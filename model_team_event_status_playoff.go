@@ -8,8 +8,7 @@
  */
 
 package openapi
-
-// Playoff status for this team, may be null if the team did not make playoffs, or playoffs have not begun.
+// TeamEventStatusPlayoff Playoff status for this team, may be null if the team did not make playoffs, or playoffs have not begun.
 type TeamEventStatusPlayoff struct {
 	// The highest playoff level the team reached.
 	Level string `json:"level,omitempty"`

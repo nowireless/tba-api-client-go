@@ -8,8 +8,7 @@
  */
 
 package openapi
-
-// Insights for FIRST Stronghold qualification and elimination matches.
+// EventInsights2016 Insights for FIRST Stronghold qualification and elimination matches.
 type EventInsights2016 struct {
 	// For the Low Bar - An array with three values, number of times damaged, number of opportunities to damage, and percentage.
 	LowBar []float32 `json:"LowBar"`

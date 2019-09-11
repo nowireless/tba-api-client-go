@@ -8,8 +8,7 @@
  */
 
 package openapi
-
-// OPR, DPR, and CCWM for teams at the event.
+// EventOpRs OPR, DPR, and CCWM for teams at the event.
 type EventOpRs struct {
 	// A key-value pair with team key (eg `frc254`) as key and OPR as value.
 	Oprs map[string]float32 `json:"oprs,omitempty"`

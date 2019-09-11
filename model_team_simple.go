@@ -8,7 +8,7 @@
  */
 
 package openapi
-
+// TeamSimple struct for TeamSimple
 type TeamSimple struct {
 	// TBA team key with the format `frcXXXX` with `XXXX` representing the team number.
 	Key string `json:"key"`

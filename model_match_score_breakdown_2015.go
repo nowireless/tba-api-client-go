@@ -8,8 +8,7 @@
  */
 
 package openapi
-
-// See the 2015 FMS API documentation for a description of each value
+// MatchScoreBreakdown2015 See the 2015 FMS API documentation for a description of each value
 type MatchScoreBreakdown2015 struct {
 	Blue MatchScoreBreakdown2015Alliance `json:"blue,omitempty"`
 	Red MatchScoreBreakdown2015Alliance `json:"red,omitempty"`

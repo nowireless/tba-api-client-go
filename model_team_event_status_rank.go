@@ -8,7 +8,7 @@
  */
 
 package openapi
-
+// TeamEventStatusRank struct for TeamEventStatusRank
 type TeamEventStatusRank struct {
 	// Number of teams ranked.
 	NumTeams int32 `json:"num_teams,omitempty"`

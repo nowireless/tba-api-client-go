@@ -8,7 +8,7 @@
  */
 
 package openapi
-
+// EventSimple struct for EventSimple
 type EventSimple struct {
 	// TBA event key with the format yyyy[EVENT_CODE], where yyyy is the year, and EVENT_CODE is the event code of the event.
 	Key string `json:"key"`

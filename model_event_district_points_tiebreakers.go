@@ -8,7 +8,7 @@
  */
 
 package openapi
-
+// EventDistrictPointsTiebreakers struct for EventDistrictPointsTiebreakers
 type EventDistrictPointsTiebreakers struct {
 	HighestQualScores []int32 `json:"highest_qual_scores,omitempty"`
 	QualWins int32 `json:"qual_wins,omitempty"`

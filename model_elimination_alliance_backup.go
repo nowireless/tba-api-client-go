@@ -8,8 +8,7 @@
  */
 
 package openapi
-
-// Backup team called in, may be null.
+// EliminationAllianceBackup Backup team called in, may be null.
 type EliminationAllianceBackup struct {
 	// Team key that was called in as the backup.
 	In string `json:"in,omitempty"`

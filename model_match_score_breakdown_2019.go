@@ -8,8 +8,7 @@
  */
 
 package openapi
-
-// See the 2019 FMS API documentation for a description of each value. https://frcevents2.docs.apiary.io/#reference/match-results/score-details
+// MatchScoreBreakdown2019 See the 2019 FMS API documentation for a description of each value. https://frcevents2.docs.apiary.io/#reference/match-results/score-details
 type MatchScoreBreakdown2019 struct {
 	Blue MatchScoreBreakdown2019Alliance `json:"blue,omitempty"`
 	Red MatchScoreBreakdown2019Alliance `json:"red,omitempty"`

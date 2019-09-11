@@ -8,8 +8,7 @@
  */
 
 package openapi
-
-// Rank of a team in a district.
+// DistrictRanking Rank of a team in a district.
 type DistrictRanking struct {
 	// TBA team key for the team.
 	TeamKey string `json:"team_key"`

@@ -8,8 +8,7 @@
  */
 
 package openapi
-
-// Backup status, may be null.
+// TeamEventStatusAllianceBackup Backup status, may be null.
 type TeamEventStatusAllianceBackup struct {
 	// TBA key for the team replaced by the backup.
 	Out string `json:"out,omitempty"`

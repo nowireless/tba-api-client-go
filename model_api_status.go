@@ -8,7 +8,7 @@
  */
 
 package openapi
-
+// ApiStatus struct for ApiStatus
 type ApiStatus struct {
 	// Year of the current FRC season.
 	CurrentSeason int32 `json:"current_season"`

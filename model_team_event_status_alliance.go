@@ -8,7 +8,7 @@
  */
 
 package openapi
-
+// TeamEventStatusAlliance struct for TeamEventStatusAlliance
 type TeamEventStatusAlliance struct {
 	// Alliance name, may be null.
 	Name string `json:"name,omitempty"`

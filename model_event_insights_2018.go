@@ -8,8 +8,7 @@
  */
 
 package openapi
-
-// Insights for FIRST Power Up qualification and elimination matches.
+// EventInsights2018 Insights for FIRST Power Up qualification and elimination matches.
 type EventInsights2018 struct {
 	// An array with three values, number of times auto quest was completed, number of opportunities to complete the auto quest, and percentage.
 	AutoQuestAchieved []float32 `json:"auto_quest_achieved"`

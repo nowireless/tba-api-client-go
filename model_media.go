@@ -8,8 +8,7 @@
  */
 
 package openapi
-
-// The `Media` object contains a reference for most any media associated with a team or event on TBA.
+// Media The `Media` object contains a reference for most any media associated with a team or event on TBA.
 type Media struct {
 	// TBA identifier for this media.
 	Key string `json:"key"`

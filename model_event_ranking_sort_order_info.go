@@ -8,7 +8,7 @@
  */
 
 package openapi
-
+// EventRankingSortOrderInfo struct for EventRankingSortOrderInfo
 type EventRankingSortOrderInfo struct {
 	// Integer expressing the number of digits of precision in the number provided in `sort_orders`.
 	Precision int32 `json:"precision"`

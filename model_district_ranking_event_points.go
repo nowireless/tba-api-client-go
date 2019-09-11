@@ -8,7 +8,7 @@
  */
 
 package openapi
-
+// DistrictRankingEventPoints struct for DistrictRankingEventPoints
 type DistrictRankingEventPoints struct {
 	// `true` if this event is a District Championship event.
 	DistrictCmp bool `json:"district_cmp"`

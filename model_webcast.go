@@ -8,7 +8,7 @@
  */
 
 package openapi
-
+// Webcast struct for Webcast
 type Webcast struct {
 	// Type of webcast, typically descriptive of the streaming provider.
 	Type string `json:"type"`

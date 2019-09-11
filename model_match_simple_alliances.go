@@ -8,8 +8,7 @@
  */
 
 package openapi
-
-// A list of alliances, the teams on the alliances, and their score.
+// MatchSimpleAlliances A list of alliances, the teams on the alliances, and their score.
 type MatchSimpleAlliances struct {
 	Red MatchAlliance `json:"red,omitempty"`
 	Blue MatchAlliance `json:"blue,omitempty"`

@@ -8,7 +8,7 @@
  */
 
 package openapi
-
+// MatchVideos struct for MatchVideos
 type MatchVideos struct {
 	// Can be one of 'youtube' or 'tba'
 	Type string `json:"type,omitempty"`

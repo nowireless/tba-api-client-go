@@ -8,7 +8,7 @@
  */
 
 package openapi
-
+// EliminationAllianceStatus struct for EliminationAllianceStatus
 type EliminationAllianceStatus struct {
 	PlayoffAverage float64 `json:"playoff_average,omitempty"`
 	Level string `json:"level,omitempty"`

@@ -8,7 +8,7 @@
  */
 
 package openapi
-
+// ApiStatusAppVersion struct for ApiStatusAppVersion
 type ApiStatusAppVersion struct {
 	// Internal use - Minimum application version required to correctly connect and process data.
 	MinAppVersion int32 `json:"min_app_version"`

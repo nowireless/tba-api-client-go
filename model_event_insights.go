@@ -8,8 +8,7 @@
  */
 
 package openapi
-
-// A year-specific event insight object expressed as a JSON string, separated in to `qual` and `playoff` fields. See also Event_Insights_2016, Event_Insights_2017, etc.
+// EventInsights A year-specific event insight object expressed as a JSON string, separated in to `qual` and `playoff` fields. See also Event_Insights_2016, Event_Insights_2017, etc.
 type EventInsights struct {
 	// Inights for the qualification round of an event
 	Qual map[string]interface{} `json:"qual,omitempty"`

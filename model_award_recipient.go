@@ -8,8 +8,7 @@
  */
 
 package openapi
-
-// An `Award_Recipient` object represents the team and/or person who received an award at an event.
+// AwardRecipient An `Award_Recipient` object represents the team and/or person who received an award at an event.
 type AwardRecipient struct {
 	// The TBA team key for the team that was given the award. May be null.
 	TeamKey string `json:"team_key,omitempty"`

@@ -8,7 +8,7 @@
  */
 
 package openapi
-
+// TeamEventStatusRankSortOrderInfo struct for TeamEventStatusRankSortOrderInfo
 type TeamEventStatusRankSortOrderInfo struct {
 	// The number of digits of precision used for this value, eg `2` would correspond to a value of `101.11` while `0` would correspond to `101`.
 	Precision int32 `json:"precision,omitempty"`

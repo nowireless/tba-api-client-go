@@ -8,7 +8,7 @@
  */
 
 package openapi
-
+// MatchAlliance struct for MatchAlliance
 type MatchAlliance struct {
 	// Score for this alliance. Will be null or -1 for an unplayed match.
 	Score int32 `json:"score"`

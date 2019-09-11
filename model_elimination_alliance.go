@@ -8,7 +8,7 @@
  */
 
 package openapi
-
+// EliminationAlliance struct for EliminationAlliance
 type EliminationAlliance struct {
 	// Alliance name, may be null.
 	Name string `json:"name,omitempty"`

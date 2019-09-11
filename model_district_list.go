@@ -8,7 +8,7 @@
  */
 
 package openapi
-
+// DistrictList struct for DistrictList
 type DistrictList struct {
 	// The short identifier for the district.
 	Abbreviation string `json:"abbreviation"`

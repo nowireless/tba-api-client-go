@@ -8,7 +8,7 @@
  */
 
 package openapi
-
+// TeamRobot struct for TeamRobot
 type TeamRobot struct {
 	// Year this robot competed in.
 	Year int32 `json:"year"`

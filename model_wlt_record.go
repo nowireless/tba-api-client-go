@@ -8,8 +8,7 @@
  */
 
 package openapi
-
-// A Win-Loss-Tie record for a team, or an alliance.
+// WltRecord A Win-Loss-Tie record for a team, or an alliance.
 type WltRecord struct {
 	// Number of losses.
 	Losses int32 `json:"losses"`

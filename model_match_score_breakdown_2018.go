@@ -8,8 +8,7 @@
  */
 
 package openapi
-
-// See the 2018 FMS API documentation for a description of each value.
+// MatchScoreBreakdown2018 See the 2018 FMS API documentation for a description of each value.
 type MatchScoreBreakdown2018 struct {
 	Blue MatchScoreBreakdown2018Alliance `json:"blue,omitempty"`
 	Red MatchScoreBreakdown2018Alliance `json:"red,omitempty"`

@@ -8,7 +8,7 @@
  */
 
 package openapi
-
+// EventRanking struct for EventRanking
 type EventRanking struct {
 	// List of rankings at the event.
 	Rankings []EventRankingRankings `json:"rankings"`

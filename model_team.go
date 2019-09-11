@@ -8,7 +8,7 @@
  */
 
 package openapi
-
+// Team struct for Team
 type Team struct {
 	// TBA team key with the format `frcXXXX` with `XXXX` representing the team number.
 	Key string `json:"key"`

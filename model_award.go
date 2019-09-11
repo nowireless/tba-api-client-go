@@ -8,7 +8,7 @@
  */
 
 package openapi
-
+// Award struct for Award
 type Award struct {
 	// The name of the award as provided by FIRST. May vary for the same award type.
 	Name string `json:"name"`

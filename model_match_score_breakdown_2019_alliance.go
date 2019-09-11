@@ -8,7 +8,7 @@
  */
 
 package openapi
-
+// MatchScoreBreakdown2019Alliance struct for MatchScoreBreakdown2019Alliance
 type MatchScoreBreakdown2019Alliance struct {
 	AdjustPoints int32 `json:"adjustPoints,omitempty"`
 	AutoPoints int32 `json:"autoPoints,omitempty"`

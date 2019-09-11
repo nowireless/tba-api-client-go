@@ -8,8 +8,7 @@
  */
 
 package openapi
-
-// Insights for FIRST STEAMWORKS qualification and elimination matches.
+// EventInsights2017 Insights for FIRST STEAMWORKS qualification and elimination matches.
 type EventInsights2017 struct {
 	// Average foul score.
 	AverageFoulScore float32 `json:"average_foul_score"`

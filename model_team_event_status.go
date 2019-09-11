@@ -8,7 +8,7 @@
  */
 
 package openapi
-
+// TeamEventStatus struct for TeamEventStatus
 type TeamEventStatus struct {
 	Qual TeamEventStatusRank `json:"qual,omitempty"`
 	Alliance TeamEventStatusAlliance `json:"alliance,omitempty"`

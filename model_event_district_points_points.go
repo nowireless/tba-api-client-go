@@ -8,7 +8,7 @@
  */
 
 package openapi
-
+// EventDistrictPointsPoints struct for EventDistrictPointsPoints
 type EventDistrictPointsPoints struct {
 	// Total points awarded at this event.
 	Total int32 `json:"total"`
